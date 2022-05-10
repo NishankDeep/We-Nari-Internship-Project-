@@ -3,6 +3,9 @@ E-commerce Website
 Project Title : 
 	We Nari
 
+Guided By :
+	Vaibhav Tiwary 
+
 Team Member :
 	Utsav
 	Areeb
@@ -13,4 +16,5 @@ Team Member :
 
 Description
 
-The website is about madhubani sarees.
+The project is to make a e-commerce website for sarees consisting of wide range of variety. Our main aim is to target ladies of the country
+ and give them wide range of choices at reasonable price .
