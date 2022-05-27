@@ -1,0 +1,163 @@
+body{
+    background-color: whitesmoke;
+      margin: 0px;
+}
+/* class for company name and nav-bar */
+.row,.header{
+    margin-left: 0px;
+    margin-right: 0px;
+    justify-content: center;
+    height: 200px;
+    position: relative;
+    
+}
+/* class for company title */
+.company{
+    display: flex;
+    align-items: center;   
+    flex-wrap: nowrap;
+
+    justify-content: center;
+    height: 100px;
+    width: 300px;
+   
+    text-align: center;
+    font-family: 'Sacramento',cursive;
+    color: rgb(0, 0, 0);
+}
+
+h1{
+    
+    margin-top: 0px;
+    font-size:2em;
+}
+.nav-bar{
+    
+    position: absolute;
+    display: block;
+    top: 130px;
+    height: 50px;
+    text-decoration: none;
+    background-color: rgb(252, 219, 230);
+}
+.nav-option{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    height: 40px;
+    padding-top: 0px;
+}
+.nav-option a:hover{
+     color: rgb(202, 112, 28);
+}
+.nav-link{
+    font-family: 'HMSansLatin-Regular';
+    font-weight: bolder;
+    display: inline-block;
+    color:rgb(19, 239, 210);
+    text-decoration: none;
+    margin:0px auto;
+    height: 35px;
+    text-align: center;
+    
+}
+.nav-item{
+    display: inline-block;
+    margin: 0px 40px;
+    padding-top: 8px;
+}
+
+.mid-section{
+    background: #DEE9E3;
+    height:fit-content;
+    margin-top: 0px;
+    position: relative;
+    
+}
+.trend{
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-size:xx-large;
+    text-align: center;
+    width:300px;
+    left: 0px;
+    right:0px;
+    font-family: 'Bodoni Moda',serif;
+}
+.head-2{
+    display: flex;
+    justify-content: center;
+    height:40px;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/* dealing with images layout */
+.photo{
+    height: fit-content;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.pics{
+    border-radius: 10%;
+    height:398px;
+    width:305px;
+
+}
+.pic-text{
+    font-family: 'Bodoni Moda',serif;
+    font-size:large;
+    text-decoration: none;
+    margin-top: 15px;
+}
+/* classes */
+
+/* footer firstBox */
+#footer{
+    margin: 50px 50px 0px 50px;
+    padding: 50px 10px 50px 5px;
+}
+
+.companyInfo , .addressInfo{
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+
+.marginRemove a{
+    text-decoration: none;
+    color: black;
+    padding: 10px 0px;
+}
+
+
+/* app in footer */
+.secondBox{
+    text-align: center;
+    margin: 20px;
+}
+
+.app{
+    margin: 8px;
+}
+
+/* copyright */
+.copyright{
+    padding: 15px;
+    
+    background-color: rgb(240, 190, 206);
+    text-align: center;
+}
+
+/* hovering part */
+
+.companyInfo a:hover {
+    text-decoration: underline;
+    color: palevioletred;
+}
+
+.containgApp a i:hover{
+    color: palevioletred;
+}
