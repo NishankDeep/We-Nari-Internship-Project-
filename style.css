@@ -114,13 +114,16 @@ h1{
 }
 /* classes */
 
+
 /* footer firstBox */
 #footer{
+    box-sizing: border-box;
     margin: 50px 50px 0px 50px;
-    padding: 50px 10px 50px 5px;
+    padding: 50px 10px 50px 5px;    
 }
 
 .companyInfo , .addressInfo{
+    list-style: none;
     padding-left: 0;
     margin-top: 20px;
 }
@@ -140,6 +143,7 @@ h1{
 }
 
 .app{
+    color :black;
     margin: 8px;
 }
 
