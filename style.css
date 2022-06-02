@@ -92,7 +92,39 @@ h1{
     margin: 0px 40px;
     padding-top: 8px;
 } */
-.mid-section{
+
+/* Mid Section */
+@media (min-width: 768px){
+
+    .carousel-inner {
+        
+        display: flex;
+    }
+    .carousel-item {
+        margin-right: 0px;
+        flex: 0 0 25%;
+        display: block;
+    }
+}
+.carousel-inner{
+
+    padding: 1em;
+}
+.card{
+    margin: 0 2.1em;
+    box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+    border: none;
+}
+.carousel-control-prev, .carousel-control-next{
+    
+    background-color: #aaaaaa;
+    width: 6vh;
+    height: 6vh;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+/* .mid-section{
     background: #ffff;
     height:fit-content;
     margin-top: 0px;
@@ -116,10 +148,10 @@ h1{
     width: 100%;
     margin-top: 30px;
     margin-bottom: 20px;
-}
+} */
 
 /* dealing with images layout */
-.photo{
+/* .photo{
     height: fit-content;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -136,7 +168,7 @@ h1{
     font-size:large;
     text-decoration: none;
     margin-top: 15px;
-}
+} */
 /* classes */
 
 
