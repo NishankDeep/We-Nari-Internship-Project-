@@ -18,6 +18,10 @@ section .imgBx{
     height: 100%;
 }
 
+/* h1{ */
+    /* padding-top: 200px; */
+    /* margin-top: 200px;
+} */
 /* gradient background */
 
 /* 
@@ -179,4 +183,9 @@ section .contentBx .center .login p a{
         background-color: rgb(255 255 255 / 0.9);
         margin: 50px;
     }
+
+    /* h1{ */
+        /* padding-top: 100px; */
+        /* margin-top: 80px;
+    } */
 }
