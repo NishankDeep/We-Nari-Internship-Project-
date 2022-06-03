@@ -9,16 +9,16 @@
   <script src="https://kit.fontawesome.com/57c20b0d98.js" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
-
+  
   <!-- stylesheet for main crousel -->
-  <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css"
-    />
-
-    <link rel="stylesheet" href="./CSS/style.css">
+  <!-- <link
+  rel="stylesheet"
+  href="https://unpkg.com/swiper/swiper-bundle.min.css"
+  />
+  
+  <link rel="stylesheet" href="./CSS/style.css"> -->
   <!-- ends -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -57,32 +57,9 @@
       </div>
     </div>
   </nav>
-  <!-- <div class="col nav-bar" style="height: 40px;">
-        <ul class="nav-option" type="none">
-          <li class="col-1 nav-item">
-            <a class="nav-link" href="">HOME</a>
-          </li>
-          <li class="col-1 nav-item">
-            <a class="nav-link" href="">PRODUCTS</a>
-          </li>
-          <li class="col-1 nav-item">
-            <a class="nav-link" href="">COMPANY</a>
-          </li>
-          <li class="col-1 nav-item">
-            <a class="nav-link" href="">BLOG</a>
-          </li>
-          <li class="col-1 nav-item">
-            <a class="nav-link" href="">SHOP</a>
-          </li>
-          <li class="col-1 nav-item">
-            <a class="nav-link" href="">STYLE</a>
-          </li>
-        </ul>
-      </div>
-    </div> -->
 
     <!-- Main-Crousel -->
-    <div class="swiper mySwiper">
+    <!-- <div class="swiper mySwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <img src="./images/img9.jpg" />
@@ -114,146 +91,283 @@
       </div>
       <div class="swiper-pagination"></div>
     </div>
-  </div>
+  </div> -->
 
     <!-- ends crousel -->
 
   <!-- for photo section -->
 
   <div class="trending">Trending Now!</div>
-  <div id="carouselExampleControls" class="carousel slide photos" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="card">
-          <img src="https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/sequinssaree.jpg" class="rounded-2">
-          <div class="card-body">
-            <h5 class="card-title">SEQUINS</h5>
-          </div>
+  <div class="container mb-5">
+    <div id="carouselExampleControls" class="carousel slide d-none d-sm-block" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="card-wrapper">
+                    <div class="card">
+                        <img src="https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/latest.jpg"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">LATEST</h5>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/sequinssaree.jpg"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">SEQUINS</h5>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/readymade.jpg"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">READYMADE</h5>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Organza.jpg"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">ORGANZA</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card-wrapper">
+                    <div class="card">
+                        <img src="https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/silk.jpg"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">SILK</h5>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/patola.jpg"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">PATOLA</h5>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Bandhani.jpg"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">BANDHANI</h5>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Banarasisilk.jpg"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">BANARASI-SILK</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="carousel-item">
-        <div class="card">
-          <img src="https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Organza.jpg" class="rounded-2">
-          <div class="card-body">
-            <h5 class="card-title">ORGANZA</h5>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="card">
-          <img src="https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/readymade.jpg" class="rounded-2">
-          <div class="card-body">
-            <h5 class="card-title">LATEST</h5>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="card">
-          <img src="https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/latest.jpg" class="rounded-2">
-          <div class="card-body">
-            <h5 class="card-title">READYMADE</h5>
-          </div>
-        </div>
-      </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target=".carousel.slide.photos" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target=".carousel.slide.photos" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-  <!-- <div class="mid-section">
-      <div class="head-2">
-        <h2 class="trend">TRENDING NOW</h2>
-      </div> -->
-  <!-- for photo  -->
-  <!-- <div class="row photo" style="margin-left: 0px;margin-right: 0px;">
-        <div class="col photo col-lg-3 col-sm-6 ">
-          <img class="pics" src="https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Organza.jpg" alt="">
-        <h3 class="pic-text">LATEST</h3>
+    
+    <div id="carouselExampleControlsSmallScreen" class="carousel slide d-sm-none" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="card">
+                    <img src="https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/latest.jpg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">LATEST</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card">
+                    <img src="https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/sequinssaree.jpg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">SEQUINS</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card">
+                    <img src="https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/readymade.jpg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">READYMADE</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card">
+                    <img src="https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Organza.jpg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">ORGANZA</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card">
+                    <img src="https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/silk.jpg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">SILK</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card">
+                    <img src="https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/patola.jpg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">PATOLA</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card">
+                    <img src="https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Bandhani.jpg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">BANDHANI</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card">
+                    <img src="https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Banarasisilk.jpg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">BANARASI-SILK</h5>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col photo col-lg-3 col-sm-6">
-         <img class="pics" src="https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/sequinssaree.jpg" alt="">
-         <h3 class="pic-text">SEQUINS</h3>
-        </div>
-        <div class="col photo col-lg-3 col-sm-6">
-          <img class="pics" src="https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/readymade.jpg" alt="">
-          <h3 class="pic-text">READYMADE</h3>
-        </div>
-        <div class="col photo col-lg-3 col-sm-6">
-          <img class="pics" src="https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/latest.jpg" alt="">
-          <h3 class="pic-text">ORGANZA</h3>
-        </div>
-      </div>
-      <div class="row photo " style="margin-left: 0px;margin-right: 0px;">
-        <div class="col photo col-lg-3 col-sm-6">
-          <img class="pics" src="https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/latest.jpg" alt="">
-          <h3 class="pic-text">LATEST</h3>
-        </div>
-        <div class="col photo col-lg-3 col-sm-6">
-         <img class="pics" src="https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/latest.jpg" alt="">
-         <h3 class="pic-text">SEQUINS</h3>
-        </div>
-        <div class="col photo col-lg-3 col-sm-6">
-          <img class="pics" src="https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/latest.jpg" alt="">
-          <h3 class="pic-text">READYMADE</h3>
-        </div>
-        <div class="col photo col-lg-3 col-sm-6">
-          <img class="pics" src="https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/latest.jpg" alt="">
-          <h3 class="pic-text">ORGANZA</h3>
-        </div>
-      </div>
-    </div> -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsSmallScreen"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsSmallScreen"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
 
   <!-- Review Section -->
-
   <section class="review">
 
     <p class="heading">Customer Review</p>
     <p class="overview">What our customers say about our beautiful sarees!</p>
-    <div id="carouselExampleControls review" class="carousel slide comments" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="card comment">
-            <p class="name">Aahana Pandey</p>
-            <b>I love the sarees of WeNari❣️</b>
-            <p class = "content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est earum adipisci, similique tempora ut esse mollitia quidem fugiat eum dolore consequuntur quaerat ipsam ipsa ipsum.</p>
+    <div class="container mb-5">
+      <div id="carouselExampleControlsReview" class="carousel slide d-none d-sm-block" data-bs-ride="carousel">
+          <div class="carousel-inner">
+              <div class="carousel-item active">
+                  <div class="card-wrapper">
+                    <div class="card comment">
+                      <p class="name">Aahana Pandey</p>
+                      <b>I love the sarees of WeNari❣️</b>
+                      <p class = "content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est earum adipisci, similique tempora ut esse mollitia quidem fugiat eum dolore consequuntur quaerat ipsam ipsa ipsum.</p>
+                    </div>
+                    <div class="card comment">
+                      <p class="name">Nancy Singh</p>
+                      <b>Quality is just great🤗</b>
+                      <p class = "content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, molestias vel rerum facilis reprehenderit ad?</p>
+                    </div>
+                    <div class="card comment">
+                      <p class="name">Riya</p>
+                      <b>Quality is just great🤗</b>
+                      <p class = "content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, molestias vel rerum facilis reprehenderit ad?</p>
+                    </div>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <div class="card-wrapper">
+                    <div class="card comment">
+                      <p class="name">Jhanvi Kumari</p>
+                      <b>WeNari never disappoints me😊</b>
+                      <p class = "content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, repellat?</p>
+                    </div>
+                    <div class="card comment">
+                      <p class="name">Ayushi Tripathi</p>
+                      <b>Seamless delivery by WeNari🤩</b>
+                      <p class = "content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, ipsum odio saepe repellat et autem dolores dolore dicta velit totam? Sed modi cum hic repellendus similique quidem eligendi?</p>
+                    </div>
+                    <div class="card comment">
+                      <p class="name">Neha</p>
+                      <b>Seamless delivery by WeNari🤩</b>
+                      <p class = "content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, ipsum odio saepe repellat et autem dolores dolore dicta velit totam? Sed modi cum hic repellendus similique quidem eligendi?</p>
+                    </div>
+                  </div>
+              </div>
           </div>
-        </div>
-        <div class="carousel-item">
-          <div class="card comment">
-            <p class="name">Nancy Singh</p>
-            <b>Quality is just great🤗</b>
-            <p class = "content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, molestias vel rerum facilis reprehenderit ad?</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="card comment">
-            <p class="name">Jhanvi Kumari</p>
-            <b>WeNari never disappoints me😊</b>
-            <p class = "content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, repellat?</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="card comment">
-            <p class="name">Ayushi Tripathi</p>
-            <b>Seamless delivery by WeNari🤩</b>
-            <p class = "content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, ipsum odio saepe repellat et autem dolores dolore dicta velit totam? Sed modi cum hic repellendus similique quidem eligendi?</p>
-          </div>
-        </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsReview"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsReview"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+          </button>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target=".carousel.slide.comments" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target=".carousel.slide.comments" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-      <p class="last">And many more comming your way🙌</p>
+      
+      <div id="carouselExampleControlsSmallScreenReview" class="carousel slide d-sm-none" data-bs-ride="carousel">
+          <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="card comment">
+                  <p class="name">Aahana Pandey</p>
+                  <b>I love the sarees of WeNari❣️</b>
+                  <p class = "content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est earum adipisci, similique tempora ut esse mollitia quidem fugiat eum dolore consequuntur quaerat ipsam ipsa ipsum.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card comment">
+                  <p class="name">Nancy Singh</p>
+                  <b>Quality is just great🤗</b>
+                  <p class = "content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, molestias vel rerum facilis reprehenderit ad?</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card comment">
+                  <p class="name">Jhanvi Kumari</p>
+                  <b>WeNari never disappoints me😊</b>
+                  <p class = "content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, repellat?</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card comment">
+                  <p class="name">Ayushi Tripathi</p>
+                  <b>Seamless delivery by WeNari🤩</b>
+                  <p class = "content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, ipsum odio saepe repellat et autem dolores dolore dicta velit totam? Sed modi cum hic repellendus similique quidem eligendi?</p>
+                </div>
+              </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsSmallScreenReview"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsSmallScreenReview"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+          </button>
+      </div>  
+      <p class="last">And many more...🙌</p>
     </div>
   </section>
   <!-- footer code -->
