@@ -11,9 +11,13 @@ body {
 
 /* navbar styling */
 
+.nav-link:hover{
+
+    color: black !important;
+}
 .navbar {
 
-    background-color: #f0bece !important;
+    background-color: #ff4584 !important;
 }
 
 .navbar-nav>li {
@@ -113,7 +117,8 @@ h1{
 
 .card {
 
-    background-color: #f0bece;
+    background-color: #ff4584;
+    color: #fff;
     border: none;
     border-radius: 10px;
     box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
@@ -147,7 +152,10 @@ h1{
     top: 50%;
     transform: translateY(-50%);
 }
+.card-title {
 
+    text-align: center;
+}
 /* @media (min-width: 768px){
 
     .carousel-inner {
@@ -242,6 +250,13 @@ h1{
     }
 }
 /* footer firstBox */
+
+.footer-heading{
+
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 16px;
+}
 #footer {
     box-sizing: border-box;
     /* margin: 50px 50px 0px 50px; */
@@ -278,7 +293,8 @@ h1{
 .copyright {
     padding: 15px;
 
-    background-color: rgb(240, 190, 206);
+    background-color: #ff4584;
+    color: #ffff;
     text-align: center;
 }
 
