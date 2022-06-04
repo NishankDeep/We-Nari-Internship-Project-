@@ -40,8 +40,6 @@
 .htImg{
     margin-left: 100px;
     height: 400px;
-    /* visibility: hidden; */
-    /* width: 100%;  */
 }
 
 .paraC{
@@ -56,19 +54,20 @@
     margin-left: 200px;
     font-size: 2.5rem;
 }
-/* .slide1Para{
-    color:  rgb(40, 35, 36);
-    font-size: 2rem;
-    font-weight: bolder;
-} */
+
 
 @media screen and (max-width: 900px) {
     .topCnt{
-        /* display: block; */
         flex-direction: column;
         text-align: center;
+
+        justify-content: flex-end;
     }
-    /* .imgC{
-        visibility: hidden;
-    } */
+    .wrap{
+        display: none;
+    }
+    .lastP{
+        margin-left: auto;
+        font-size: 1.8rem;
+    }
 }
