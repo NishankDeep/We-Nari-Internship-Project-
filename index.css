@@ -9,6 +9,11 @@ body {
     background-color: whitesmoke;
 }
 
+/* banner */
+.banner{
+
+    background-color: whitesmoke !important;
+}
 /* navbar styling */
 
 .nav-link:hover{
