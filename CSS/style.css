@@ -3,8 +3,8 @@
     padding: 0;
 }
 
-.container{
-    background: #eee;
+.cnt{
+    background: whitesmoke;
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 14px;
     color: #000;
@@ -14,7 +14,7 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: rgb(66, 64, 64);
+    /* background: rgb(66, 64, 64); */
   }
 
   .swiper {
