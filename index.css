@@ -23,6 +23,7 @@ body {
 .nav-link:hover{
 
     color: black !important;
+    transition: 1s ease;
 }
 .navbar {
 
@@ -56,8 +57,17 @@ body {
     font-family: Sacramento;
     font-weight: bold;
     font-size: 40px !important;
+    color: transparent;
+    animation: text_reveal 2s ease forwards;
+    animation-delay: .5s;
 }
+@keyframes text_reveal {
+    
+    100%{
 
+        color: black;
+    }
+}
 .card {
 
     background-color: #ff4584;
@@ -107,91 +117,6 @@ body {
 
     text-align: center;
 }
-/* @media (min-width: 768px){
-
-    .carousel-inner {
-        
-        display: flex;
-    }
-    .carousel-item {
-        margin-right: 0px;
-        flex: 0 0 25%;
-        display: block;
-    }
-}
-.carousel-inner{
-
-    padding: 1em;
-}
-.card{
-    margin: 0 2.1em;
-    box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
-    border: none;
-}
-.card-title{
-
-    text-align: center;
-}
-.carousel-control-prev, .carousel-control-next{
-    
-    background-color: #aaaaaa;
-    width: 6vh;
-    height: 6vh;
-    border-radius: 50%;
-    top: 50%;
-    transform: translateY(-50%);
-}
-#carouselExampleControls{
-
-    margin-bottom: 100px !important;
-} */
-/* .mid-section{
-    background: #ffff;
-    height:fit-content;
-    margin-top: 0px;
-    position: relative;
-    
-}
-.trend{
-    margin-bottom: 0px;
-    margin-top: 0px;
-    font-size:xx-large;
-    text-align: center;
-    width:300px;
-    left: 0px;
-    right:0px;
-    font-family: 'Bodoni Moda',serif;
-}
-.head-2{
-    display: flex;
-    justify-content: center;
-    height:40px;
-    width: 100%;
-    margin-top: 30px;
-    margin-bottom: 20px;
-} */
-
-/* dealing with images layout */
-/* .photo{
-    height: fit-content;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-align: center;
-}
-.pics{
-    border-radius: 13px;
-    height:398px;
-    width:305px;
-
-}
-.pic-text{
-    font-family: 'Bodoni Moda',serif;
-    font-size:large;
-    text-decoration: none;
-    margin-top: 15px;
-} */
-/* classes */
-
 /* review section */
 @media screen and (min-width: 577px) {
 
@@ -250,7 +175,6 @@ body {
 }
 
 /* hovering part */
-
 .companyInfo a:hover {
     text-decoration: underline;
     color: palevioletred;
