@@ -8,7 +8,11 @@
 body {
     background-color: whitesmoke;
 }
+.scrolling-active{
 
+    transition: 0.5s ease;
+    box-shadow: 0 10px 1rem rgba(0, 0, 0, .3);
+}
 /* banner */
 .banner{
 
