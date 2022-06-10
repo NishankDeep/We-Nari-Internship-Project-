@@ -48,73 +48,7 @@ body {
     font-size: 20px !important;
 }
 
-/* class for company name and nav-bar */
-/* .row.header{
-    margin-left: 0px;
-    margin-right: 0px;
-    justify-content: center;
-    height: 200px;
-    position: relative;
-    
-} */
-/* class for company title */
-/* .company{
-    display: flex;
-    align-items: center;   
-    flex-wrap: nowrap;
-
-    justify-content: center;
-    height: 100px;
-    width: 300px;
-   
-    text-align: center;
-    font-family: 'Sacramento',cursive;
-    color: rgb(0, 0, 0);
-}
-
-h1{
-    
-    margin-top: 0px;
-    font-size:2em;
-}
-.nav-bar{
-    
-    position: absolute;
-    display: block;
-    top: 130px;
-    height: 50px;
-    text-decoration: none;
-    background-color: rgb(252, 219, 230);
-}
-.nav-option{
-    display: flex;
-    justify-content: center;
-    flex-wrap: nowrap;
-    height: 40px;
-    padding-top: 0px;
-}
-.nav-option a:hover{
-     color: rgb(202, 112, 28);
-}
-.nav-link{
-    font-family: 'HMSansLatin-Regular';
-    font-weight: bolder;
-    display: inline-block;
-    color:rgb(19, 239, 210);
-    text-decoration: none;
-    margin:0px auto;
-    height: 35px;
-    text-align: center;
-    
-}
-.nav-item{
-    display: inline-block;
-    margin: 0px 40px;
-    padding-top: 8px;
-} */
-
 /* Mid Section */
-
 .trending {
 
     padding-top: 50px;
@@ -132,7 +66,15 @@ h1{
     border-radius: 10px;
     box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
 }
+.card{
 
+    overflow: hidden;
+}
+.card-img-top:hover{
+
+    transform: scale(1.5);
+    transition: 2.5s ease-in-out;
+}
 .carousel-inner {
 
     padding: 1em;
@@ -312,10 +254,13 @@ h1{
 .companyInfo a:hover {
     text-decoration: underline;
     color: palevioletred;
+    transition: .3s ease;
 }
 
 .containgApp a i:hover {
+    transform: scale(1.5);
     color: palevioletred;
+    transition: .5s ease;
 }
 
 /* review page stling */
