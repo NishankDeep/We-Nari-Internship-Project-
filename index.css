@@ -179,6 +179,57 @@ body {
 
     text-align: center;
 }
+
+/* Customization Section */
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+
+ .customize{
+    text-align: center;
+    margin: 0 3rem;
+    margin-top: 7rem;
+    /* border: 2px solid red; */
+    padding: 2rem 0rem;
+    padding-bottom: 4rem;
+    background-color: white;
+}
+
+ .customize p{
+    font-size: 40px !important;
+    font-family: Sacramento;
+    font-weight: bold;
+    margin-bottom: 3rem;
+}
+
+/* .customizeLink{
+    margin: 3rem 20rem;
+    padding-top: 50px;
+    padding-bottom: 150px;
+    background-image: url('https://d26dm7ayqnmdyf.cloudfront.net/wp-content/uploads/2016/01/SEW1677.jpg');
+    filter: blur(1px);
+    z-index: -1;
+} */
+
+ .customize a{
+    font-size: 20px;
+    background: #ff4584;
+    color: #fff;
+    cursor: pointer;
+    padding: 25px 25px;
+    border-radius: 10px;
+}
+
+ .customize a:hover{
+    background: #fff;
+    color: #ce3266;
+    outline: none;
+    border: 2px solid #ce3266;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+    /* z-index: 1; */
+}
+
 /* review section */
 @media screen and (min-width: 577px) {
 
