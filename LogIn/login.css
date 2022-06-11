@@ -191,6 +191,7 @@ section .contentBx .center #newacc a:hover{
 @media (max-width: 768px){
 
     section .imgBx{
+        overflow: hidden;
         position: absolute;
         top: 0;
         left: 0;

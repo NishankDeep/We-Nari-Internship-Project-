@@ -8,17 +8,80 @@
 body {
     background-color: whitesmoke;
 }
+.scrolling-active{
 
+    transition: 0.5s ease;
+    box-shadow: 0 10px 1rem rgba(0, 0, 0, .3);
+}
 /* banner */
 .banner{
 
-    background-color: whitesmoke !important;
+    background-image: url("https://cdn.shopify.com/s/files/1/2395/9105/files/sarees_e80295a4-00e8-477b-8426-007e575d630c.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 200px;
+    margin-top: 15px;
 }
+@media screen and (min-width: 450px){
+
+    .banner{
+
+        height: 250px;
+    }
+}
+@media screen and (min-width: 570px){
+
+    .banner{
+        height: 300px;
+    }
+}
+@media screen and (min-width:680px){
+    
+    .banner{
+
+        height: 350px;
+    }
+}   
+@media screen and (min-width:790px){
+
+    .banner{
+
+        height: 400px;
+    }
+}
+@media screen and (min-width:910px){
+
+    .banner{
+        height: 450px;
+    }
+}
+@media screen and (min-width:980px) {
+    
+    .banner{
+        height: 100vh;
+    }
+}
+/* @media screen and (min-width:1140px) {
+    .banner{
+        height: 550px;
+    }
+}
+@media screen and (min-width:1250px) {
+    .banner{
+        height: 600px;
+    }
+}
+@media screen and (min-width:1360px) {
+    .banner{
+        height: 650px;
+    }
+} */
 /* navbar styling */
 
-.nav-link:hover{
+.navbar-brand:hover, .nav-link:hover{
 
     color: black !important;
+    transition: 1s ease;
 }
 .navbar {
 
@@ -44,82 +107,25 @@ body {
     font-size: 20px !important;
 }
 
-/* class for company name and nav-bar */
-/* .row.header{
-    margin-left: 0px;
-    margin-right: 0px;
-    justify-content: center;
-    height: 200px;
-    position: relative;
-    
-} */
-/* class for company title */
-/* .company{
-    display: flex;
-    align-items: center;   
-    flex-wrap: nowrap;
-
-    justify-content: center;
-    height: 100px;
-    width: 300px;
-   
-    text-align: center;
-    font-family: 'Sacramento',cursive;
-    color: rgb(0, 0, 0);
-}
-
-h1{
-    
-    margin-top: 0px;
-    font-size:2em;
-}
-.nav-bar{
-    
-    position: absolute;
-    display: block;
-    top: 130px;
-    height: 50px;
-    text-decoration: none;
-    background-color: rgb(252, 219, 230);
-}
-.nav-option{
-    display: flex;
-    justify-content: center;
-    flex-wrap: nowrap;
-    height: 40px;
-    padding-top: 0px;
-}
-.nav-option a:hover{
-     color: rgb(202, 112, 28);
-}
-.nav-link{
-    font-family: 'HMSansLatin-Regular';
-    font-weight: bolder;
-    display: inline-block;
-    color:rgb(19, 239, 210);
-    text-decoration: none;
-    margin:0px auto;
-    height: 35px;
-    text-align: center;
-    
-}
-.nav-item{
-    display: inline-block;
-    margin: 0px 40px;
-    padding-top: 8px;
-} */
-
 /* Mid Section */
-
 .trending {
 
-    padding-top: 50px;
+    /* padding-top: 50px; */
     text-align: center;
     font-family: Sacramento;
     font-weight: bold;
     font-size: 40px !important;
+    color: transparent;
+    animation: text_reveal 2s ease forwards;
+    animation-delay: .5s;
 }
+@keyframes text_reveal {
+    
+    100%{
 
+        color: black;
+    }
+}
 .card {
 
     background-color: #ff4584;
@@ -128,7 +134,19 @@ h1{
     border-radius: 10px;
     box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
 }
+.card{
 
+    overflow: hidden;
+}
+.card-img-top{
+
+    height: 45vh;
+}
+.card-img-top:hover{
+
+    transform: scale(1.5);
+    transition: 2.5s ease-in-out;
+}
 .carousel-inner {
 
     padding: 1em;
@@ -161,90 +179,56 @@ h1{
 
     text-align: center;
 }
-/* @media (min-width: 768px){
 
-    .carousel-inner {
-        
-        display: flex;
-    }
-    .carousel-item {
-        margin-right: 0px;
-        flex: 0 0 25%;
-        display: block;
-    }
-}
-.carousel-inner{
+/* Customization Section */
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
 
-    padding: 1em;
-}
-.card{
-    margin: 0 2.1em;
-    box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
-    border: none;
-}
-.card-title{
-
+ .customize{
     text-align: center;
+    margin: 0 3rem;
+    margin-top: 7rem;
+    /* border: 2px solid red; */
+    padding: 2rem 0rem;
+    padding-bottom: 4rem;
+    background-color: white;
 }
-.carousel-control-prev, .carousel-control-next{
-    
-    background-color: #aaaaaa;
-    width: 6vh;
-    height: 6vh;
-    border-radius: 50%;
-    top: 50%;
-    transform: translateY(-50%);
-}
-#carouselExampleControls{
 
-    margin-bottom: 100px !important;
-} */
-/* .mid-section{
-    background: #ffff;
-    height:fit-content;
-    margin-top: 0px;
-    position: relative;
-    
+ .customize p{
+    font-size: 40px !important;
+    font-family: Sacramento;
+    font-weight: bold;
+    margin-bottom: 3rem;
 }
-.trend{
-    margin-bottom: 0px;
-    margin-top: 0px;
-    font-size:xx-large;
-    text-align: center;
-    width:300px;
-    left: 0px;
-    right:0px;
-    font-family: 'Bodoni Moda',serif;
-}
-.head-2{
-    display: flex;
-    justify-content: center;
-    height:40px;
-    width: 100%;
-    margin-top: 30px;
-    margin-bottom: 20px;
+
+/* .customizeLink{
+    margin: 3rem 20rem;
+    padding-top: 50px;
+    padding-bottom: 150px;
+    background-image: url('https://d26dm7ayqnmdyf.cloudfront.net/wp-content/uploads/2016/01/SEW1677.jpg');
+    filter: blur(1px);
+    z-index: -1;
 } */
 
-/* dealing with images layout */
-/* .photo{
-    height: fit-content;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-align: center;
+  .customize a{
+    font-size: 20px;
+    background: #ff4584;
+    color: #fff;
+    cursor: pointer;
+    padding: 15px 20px;
+    border-radius: 10px;
 }
-.pics{
-    border-radius: 13px;
-    height:398px;
-    width:305px;
 
+ .customize a:hover{
+    background: #fff;
+    color: #ce3266;
+    outline: none;
+    border: 2px solid #ce3266;
+    font-weight: 500;
+    cursor: pointer;
+    /* transition: 0.3s; */
+    /* z-index: 1; */
 }
-.pic-text{
-    font-family: 'Bodoni Moda',serif;
-    font-size:large;
-    text-decoration: none;
-    margin-top: 15px;
-} */
-/* classes */
 
 /* review section */
 @media screen and (min-width: 577px) {
@@ -304,14 +288,16 @@ h1{
 }
 
 /* hovering part */
-
 .companyInfo a:hover {
     text-decoration: underline;
     color: palevioletred;
+    transition: .3s ease;
 }
 
 .containgApp a i:hover {
+    transform: scale(1.5);
     color: palevioletred;
+    transition: .5s ease;
 }
 
 /* review page stling */
