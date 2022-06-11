@@ -23,6 +23,7 @@ body {
 .nav-link:hover{
 
     color: black !important;
+    transition: 1s ease;
 }
 .navbar {
 
@@ -48,88 +49,7 @@ body {
     font-size: 20px !important;
 }
 
-/* class for company name and nav-bar */
-/* .row.header{
-    margin-left: 0px;
-    margin-right: 0px;
-    justify-content: center;
-    height: 200px;
-    position: relative;
-    
-} */
-/* class for company title */
-/* .company{
-    display: flex;
-    align-items: center;   
-    flex-wrap: nowrap;
-
-    justify-content: center;
-    height: 100px;
-    width: 300px;
-   
-    text-align: center;
-    font-family: 'Sacramento',cursive;
-    color: rgb(0, 0, 0);
-}
-
-h1{
-    
-    margin-top: 0px;
-    font-size:2em;
-}
-.nav-bar{
-    
-    position: absolute;
-    display: block;
-    top: 130px;
-    height: 50px;
-    text-decoration: none;
-    background-color: rgb(252, 219, 230);
-}
-.nav-option{
-    display: flex;
-    justify-content: center;
-    flex-wrap: nowrap;
-    height: 40px;
-    padding-top: 0px;
-}
-.nav-option a:hover{
-     color: rgb(202, 112, 28);
-}
-.nav-link{
-    font-family: 'HMSansLatin-Regular';
-    font-weight: bolder;
-    display: inline-block;
-    color:rgb(19, 239, 210);
-    text-decoration: none;
-    margin:0px auto;
-    height: 35px;
-    text-align: center;
-    
-}
-.nav-item{
-    display: inline-block;
-    margin: 0px 40px;
-    padding-top: 8px;
-} */
-
 /* Mid Section */
-
-/* banner section */
-.carimage{
-   opacity: 100;
-    height: 240px;
-}
-
- @media screen and (max-width: 577px) {
-
-    .carimage {
-        height: 175px;
-    }
-} 
-
-/* banner section ending */
-
 .trending {
 
     padding-top: 50px;
@@ -137,8 +57,17 @@ h1{
     font-family: Sacramento;
     font-weight: bold;
     font-size: 40px !important;
+    color: transparent;
+    animation: text_reveal 2s ease forwards;
+    animation-delay: .5s;
 }
+@keyframes text_reveal {
+    
+    100%{
 
+        color: black;
+    }
+}
 .card {
 
     background-color: #ff4584;
@@ -147,7 +76,15 @@ h1{
     border-radius: 10px;
     box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
 }
+.card{
 
+    overflow: hidden;
+}
+.card-img-top:hover{
+
+    transform: scale(1.5);
+    transition: 2.5s ease-in-out;
+}
 .carousel-inner {
 
     padding: 1em;
@@ -180,91 +117,6 @@ h1{
 
     text-align: center;
 }
-/* @media (min-width: 768px){
-
-    .carousel-inner {
-        
-        display: flex;
-    }
-    .carousel-item {
-        margin-right: 0px;
-        flex: 0 0 25%;
-        display: block;
-    }
-}
-.carousel-inner{
-
-    padding: 1em;
-}
-.card{
-    margin: 0 2.1em;
-    box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
-    border: none;
-}
-.card-title{
-
-    text-align: center;
-}
-.carousel-control-prev, .carousel-control-next{
-    
-    background-color: #aaaaaa;
-    width: 6vh;
-    height: 6vh;
-    border-radius: 50%;
-    top: 50%;
-    transform: translateY(-50%);
-}
-#carouselExampleControls{
-
-    margin-bottom: 100px !important;
-} */
-/* .mid-section{
-    background: #ffff;
-    height:fit-content;
-    margin-top: 0px;
-    position: relative;
-    
-}
-.trend{
-    margin-bottom: 0px;
-    margin-top: 0px;
-    font-size:xx-large;
-    text-align: center;
-    width:300px;
-    left: 0px;
-    right:0px;
-    font-family: 'Bodoni Moda',serif;
-}
-.head-2{
-    display: flex;
-    justify-content: center;
-    height:40px;
-    width: 100%;
-    margin-top: 30px;
-    margin-bottom: 20px;
-} */
-
-/* dealing with images layout */
-/* .photo{
-    height: fit-content;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-align: center;
-}
-.pics{
-    border-radius: 13px;
-    height:398px;
-    width:305px;
-
-}
-.pic-text{
-    font-family: 'Bodoni Moda',serif;
-    font-size:large;
-    text-decoration: none;
-    margin-top: 15px;
-} */
-/* classes */
-
 /* review section */
 @media screen and (min-width: 577px) {
 
@@ -323,14 +175,16 @@ h1{
 }
 
 /* hovering part */
-
 .companyInfo a:hover {
     text-decoration: underline;
     color: palevioletred;
+    transition: .3s ease;
 }
 
 .containgApp a i:hover {
+    transform: scale(1.5);
     color: palevioletred;
+    transition: .5s ease;
 }
 
 /* review page stling */
