@@ -144,7 +144,7 @@ body {
 }
 .card-img-top:hover{
 
-    transform: scale(1.5);
+    transform: scale(1.06);
     transition: 2.5s ease-in-out;
 }
 .carousel-inner {

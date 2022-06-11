@@ -109,6 +109,14 @@ body{
     }
 }
 
+.btnBg:hover{
+    background-color: whitesmoke;
+    border-color: #ff4584;
+    color: #ff4584;
+
+}
+
+
 /* footer firstBox */
 
 .footer-heading{
@@ -136,11 +144,6 @@ body{
     padding: 10px 0px;
 }
 
-.btnBg:hover{
-    background-color: whitesmoke;
-    border-color: whitesmoke;
-    color: #ff4584;
-}
 
 /* app in footer */
 .secondBox {
