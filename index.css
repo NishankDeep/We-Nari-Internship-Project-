@@ -16,11 +16,69 @@ body {
 /* banner */
 .banner{
 
-    background-color: whitesmoke !important;
+    background-image: url("https://cdn.shopify.com/s/files/1/2395/9105/files/sarees_e80295a4-00e8-477b-8426-007e575d630c.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 200px;
+    margin-top: 15px;
 }
+@media screen and (min-width: 450px){
+
+    .banner{
+
+        height: 250px;
+    }
+}
+@media screen and (min-width: 570px){
+
+    .banner{
+        height: 300px;
+    }
+}
+@media screen and (min-width:680px){
+    
+    .banner{
+
+        height: 350px;
+    }
+}   
+@media screen and (min-width:790px){
+
+    .banner{
+
+        height: 400px;
+    }
+}
+@media screen and (min-width:910px){
+
+    .banner{
+        height: 450px;
+    }
+}
+@media screen and (min-width:980px) {
+    
+    .banner{
+        height: 100vh;
+    }
+}
+/* @media screen and (min-width:1140px) {
+    .banner{
+        height: 550px;
+    }
+}
+@media screen and (min-width:1250px) {
+    .banner{
+        height: 600px;
+    }
+}
+@media screen and (min-width:1360px) {
+    .banner{
+        height: 650px;
+    }
+} */
 /* navbar styling */
 
-.nav-link:hover{
+.navbar-brand:hover, .nav-link:hover{
 
     color: black !important;
     transition: 1s ease;
@@ -52,7 +110,7 @@ body {
 /* Mid Section */
 .trending {
 
-    padding-top: 50px;
+    /* padding-top: 50px; */
     text-align: center;
     font-family: Sacramento;
     font-weight: bold;
@@ -79,6 +137,10 @@ body {
 .card{
 
     overflow: hidden;
+}
+.card-img-top{
+
+    height: 45vh;
 }
 .card-img-top:hover{
 
