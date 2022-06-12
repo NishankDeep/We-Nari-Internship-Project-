@@ -14,3 +14,7 @@ inp3.addEventListener("click",function(){
     inp3.classList.add("rmvBxShadow")
 })
 
+document.querySelector(".submit").addEventListener("click",function(){
+    document.querySelector(".submit").classList.add("rsubmit");
+})
+

@@ -53,9 +53,17 @@ body{
     background-color: whitesmoke;
 }
 
+h4{
+    font-weight: 900;
+    text-align: center;
+    font-size: 1.8rem;
+    padding: 2%;
+}
+
 .cnt{
     /* margin-left: 0;
     margin-right: 0; */
+    width: 60%;
     padding: 0 12%;
     background: rgba(0, 0, 0, 0.3);
     z-index: 0;
@@ -73,11 +81,6 @@ body{
     
 }
 
-.btnBg{
-    background-color: #ff4584;
-    border-color: #ff4584;
-    font-size: 1.2rem;
-}
 
 .rmvBxShadow{
     outline: none;
@@ -87,17 +90,38 @@ body{
 }
 
 #mail{
-    width: 45%;
+    /* width: 45%; */
 }
 
 #disc{
-    width: 70%;
+    /* width: 70%; */
     resize: none;
 }
 
 /* #attach{
     width: 45%;
 } */
+
+/* checking the button */
+.submit{
+    background-color: #ff4584;
+    padding: 2% 5%;
+    color: white;
+    font-size: 1.2rem;
+    font-family: 'Sacramento',;
+    border: 1px solid #ff4584;
+    border-radius: 12px;
+    
+}
+
+.submit:hover{
+    background-color: white;
+    color: #ff4584;
+    border-color: #ff4584;   
+}
+
+/* ******************* */
+
 
 @media screen and (max-width : 1001px) {
     #attach{
@@ -107,12 +131,14 @@ body{
     }
 }
 
-.btnBg:hover{
-    background-color: whitesmoke;
-    border-color: #ff4584;
-    color: #ff4584;
 
+@media screen and (max-width: 600px) {
+    .cnt{
+        width: 100%;
+    }
+    
 }
+
 
 
 /* footer firstBox */
