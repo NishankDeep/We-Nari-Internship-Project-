@@ -291,10 +291,11 @@ a:visited { text-decoration: none; }
 
     margin-top: 26px;
     text-align: center;
-    font-family: "Poppins";
+    font-family: 'Bodoni Moda', serif;
     color: transparent;
     animation: text_reveal 2s ease forwards;
     animation-delay: .5s;
+    
 }
 
 .review {
