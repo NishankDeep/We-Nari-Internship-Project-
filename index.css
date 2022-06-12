@@ -112,7 +112,7 @@ body {
 }
 .card-img-top:hover{
 
-    transform: scale(1.06);
+    transform: scale(1.1);
     transition: 2.5s ease-in-out;
 }
 .carousel-inner {
@@ -152,8 +152,8 @@ body {
 a:link { text-decoration: none; }
 a:visited { text-decoration: none; }
 
- .customize{
-    text-align: center;
+.customize{
+    text-align: center; 
     margin: 0 3rem;
     margin-top: 7rem;
     /* border: 2px solid red; */
@@ -162,10 +162,10 @@ a:visited { text-decoration: none; }
     background-color: white;
 }
 
- .customize p{
+.customize p{
     font-size: 40px !important;
     font-family: Sacramento;
-    font-weight: bold;
+    /* font-weight: bold; */
     margin-bottom: 3rem;
 }
 
@@ -178,24 +178,25 @@ a:visited { text-decoration: none; }
     z-index: -1;
 } */
 
-  .customize a{
+.customize a{
     font-size: 20px;
     background: #ff4584;
     color: #fff;
     cursor: pointer;
-    padding: 15px 20px;
+    padding: 13px 13px;
     border-radius: 10px;
 }
 
- .customize a:hover{
+.customize a:hover{
     background: #fff;
     color: #ce3266;
     outline: none;
-    border: 2px solid #ce3266;
-    font-weight: 500;
+    /* border: 2px solid #ce3266; */
+    /* font-weight: 500; */
     cursor: pointer;
-    /* transition: 0.3s; */
-    /* z-index: 1; */
+    transform: scale(1.03);
+    transition: .3s;
+    z-index: 1;
 }
 
 /* review section */
