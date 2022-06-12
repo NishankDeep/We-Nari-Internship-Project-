@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Work+Sans:wght@700&display=swap");
 
 * {
 
@@ -9,7 +10,7 @@ body {
     background-color: whitesmoke;
 }
 .scrolling-active{
-
+    
     transition: 0.5s ease;
     box-shadow: 0 10px 1rem rgba(0, 0, 0, .3);
 }
@@ -23,14 +24,14 @@ body {
     margin-top: 15px;
 }
 @media screen and (min-width: 450px){
-
+    
     .banner{
 
         height: 250px;
     }
 }
 @media screen and (min-width: 570px){
-
+    
     .banner{
         height: 300px;
     }
@@ -38,19 +39,19 @@ body {
 @media screen and (min-width:680px){
     
     .banner{
-
+        
         height: 350px;
     }
 }   
 @media screen and (min-width:790px){
 
     .banner{
-
+        
         height: 400px;
     }
 }
 @media screen and (min-width:910px){
-
+    
     .banner{
         height: 450px;
     }
@@ -61,21 +62,6 @@ body {
         height: 100vh;
     }
 }
-/* @media screen and (min-width:1140px) {
-    .banner{
-        height: 550px;
-    }
-}
-@media screen and (min-width:1250px) {
-    .banner{
-        height: 600px;
-    }
-}
-@media screen and (min-width:1360px) {
-    .banner{
-        height: 650px;
-    }
-} */
 /* navbar styling */
 
 .navbar-brand:hover, .nav-link:hover{
@@ -84,7 +70,7 @@ body {
     transition: 1s ease;
 }
 .navbar {
-
+    
     background-color: #ff4584 !important;
 }
 
@@ -95,9 +81,9 @@ body {
 }
 
 .navbar-brand {
-
+    
     font-family: 'Sacramento', cursive;
-    font-size: 40px !important;
+    font-size: 35px !important;
     font-weight: bold !important;
     padding-left: 30px;
 }
@@ -108,26 +94,8 @@ body {
 }
 
 /* Mid Section */
-.trending {
-
-    /* padding-top: 50px; */
-    text-align: center;
-    font-family: Sacramento;
-    font-weight: bold;
-    font-size: 40px !important;
-    color: transparent;
-    animation: text_reveal 2s ease forwards;
-    animation-delay: .5s;
-}
-@keyframes text_reveal {
-    
-    100%{
-
-        color: black;
-    }
-}
 .card {
-
+    
     background-color: #ff4584;
     color: #fff;
     border: none;
@@ -144,7 +112,7 @@ body {
 }
 .card-img-top:hover{
 
-    transform: scale(1.06);
+    transform: scale(1.1);
     transition: 2.5s ease-in-out;
 }
 .carousel-inner {
@@ -153,13 +121,13 @@ body {
 }
 
 @media screen and (min-width: 577px) {
-
+    
     .card-wrapper {
-
+        
         display: flex;
     }
     .card {
-
+        
         margin: 0px 20px 0px 20px;
         width: calc(25%);
     }
@@ -167,7 +135,7 @@ body {
 
 .carousel-control-prev,
 .carousel-control-next {
-
+    
     background-color: #aaaaaa;
     width: 6vh;
     height: 6vh;
@@ -176,7 +144,7 @@ body {
     transform: translateY(-50%);
 }
 .card-title {
-
+    
     text-align: center;
 }
 
@@ -184,8 +152,8 @@ body {
 a:link { text-decoration: none; }
 a:visited { text-decoration: none; }
 
- .customize{
-    text-align: center;
+.customize{
+    text-align: center; 
     margin: 0 3rem;
     margin-top: 7rem;
     /* border: 2px solid red; */
@@ -194,10 +162,10 @@ a:visited { text-decoration: none; }
     background-color: white;
 }
 
- .customize p{
+.customize p{
     font-size: 40px !important;
     font-family: Sacramento;
-    font-weight: bold;
+    /* font-weight: bold; */
     margin-bottom: 3rem;
 }
 
@@ -210,24 +178,25 @@ a:visited { text-decoration: none; }
     z-index: -1;
 } */
 
-  .customize a{
+.customize a{
     font-size: 20px;
     background: #ff4584;
     color: #fff;
     cursor: pointer;
-    padding: 15px 20px;
+    padding: 13px 13px;
     border-radius: 10px;
 }
 
- .customize a:hover{
+.customize a:hover{
     background: #fff;
     color: #ce3266;
     outline: none;
-    border: 2px solid #ce3266;
-    font-weight: 500;
+    /* border: 2px solid #ce3266; */
+    /* font-weight: 500; */
     cursor: pointer;
-    /* transition: 0.3s; */
-    /* z-index: 1; */
+    transform: scale(1.03);
+    transition: .3s;
+    z-index: 1;
 }
 
 /* review section */
@@ -241,7 +210,7 @@ a:visited { text-decoration: none; }
 /* footer firstBox */
 
 .footer-heading{
-
+    
     font-weight: bold;
     font-family: sans-serif;
     font-size: 16px;
@@ -287,6 +256,13 @@ a:visited { text-decoration: none; }
     text-align: center;
 }
 
+@keyframes text_reveal {
+    
+    100%{
+
+        color: black;
+    }
+}
 /* hovering part */
 .companyInfo a:hover {
     text-decoration: underline;
@@ -315,8 +291,12 @@ a:visited { text-decoration: none; }
 
     margin-top: 26px;
     text-align: center;
-    font-size: 28px;
-    font-weight: bold;
+    font-family: 'Bodoni Moda', serif;
+    color: transparent;
+    animation: text_reveal 2s ease forwards;
+    animation-delay: .5s;
+    font-size: 2.25rem;
+    
 }
 
 .review {
@@ -329,7 +309,7 @@ a:visited { text-decoration: none; }
     background-color: #ffffff;
     border: 2px solid #ccc;
     border-radius: 15px;
-    box-shadow: 0px 80px 200px 10px #888888;
+    box-shadow: 0px 8px 2000px 10px #888888;
 }
 .name {
 
