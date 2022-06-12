@@ -39,11 +39,8 @@ body{
 /* description  */
 
 #form{
-    margin-top: 0;
-    padding-top: 0;
-    /* color: #85F4FF; */
     color: #F6FBF4;
-    background: rgba(0, 0, 0, 0.4) url(./image/bg4.jpg)  center center/100% no-repeat;
+    background:url(./image/bg4.jpg)  center center/100% no-repeat;
     background-size: cover;
         
 }
@@ -57,7 +54,8 @@ body{
 }
 
 .cnt{
-    margin-top: 0%;
+    /* margin-left: 0;
+    margin-right: 0; */
     padding: 0 12%;
     background: rgba(0, 0, 0, 0.3);
     z-index: 0;

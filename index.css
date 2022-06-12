@@ -191,7 +191,7 @@ a:visited { text-decoration: none; }
     background: #fff;
     color: #ce3266;
     outline: none;
-    /* border: 2px solid #ce3266; */
+    border: 2px solid #ce3266;
     /* font-weight: 500; */
     cursor: pointer;
     transform: scale(1.03);
