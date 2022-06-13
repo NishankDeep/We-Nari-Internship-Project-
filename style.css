@@ -94,6 +94,27 @@ body {
 }
 
 /* Mid Section */
+.featured{
+
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    transform: perspective(900px) rotateY(20deg);
+    transition: .5s;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.featured:hover{
+
+    transform: rotate(0);
+    transition: .25s ease-in-out;
+}
+.card-wrapper:hover .featured {
+    filter: blur(1.5px);
+}
+
+.card-wrapper .featured:hover {
+    filter: blur(0px);
+}
 .card {
     
     background-color: #ff4584;
@@ -108,12 +129,13 @@ body {
 }
 .card-img-top{
 
-    height: 45vh;
+    height: 41vh;
 }
 .card-img-top:hover{
 
     transform: scale(1.5);
     transition: 2.5s ease-in-out;
+    /* transition-delay: .1s; */
 }
 .carousel-inner {
 
