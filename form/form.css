@@ -1,41 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Work+Sans:wght@700&display=swap");
 
-*{
-    box-sizing: border-box;
-}
-
-body{
-    background-color: whitesmoke !important;
-}
-/* navbar styling */
-
-.nav-link:hover{
-    color: black !important;
-}
-.navbar {
-    background-color: #ff4584 !important;
-}
-
-.navbar-nav>li {
-
-    padding-left: 30px;
-    padding-right: 30px;
-}
-
-.navbar-brand {
-
-    font-family: 'Sacramento', cursive;
-    font-size: 40px !important;
-    font-weight: bold !important;
-    padding-left: 30px;
-}
-
-.nav-link {
-
-    font-size: 20px !important;
-}
-
 /* description  */
 
 #form{
@@ -137,65 +102,4 @@ h4{
         width: 100%;
     }
     
-}
-
-
-
-/* footer firstBox */
-
-.footer-heading{
-
-    font-weight: bold;
-    font-family: sans-serif;
-    font-size: 16px;
-}
-#footer {
-    box-sizing: border-box;
-    padding: 50px 10px 50px 5px;
-}
-
-.companyInfo,
-.addressInfo {
-    list-style: none;
-    padding-left: 0;
-    margin-top: 20px;
-}
-
-
-.marginRemove a {
-    text-decoration: none;
-    color: black;
-    padding: 10px 0px;
-}
-
-
-/* app in footer */
-.secondBox {
-    text-align: center;
-    margin: 20px;
-}
-
-.app {
-    color: black;
-    margin: 8px;
-}
-
-/* copyright */
-.copyright {
-    padding: 15px;
-
-    background-color: #ff4584;
-    color: #ffff;
-    text-align: center;
-}
-
-/* hovering part */
-
-.companyInfo a:hover {
-    text-decoration: underline;
-    color: palevioletred;
-}
-
-.containgApp a i:hover {
-    color: palevioletred;
 }
