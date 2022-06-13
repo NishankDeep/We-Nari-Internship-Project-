@@ -81,6 +81,9 @@ h4{
     
 }
 
+.sizeChange{
+    font-size: 1rem;
+}
 
 .rmvBxShadow{
     outline: none;
@@ -89,9 +92,9 @@ h4{
 
 }
 
-#mail{
-    /* width: 45%; */
-}
+/* #mail{
+    width: 45%;
+} */
 
 #disc{
     /* width: 70%; */
@@ -128,6 +131,11 @@ h4{
         width: 100%;
         /* background-color: #ff4584; */
         /* background-color: red; */
+    }
+
+    .txtInside{
+        font-size: 1rem;
+        transition: smooth;
     }
 }
 
