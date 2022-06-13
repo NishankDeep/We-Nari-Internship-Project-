@@ -132,7 +132,8 @@ section .contentBx .center .TxtField input[type="submit"]:hover{
     background: #fff;
     color: #ce3266;
     outline: none;
-    border: 2px solid #ce3266;
+    /* border: 1px solid #ce3266; */
+    transform: scale(1.1);
     font-weight: 500;
     cursor: pointer;
     transition: 0.3s;
@@ -182,7 +183,8 @@ section .contentBx .center #newacc a:hover{
     background: #fff;
     color: #ce3266;
     outline: none;
-    border: 2px solid #ce3266;
+    /* border: 2px solid #ce3266; */
+    transform: scale(2.1);
     font-weight: 500;
     cursor: pointer;
     transition: 0.3s;
@@ -201,7 +203,7 @@ section .contentBx .center #newacc a:hover{
     } 
 
     section .imgBx .imgText .welcome{
-        color: transparent;
+        color: black;
     }
     
     section .contentBx{
@@ -215,7 +217,7 @@ section .contentBx .center #newacc a:hover{
     }
 
     section .contentBx .center{
-        border-radius: 20px;
+        border-radius: 10px;
 
         width: 100%;
         padding: 40px;

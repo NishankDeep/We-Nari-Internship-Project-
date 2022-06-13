@@ -131,7 +131,8 @@ section .contentBx .center .TxtField input[type="submit"]:hover{
     background: #fff;
     color: #ce3266;
     outline: none;
-    border: 2px solid #ce3266;
+    /* border: 2px solid #ce3266; */
+    transform: scale(1.1);
     font-weight: 500;
     cursor: pointer;
     transition: 0.3s;
