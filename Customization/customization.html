@@ -53,53 +53,58 @@
     </nav>
 
     <!-- Customization Form -->
-    <section class="container">
-        <header class="header">
-            <h1 id="title" class="text-center">Saree Customization Form</h1>
-        </header>
+    <div class="wrapper">
 
-        <form id="survey-form">
-            <div class="form-group">
-                <label id="name-label" for="name">Name</label>
-                <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" required="">
-            </div>
+      <div class="bg-image"></div>
 
-            <div class="form-group">
-                <label id="email-label" for="email">Email</label>
-                <input type="email" name="email" id="email" class="form-control" placeholder="Enter your Email"
-                    required="">
-            </div>
+      <section class="container form-container">
+          <header class="header">
+              <h1 id="title" class="text-center">Saree Customization Form</h1>
+          </header>
 
-            <div class="form-group">
-                <p>Which material suites best for your customized saree?</p>
-                <select id="dropdown" name="role" class="form-control" required="">
-                    <option disabled="" selected="" value="">Select the material of the saree</option>
-                    <option value="Cotton">Cotton</option>
-                    <option value="Silk">Silk</option>
-                    <option value="new">Many more to be added</option>
-                </select>
-            </div>
+          <form id="survey-form">
+              <div class="form-group">
+                  <label id="name-label" for="name">Name</label>
+                  <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" required="">
+              </div>
 
-            <div class="form-group">
-                <p>Description</p>
-                <textarea id="comments" class="input-textarea" name="comment"
-                    placeholder="Write the details of the saree here..."></textarea>
-            </div>
-            <div class="form-group">
-                <label for=" " class="form-label txtInside">Sample Photo </label>
-                <!-- <label for=" " class="form-label">( .jpeg, .jpg, .png, .pdf file are accepted) </label> -->
-                <input class="form-control formChoose sizeChange" type="file" id="attach"
-                    accept=".jpg, .jpeg, .png, .pdf">
-            </div>
+              <div class="form-group">
+                  <label id="email-label" for="email">Email</label>
+                  <input type="email" name="email" id="email" class="form-control" placeholder="Enter your Email"
+                      required="">
+              </div>
+
+              <div class="form-group">
+                  <p>Which material suites best for your customized saree?</p>
+                  <select id="dropdown" name="role" class="form-control" required="">
+                      <option disabled="" selected="" value="">Select the material of the saree</option>
+                      <option value="Cotton">Cotton</option>
+                      <option value="Silk">Silk</option>
+                      <option value="new">Many more to be added</option>
+                  </select>
+              </div>
+
+              <div class="form-group">
+                  <p>Description</p>
+                  <textarea id="comments" class="input-textarea" name="comment"
+                      placeholder="Write the details of the saree here..."></textarea>
+              </div>
+              <div class="form-group">
+                  <label for=" " class="form-label txtInside">Sample Photo </label>
+                  <!-- <label for=" " class="form-label">( .jpeg, .jpg, .png, .pdf file are accepted) </label> -->
+                  <input class="form-control formChoose sizeChange" type="file" id="attach"
+                      accept=".jpg, .jpeg, .png, .pdf">
+              </div>
 
 
-            <div class="form-group">
-                <button type="submit" id="submit" class="submit-button">
-                    Submit
-                </button>
-            </div>
-        </form>
-    </section>
+              <div class="form-group">
+                  <button type="submit" id="submit" class="submit-button">
+                      Submit
+                  </button>
+              </div>
+          </form>
+      </section>
+    </div>
 
     <!-- footer code -->
     <div class="container">
@@ -111,7 +116,7 @@
         
                     <ul class="companyInfo">
                       <li class="marginRemove">
-                        <a href="myaccount.html" target="_blank" rel="noopener noreferrer">Account</a>
+                        <a href="../Account/myaccount.html" target="_blank" rel="noopener noreferrer">Account</a>
                       </li>
                       <li class="marginRemove">
                         <a href="#" target="_blank" rel="noopener noreferrer">Order Status</a>
