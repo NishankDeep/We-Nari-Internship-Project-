@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product-Details</title>
+
+    <script src="https://kit.fontawesome.com/57c20b0d98.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <link rel="stylesheet" href="./detail.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">We Nari.com</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Products</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link active">Company</a>
+              </li> -->
+              <li class="nav-item">
+                <a class="nav-link active">Shop</a>
+              </li>
+              <li class="nav-item">
+                <a  class="nav-link active">Cart</a>
+              </li>
+              <li class="nav-item">
+                <a href="./LogIn/login.html" target="" class="nav-link active">Login</a>
+              </li>
+            </ul>
+            <!-- <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form> -->
+          </div>
+        </div>
+      </nav>
+
+    <div class="container">
+        <div class="left">
+            <div class="img-description">
+                <div class="img-options">
+                    <img src="./images/img1.jpg" alt="" onclick="clickimg(this)">
+                    <img src="./images/img2.jpg" alt="" onclick="clickimg(this)">
+                    <img src="./images/img3.jpg" alt="" onclick="clickimg(this)">
+                    <img src="./images/img4.jpg" alt="" onclick="clickimg(this)">
+                    <img src="./images/img5.jpg" alt="" onclick="clickimg(this)">
+                    <img src="./images/img6.jpg" alt="" onclick="clickimg(this)">
+                </div>
+                <div class="main-img">
+                    <img src="./images/img1.jpg" alt="" id="change">
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="buttons">
+                <button class="btns">ADD TO CART</button>
+                <button class="btns">buy now</button>
+            </div>
+        </div>
+        
+        <div class="right">
+            <div class="prod-header">
+                <h1>SAMSUNG 65-Inch Class Crystal UHD AU8000 Series - 4K UHD HDR Smart TV with Alexa Built-in (UN65AU8000FXZA, 2021 Model), Black</h3>
+                
+            </div>
+
+            <div class="rating-details">
+                <button><span>4.2</span> <img src="./img/start-filled.svg" alt=""> | 600 Ratings</button>
+            </div>
+
+            <hr>
+
+            <div class="price-details">
+                <span class="price"><strong>Rs. 12,000</strong> <s> Rs. 30,000 </s> <button>33% Off</button></span>
+
+                <span class="taxes">inclusive of all taxes</span>
+            </div>
+
+            <hr>
+
+            <div class="prod-details">
+                <div class="size-details">
+                    <span>Size: <strong>55 in</strong></span>
+                    <div class="size-options">
+                        <button class="btn">28 in</button>
+                        <button class="btn">30 in</button>
+                        <button class="btn">32 in</button>
+                        <button class="btn">34 in</button>
+                        <button class="btn">36 in</button>
+                        <button class="btn">38 in</button>
+                        <button class="btn">40 in</button>
+                    </div> 
+                </div>
+
+                <div class="meta-data">
+                    <h3>Product Info</h3>
+                    <span>100% Original Products</span>
+                    <span>Pay on delivery might be available</span>
+                    <span>Easy 30 days returns and exchanges</span>
+                    <span>Try & Buy might be available</span>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="details">
+
+                <div class="special-heading">
+                    <h3>Specifications</h3>
+                </div>
+                <table  class="table-content">
+                    <tr>
+                        <td><strong>Shape</strong></td>
+                        <td class="table-details">Fit and Flare</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Length</strong></td>
+                        <td class="table-details">65 inches</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Occasion</strong></td>
+                        <td class="table-details">Party</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Fabric Type</strong></td>
+                        <td class="table-details">Net</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Print or Pattern Type</strong></td>
+                        <td class="table-details">Solid</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Knit or Woven</strong></td>
+                        <td class="table-details">Woven</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Transparency</strong></td>
+                        <td class="table-details">Opaque</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="Description">
+                <div class="heading">
+                    <h2>Product Description</h2>
+                </div>
+                <div class="prod-content">
+                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni deserunt consectetur, inventore excepturi nisi delectus eius incidunt ab eligendi illum tempore repudiandae. Rem beatae veritatis minus nulla eaque ex dolor dolorem repellat?</span>
+
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias pariatur beatae totam inventore quia placeat minima architecto commodi ducimus molestiae omnis cum delectus voluptatibus officiis saepe incidunt, vel doloremque voluptate necessitatibus. Eos modi minima voluptatum inventore dolorem corrupti aperiam aliquid laudantium! Facere, unde.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="Top">
+        <span><a href="#">Back To Top</a></span>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./detail.js"></script>
+
+    
+</body>
+</html>
