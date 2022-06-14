@@ -196,8 +196,8 @@ form {
 }
 
 .submit-button:hover{
-  color: #FF4584;
-  background-color: #ffffff;
+  /* color: #FF4584; */
+  background-color: transparent;
   border: 2.2px solid #ff4584;
   transform: scale(1.05);
 }
