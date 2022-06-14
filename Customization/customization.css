@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
 
 :root {
+  --nav-height: 70px;
+  --container-height: 70px;
   --color-white: #f3f3f3;
   --color-darkblue: #1b1b32;
   --color-darkblue-alpha: rgba(92, 92, 104, 0.8);
@@ -58,7 +60,7 @@ button {
 }
 .bg-image{
 
-  height: 105vh;
+  height: var(--container-height);
   background-image: url("bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -67,19 +69,9 @@ button {
 }
 #title{
 
-  padding-top: 50px;
+  /* padding-top: 60px; */
   font-size: 30px;
   font-weight: 600;
-}
-.form-container {
-
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  padding-top: 50px;
-  /* margin: 3.125rem auto 0 auto; */
 }
 
 @media (min-width: 576px) {
@@ -92,6 +84,16 @@ button {
   .form-container {
     max-width: 720px;
   }
+}
+.form-container {
+
+  position: absolute;
+  top: var(--nav-height);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  padding-top: 30px;
+  /* margin: 3.125rem auto 0 auto; */
 }
 
 .header {
@@ -127,9 +129,9 @@ form {
   form {
     padding: 30px 50px 5px 50px;
   }
-  #title{
+  .form-container{
 
-    padding-top: 0px;
+    padding-top: 40px;
   }
 }
 @media screen and (min-width: 900px){
@@ -137,6 +139,10 @@ form {
   #title{
     
     font-size: 40px;
+  }
+  .form-container{
+
+    padding-top: 40px;
   }
 }
 .form-group {
