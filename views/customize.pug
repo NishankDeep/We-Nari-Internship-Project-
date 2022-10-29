@@ -1,0 +1,33 @@
+extends layout.pug
+
+block style
+  style
+    include ../public/style/customize.css
+block content
+  .wrapper
+  .bg-image
+  section#form-cnt.container.form-container
+    header.header
+    h1#title.text-center Saree Customization Form
+    form#survey-form(action = "customize" method = "post")
+      .form-group
+        label#name-label(for='name') Name
+        input#name.form-control(type='text' name='name' placeholder='Enter your name' required='')
+      .form-group
+        label#email-label(for='email') Email
+        input#email.form-control(type='email' name='email' placeholder='Enter your Email' required='')
+      .form-group
+        p Which material suites best for your customized saree?
+        select#dropdown.form-control(name='role' required='')
+          option(disabled="" selected='' value='') Select the material of the saree
+          option(value='Cotton') Cotton
+          option(value='Silk') Silk
+          option(value='new') Many more to be added
+      .form-group
+        p Description
+        textarea#comments.input-textarea(name='comment' placeholder='Write the details of the saree here...')
+      .form-group
+        label.form-label.txtInside(for=' ') Sample Photo 
+        input#attach.form-control.formChoose.sizeChange(type='file' accept='.jpg, .jpeg, .png, .pdf')
+      .form-group
+        button#button.btn(type = 'submit') Submit
