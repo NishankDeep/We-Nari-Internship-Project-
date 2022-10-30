@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customization</title>
+    <!-- font awesome link -->
+    <script src="https://kit.fontawesome.com/57c20b0d98.js" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Joan&display=swap" rel="stylesheet">
+
+    <!-- css link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <!-- my css -->
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../index.html">We Nari.com</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" 
+                href="../index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active">Company</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active">Shop</a>
+              </li>
+              <li class="nav-item">
+                <a  class="nav-link active">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a href="../LogIn/login.html" target="" class="nav-link active">Login</a>
+              </li>
+            </ul>
+            <!-- <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form> -->
+          </div>
+        </div>
+      </nav>
+
+    <section id="form">
+        <h4>Customization Detail</h4>
+        <div class="container cnt">
+            <div class="mb-3 paddDiv">
+                <label for="exampleFormControlInput1" class="form-label txtInside">Email address</label>
+                <input type="email" class="form-control inptMail sizeChange" id="mail" placeholder="name@example.com">
+            </div>
+            <div class="mb-3 paddDiv">
+                <label for="exampleFormControlTextarea1" class="form-label txtInside">Description</label>
+                <textarea class="form-control sizeChange" id="disc" rows="5" placeholder="Write the details of the saree"></textarea>
+            </div>
+            <div class="mb-3 paddDiv">
+                <label for=" " class="form-label txtInside">Sample Photo </label>
+                <!-- <label for=" " class="form-label">( .jpeg, .jpg, .png, .pdf file are accepted) </label> -->
+                <input class="form-control formChoose sizeChange" type="file" id="attach" accept=".jpg, .jpeg, .png,
+                .pdf">
+            </div>
+
+            <div class="paddDiv submitBtn">
+              <a href="#" class="btnBg"><button class="submit">Submit</button></a>
+            </div>
+            </div>
+        </div>
+    </section>
+
+
+      <!-- footer code -->
+  <div class="container">
+    <div id="footer">
+      <div class="firstBox">
+        <div class="row">
+          <div class="col-md-2">
+            <p class = "footer-heading">MY ACCOUNT</p>
+
+            <ul class="companyInfo">
+              <li class="marginRemove">
+                <a href="../Account/myaccount.html" target="" rel="noopener noreferrer">Account</a>
+              </li>
+              <li class="marginRemove">
+                <a href="#" target="_blank" rel="noopener noreferrer">Order Status</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-3">
+            <p class = "footer-heading">HELP</p>
+
+            <ul class="companyInfo">
+              <li class="marginRemove">
+                <a href="#" target="_blank" rel="noopener noreferrer">Privacy and Policy</a>
+              </li>
+              <li class="marginRemove">
+                <a href="#" target="_blank" rel="noopener noreferrer">Shipping Policy</a>
+              </li>
+              <li class="marginRemove">
+                <a href="#" target="_blank" rel="noopener noreferrer">Cancellation & Returns</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-3">
+            <p class = "footer-heading">COMPANY</p>
+
+            <ul class="companyInfo">
+              <li class="marginRemove">
+                <a href="#" target="_blank" rel="noopener noreferrer">About Us</a>
+              </li>
+              <li class="marginRemove">
+                <a href="#" target="_blank" rel="noopener noreferrer">Contact Us</a>
+              </li>
+              <li class="marginRemove">
+                <a href="#" target="_blank" rel="noopener noreferrer">Terms and Conditions</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <p class = "footer-heading">CONTACT US</p>
+
+            <ul class="addressInfo">
+              <li class="marginRemove">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>4th floor | We_Naari_Saree | Opp, Keshav Bagh Party Plot |
+                  Ranchi, India - 834001
+                </span>
+              </li>
+            </ul>
+
+            <ul class="addressInfo">
+              <li class="marginRemove">
+                <i class="fa-solid fa-phone"></i>
+                <span> India: +91 123456789 </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="secondBox">
+        <div class="containgApp">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="app"><i
+              class="fa-brands fa-facebook-f fa-2x"></i></a>
+
+          <a href="#" target="_blank" rel="noopener noreferrer" class="app"><i class="fa-brands fa-twitter fa-2x"></i></a>
+
+          <a href="#" target="_blank" rel="noopener noreferrer" class="app"><i
+              class="fa-brands fa-instagram fa-2x"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">
+    <i class="fa-regular fa-copyright"></i> <span>2022 WeNari.com </span>
+  </div>
+    
+
+  <!-- script bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+
+    <!-- adding the script -->
+    <script src="form.js"></script>
+</body>
+</html>
