@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Account</title>
+  
+  <!-- fontawesome link -->
+  <script src="https://kit.fontawesome.com/57c20b0d98.js" crossorigin="anonymous"></script>
+
+  <!-- bootstrap link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+  <!-- frontpage css link -->
+  <link rel="stylesheet" href="myaccount.css">
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <!-- nav bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../index.html">We Nari.com</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Products</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link active">Company</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link active">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a  class="nav-link active">Cart</a>
+          </li>
+          <li class="nav-item">
+            <a href="../LogIn/login.html" target="" class="nav-link active">Login</a>
+          </li>
+        </ul>
+        <!-- <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form> -->
+      </div>
+    </div>
+    </nav>
+
+      <!-- MyAccount Heading -->
+    <section class="Myaccount">
+        <p>MY ACCOUNT</p>
+    </section>
+
+    <!-- mini blocks -->
+    <section class="carton">
+        <div onclick="location.href='#';" style="cursor: pointer;" id="wishList" class="block">
+            <div class="img">
+                <img src="MyAccount_Icons/favourite.webp"  width="90px" height="90px" alt="wish-list">
+            </div>
+
+            <div class="text">
+                <p> <strong>WISH LIST</strong> <br> Check out your favourite collection</p>
+            </div>
+        </div>
+
+        <div onclick="location.href='#';" style="cursor: pointer;" id="order" class="block">
+            <div class="img">
+                <img src="MyAccount_Icons/orders.svg"  width="100px" height="100px" alt="Track-your-order">
+            </div>
+
+            <div class="text">
+                <p> <strong>MY ORDERS</strong> <br> Track, return or buy things again</p>
+            </div>
+        </div>
+
+        <div onclick="location.href='#';" style="cursor: pointer;" id="productReview" class="block">
+            <div class="img">
+                <img src="MyAccount_Icons/productReview.png" width="85px" height="85px" alt="productReview">
+            </div>
+
+            <div class="text">
+                <p> <strong>MY REVIEWS</strong> <br> Check your product reviews here</p>
+            </div>
+        </div>
+
+        <div onclick="location.href='#';" style="cursor: pointer;" id="security" class="block">
+            <div class="img">
+                <img src="MyAccount_Icons/loginSecurity.png"  width="100px" height="100px" alt="Login-and-Security">
+            </div>
+
+            <div class="text">
+                <p> <strong>LOGIN & SECURITY</strong> <br> Edit login, name and mobile number</p>
+            </div>
+        </div>
+            
+        <div onclick="location.href='#';" style="cursor: pointer;" id="address" class="block">
+            <div class="img">
+                <img src="MyAccount_Icons/address.jpeg"  width="100px" height="100px" alt="Your-Address">
+            </div>
+
+            <div class="text">
+                <p> <strong>MY ADDRESS</strong> <br> Edit addresses for new orders</p>
+            </div>
+        </div>
+
+        <div onclick="location.href='#';" style="cursor: pointer;" id="payment" class="block">
+            <div class="img">
+                <img src="MyAccount_Icons/online_payment.png"  width="100px" height="100px" alt="Payment-options">
+            </div>
+
+            <div class="text">
+                <p> <strong>PAYMENT OPTIONS</strong> <br> Edit or add payment methods</p>
+            </div>
+        </div>
+
+        <div onclick="location.href='#';" style="cursor: pointer;" id="contact" class="block">
+            <div class="img">
+                <img src="MyAccount_Icons/contactUs.png"  width="90px" height="90px" alt="Contact-us">
+            </div>
+
+            <div class="text">
+                <p> <strong>CONTACT US</strong> <br> Contact our customer service here</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer code -->
+    <div class="container">
+    <div id="footer">
+      <div class="firstBox">
+        <div class="row">
+          <div class="col-md-2">
+            <p class = "footer-heading">MY ACCOUNT</p>
+
+            <ul class="companyInfo">
+              <li class="marginRemove">
+                <a href="#" rel="noopener noreferrer">Account</a>
+              </li>
+              <li class="marginRemove">
+                <a href="#" target="_blank" rel="noopener noreferrer">Order Status</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-3">
+            <p class = "footer-heading">HELP</p>
+
+            <ul class="companyInfo">
+              <li class="marginRemove">
+                <a href="#" target="_blank" rel="noopener noreferrer">Privacy and Policy</a>
+              </li>
+              <li class="marginRemove">
+                <a href="#" target="_blank" rel="noopener noreferrer">Shipping Policy</a>
+              </li>
+              <li class="marginRemove">
+                <a href="#" target="_blank" rel="noopener noreferrer">Cancellation & Returns</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-3">
+            <p class = "footer-heading">COMPANY</p>
+
+            <ul class="companyInfo">
+              <li class="marginRemove">
+                <a href="#" target="_blank" rel="noopener noreferrer">About Us</a>
+              </li>
+              <li class="marginRemove">
+                <a href="#" target="_blank" rel="noopener noreferrer">Contact Us</a>
+              </li>
+              <li class="marginRemove">
+                <a href="#" target="_blank" rel="noopener noreferrer">Terms and Conditions</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <p class = "footer-heading">CONTACT US</p>
+
+            <ul class="addressInfo">
+              <li class="marginRemove">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>4th floor | We_Naari_Saree | Opp, Keshav Bagh Party Plot |
+                  Ranchi, India - 834001
+                </span>
+              </li>
+            </ul>
+
+            <ul class="addressInfo">
+              <li class="marginRemove">
+                <i class="fa-solid fa-phone"></i>
+                <span> India: +91 123456789 </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="secondBox">
+        <div class="containgApp">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="app"><i
+              class="fa-brands fa-facebook-f fa-2x"></i></a>
+
+          <a href="#" target="_blank" rel="noopener noreferrer" class="app"><i class="fa-brands fa-twitter fa-2x"></i></a>
+
+          <a href="#" target="_blank" rel="noopener noreferrer" class="app"><i
+              class="fa-brands fa-instagram fa-2x"></i></a>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="copyright">
+    <i class="fa-regular fa-copyright"></i> <span>2022 WeNari.com </span>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
