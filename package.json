@@ -1,0 +1,25 @@
+{
+  "name": "we-nari-internship-project-",
+  "version": "1.0.0",
+  "description": "It's a E-Commerce Website (WeNari)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NishankDeep/We-Nari-Internship-Project-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NishankDeep/We-Nari-Internship-Project-/issues"
+  },
+  "homepage": "https://github.com/NishankDeep/We-Nari-Internship-Project-#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^6.7.0",
+    "nodemon": "^2.0.20",
+    "pug": "^3.0.2"
+  }
+}

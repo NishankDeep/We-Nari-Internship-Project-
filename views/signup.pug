@@ -1,0 +1,53 @@
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width' ,='' initial-scale='1.0')
+  title WeNaari Registration
+  link(rel='preconnect' href='https://fonts.googleapis.com')
+  link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+  link(href='https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Oleo+Script+Swash+Caps&display=swap' rel='stylesheet')
+  style
+    include ../public/style/login.css
+section
+  .imgBx
+    img(src='https://cdn.shopify.com/s/files/1/2614/8952/products/406-gold_saree_360x.jpg?v=1613134936')
+    .imgText
+      .welcome
+        | Welcome,
+      .desp
+        | Login or create an account to explore WeNaari
+  .contentBx
+    .center
+      form(method='post')
+        h1 CREATE ACCOUNT
+        #name.TxtField
+          label Full Name
+          input(type='text' required='')
+          span
+        #mob.TxtField
+          label Mobile No
+          input(type='text' required='')
+          span
+        #user.TxtField
+          label Email Address
+          input(type='email' required='')
+          span
+        .TxtField
+          label Password
+          input(type='password' required='')
+          span
+        .TxtField
+          label Confirm Password
+          input(type='password' required='')
+          span
+        .tick
+          label
+            input(type='checkbox' name='')
+            |  By creating an account or logging in, you agree to Company&rsquo;s Conditions of Use and Privacy Policy.
+            br
+            br
+        #register.TxtField
+          input(type='submit' value='Register')
+        .login
+          p
+            | Already have an account? 
+            a(href='../LogIn/login.html') Login

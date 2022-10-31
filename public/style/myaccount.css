@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
+/* MyAccount Heading */
+.Myaccount{
+    margin-top: 2rem;
+    text-align: center;
+    font-size: xx-large;
+    font-family: 'Bodoni Moda', serif;
+    font-size:2.2rem;
+}
+
+
+/* miniblocks */
+.carton{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem 10rem;
+    background-color: white;
+}
+
+.block{
+    display: flex;
+    width: 28%;
+    justify-content: center;
+    text-align: center;
+    font-size: large;
+    margin: 1rem 1.5rem;
+    border: 1px solid grey;
+    padding: 1rem 1rem;
+    border-radius: 10px;
+    /* background-color: whitesmoke; */
+}
+
+.carton :hover{
+    background-color: rgb(224, 219, 219);
+}
+
+.text{
+    padding-top: 22px;
+}
+
+@media (max-width : 780px){
+    *{
+        overflow-x: hidden;
+    }
+    .carton{
+        padding: 0 0rem;
+
+    }
+    .block{
+        margin: 1rem 0.9rem;
+        padding: 1rem 0;
+        width: 100%;
+    }
+}

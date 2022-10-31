@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Work+Sans:wght@700&display=swap");
+
+/* description  */
+
+#form{
+    color: #F6FBF4;
+    background:url(./image/bg4.jpg)  center center/100% no-repeat;
+    background-size: cover;
+        
+}
+
+#form{
+    font-family: 'Poppins', serif;
+}
+
+.inptMail{
+    background-color: whitesmoke;
+}
+
+h4{
+    font-weight: 900;
+    text-align: center;
+    font-size: 1.8rem;
+    padding: 2%;
+}
+
+.cnt{
+    /* margin-left: 0;
+    margin-right: 0; */
+    width: 60%;
+    padding: 0 12%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+}
+
+.paddDiv{
+    padding-top: 3%;
+    padding-bottom: 3%;
+    z-index: 1;
+}
+
+.txtInside{
+    font-size: 1.4rem;
+    font-weight: 600;
+    
+}
+
+.sizeChange{
+    font-size: 1rem;
+}
+
+.rmvBxShadow{
+    outline: none;
+    box-shadow:none !important;
+    border:1px solid #ccc !important;
+
+}
+
+/* #mail{
+    width: 45%;
+} */
+
+#disc{
+    /* width: 70%; */
+    resize: none;
+}
+
+/* #attach{
+    width: 45%;
+} */
+
+/* checking the button */
+.submit{
+    background-color: #ff4584;
+    padding: 2% 5%;
+    color: white;
+    font-size: 1.2rem;
+    font-family: 'Sacramento',;
+    border: 1px solid #ff4584;
+    border-radius: 12px;
+    
+}
+
+.submit:hover{
+    background-color: white;
+    color: #ff4584;
+    border-color: #ff4584;   
+}
+
+/* ******************* */
+
+
+@media screen and (max-width : 1001px) {
+    #attach{
+        width: 100%;
+        /* background-color: #ff4584; */
+        /* background-color: red; */
+    }
+
+    .txtInside{
+        font-size: 1rem;
+        transition: smooth;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .cnt{
+        width: 100%;
+    }
+    
+}

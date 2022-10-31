@@ -1,0 +1,433 @@
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Work+Sans:wght@700&display=swap");
+
+* {
+
+    box-sizing: border-box;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+.scrolling-active {
+
+    transition: 0.5s ease;
+    box-shadow: 0 10px 1rem rgba(0, 0, 0, .2);
+}
+
+/* banner */
+.banner {
+
+    background-image: url("https://cdn.shopify.com/s/files/1/2395/9105/files/sarees_e80295a4-00e8-477b-8426-007e575d630c.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 200px;
+    margin-top: 15px;
+}
+
+@media screen and (min-width: 450px) {
+
+    .banner {
+
+        height: 250px;
+    }
+}
+
+@media screen and (min-width: 570px) {
+
+    .banner {
+        height: 300px;
+    }
+}
+
+@media screen and (min-width:680px) {
+
+    .banner {
+
+        height: 350px;
+    }
+}
+
+@media screen and (min-width:790px) {
+
+    .banner {
+
+        height: 400px;
+    }
+}
+
+@media screen and (min-width:910px) {
+
+    .banner {
+        height: 450px;
+    }
+}
+
+@media screen and (min-width:980px) {
+
+    .banner {
+        height: 100vh;
+    }
+}
+
+/* navbar styling */
+
+.navbar-brand:hover,
+.nav-link:hover {
+    color: black !important;
+    transition: .6s ease;
+}
+
+#nav-icon {
+
+    padding-right: 7px;
+}
+
+.nav-link:hover>#nav-icon {
+
+    filter: invert(0);
+    transition: .6s ease;
+}
+
+.navbar {
+
+    background-color: #ff4584 !important;
+}
+
+.navbar-nav>li {
+
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.navbar-brand {
+
+    font-family: 'Sacramento', cursive;
+    font-size: 35px !important;
+    font-weight: bold !important;
+    padding-left: 30px;
+}
+
+#nav-icon {
+
+    filter: invert(1)
+}
+
+.nav-link {
+
+    font-size: 20px !important;
+}
+
+/* Mid Section */
+.featured {
+
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    transform: perspective(900px) rotateY(20deg);
+    transition: .5s;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.featured:hover {
+
+    transform: rotate(0);
+    transition: .25s ease-in-out;
+}
+
+.card-wrapper:hover .featured {
+    filter: blur(1.5px);
+}
+
+.card-wrapper .featured:hover {
+    filter: blur(0px);
+}
+
+.card {
+
+    background-color: #ff4584;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+}
+
+.card {
+
+    overflow: hidden;
+}
+
+.card-img-top {
+
+    height: 41vh;
+}
+
+.card-img-top:hover {
+
+    transform: scale(1.5);
+    transition: 2.5s ease-in-out;
+    /* transition-delay: .1s; */
+}
+
+.carousel-inner {
+
+    padding: 1em;
+}
+
+@media screen and (min-width: 577px) {
+
+    .card-wrapper {
+
+        display: flex;
+    }
+
+    .card {
+
+        margin: 0px 20px 0px 20px;
+        width: calc(25%);
+    }
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+
+    background-color: #aaaaaa;
+    width: 6vh;
+    height: 6vh;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.card-title {
+
+    text-align: center;
+}
+
+/* Customization Section */
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+.customize {
+    text-align: center;
+    margin: 0 3rem;
+    margin-top: 7rem;
+    /* border: 2px solid red; */
+    padding: 2rem 0rem;
+    padding-bottom: 4rem;
+    background-color: white;
+}
+
+.customize p {
+    font-size: 40px !important;
+    font-family: Sacramento;
+    /* font-weight: bold; */
+    margin-bottom: 3rem;
+}
+
+/* .customizeLink{
+    margin: 3rem 20rem;
+    padding-top: 50px;
+    padding-bottom: 150px;
+    background-image: url('https://d26dm7ayqnmdyf.cloudfront.net/wp-content/uploads/2016/01/SEW1677.jpg');
+    filter: blur(1px);
+    z-index: -1;
+} */
+
+.customize a {
+    font-size: 20px;
+    background: #ff4584;
+    color: #fff;
+    cursor: pointer;
+    padding: 13px 13px;
+    border-radius: 10px;
+}
+
+.customize a:hover {
+    background: #fff;
+    color: #ce3266;
+    outline: none;
+    border: 2px solid #ce3266;
+    /* font-weight: 500; */
+    cursor: pointer;
+    transform: scale(1.03);
+    transition: .3s;
+    z-index: 1;
+}
+
+/* review section */
+@media screen and (min-width: 577px) {
+
+    .card.comment {
+
+        width: calc(50%);
+    }
+}
+
+/* footer firstBox */
+
+footer {
+
+    background-color: white;
+}
+
+.footer-heading {
+
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+#footer {
+    box-sizing: border-box;
+    /* margin: 50px 50px 0px 50px; */
+    padding: 50px 10px 50px 5px;
+}
+
+.companyInfo,
+.addressInfo {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+
+.marginRemove a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 0px;
+}
+
+
+/* app in footer */
+.secondBox {
+    text-align: center;
+    margin: 20px;
+}
+
+.app {
+    color: black;
+    margin: 8px;
+}
+
+/* copyright */
+.copyright {
+    padding: 15px;
+
+    background-color: #ff4584;
+    color: #ffff;
+    text-align: center;
+}
+
+@keyframes text_reveal {
+
+    100% {
+
+        color: black;
+    }
+}
+
+/* hovering part */
+.companyInfo a:hover {
+    text-decoration: underline;
+    color: palevioletred;
+    transition: .3s ease;
+}
+
+.containgApp a i:hover {
+    transform: scale(1.5);
+    color: palevioletred;
+    transition: .5s ease;
+}
+
+/* review page stling */
+.card.comment {
+
+    height: 200px;
+}
+
+.content {
+
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.heading {
+
+    margin-top: 26px;
+    text-align: center;
+    font-family: 'Bodoni Moda', serif;
+    color: transparent;
+    animation: text_reveal 2s ease forwards;
+    animation-delay: .5s;
+    font-size: 2.25rem;
+
+}
+
+.review {
+
+    text-align: center;
+    margin-top: 180px;
+    margin-bottom: 150px;
+    margin-left: 15px;
+    margin-right: 15px;
+    background-color: #ffffff;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    box-shadow: 0px 8px 2000px 10px #888888;
+}
+
+.name {
+
+    font-size: 18px;
+}
+
+.overview {
+
+    font-size: 18px;
+}
+
+@media screen and (min-width: 500px) {
+
+    .review {
+
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+
+    .review {
+
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+
+    .review {
+
+        margin-left: 150px;
+        margin-right: 150px;
+    }
+}
+
+.card.comment:hover {
+
+    transform: scale(1.08);
+    transition: 0.3s ease;
+}
+
+.last {
+
+    text-align: right;
+    font-size: 16px;
+}

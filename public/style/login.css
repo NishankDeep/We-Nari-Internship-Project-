@@ -1,0 +1,228 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:active { text-decoration: none; }
+
+section{
+ position: relative;
+ width: 100%;
+ height: 100vh;
+ display: flex;
+}
+
+section .imgBx{
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+
+/* gradient background */
+
+/* 
+section .imgBx::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(225deg, #f44e86, #03a9f4);
+    z-index: 1;
+    mix-blend-mode: screen;
+} */
+
+section .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+section .imgBx .imgText{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(4px);
+}
+
+section .imgBx .imgText .welcome{
+    font-family: 'Dancing Script', cursive;
+    width: 90%;
+    font-size: 100px;
+}
+
+section .imgBx .imgText .desp{
+    font-family: 'Dancing Script', cursive;
+    font-size: 40px;
+}
+
+section .contentBx{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
+section .contentBx .center{
+    width: 50%;
+}
+
+section .contentBx .center h1{
+    color: #607d8b;
+    font-weight: 600;
+    font-size: 1.5em;  
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    border-bottom: 4px solid #ff4584;
+    display: inline-block;
+    letter-spacing: 1px;
+}
+
+section .contentBx .center .TxtField{
+    margin-bottom: 20px;
+}
+
+section .contentBx .center .TxtField span{
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: inline-block;
+    color: #607d8b;
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+section .contentBx .center .TxtField input{
+    width: 100%;
+    padding: 10px 20px;
+    outline: none;
+    font-weight: 400;
+    border: 1px solid #607d8b;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #607d8b;
+    background: transparent;
+    border-radius: 30px;
+}
+
+section .contentBx .center .TxtField input[type="submit"]{
+    background: #ff4584;
+    border: 1px solid # #ff4584;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+section .contentBx .center .TxtField input[type="submit"]:hover{
+    background: #fff;
+    color: #ce3266;
+    outline: none;
+    border: 1px solid # #ff4584;
+    transform: scale(1.1);
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+section .contentBx .center .tick{
+    margin-bottom: 10px;
+    color: #607d8b;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+section .contentBx .center .login p{
+    color: #607d8b;
+}
+
+section .contentBx .center .login p a{
+    color: #ff4584;
+}
+
+section .contentBx .center #newacc{
+    text-align: center;
+
+}
+
+section .contentBx .center #newacc p{
+    font-style: italic;
+    margin-top: 3em;
+    margin-bottom: 1em;
+}
+
+
+section .contentBx .center #newacc a{
+    font-size: 15px;
+    background: #ff4584;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 3% 7%;
+    border-radius: 50px;
+    
+}
+
+section .contentBx .center #newacc a:hover{
+    background: #fff;
+    color: #ce3266;
+    outline: none;
+    /* border: 2px solid #ce3266; */
+    transform: scale(2.1);
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px){
+
+    section .imgBx{
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        
+    } 
+
+    section .imgBx .imgText .welcome{
+        color: black;
+    }
+    
+    section .contentBx{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 75vh;
+        margin-top: 12%;
+        z-index: 1;
+    }
+
+    section .contentBx .center{
+        border-radius: 10px;
+
+        width: 100%;
+        padding: 40px;
+        background-color: rgb(255 255 255 / 0.9);
+        margin: 50px;
+    }
+}
