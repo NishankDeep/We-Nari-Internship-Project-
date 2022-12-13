@@ -70,7 +70,6 @@ app.use((req,res,next) => {
 
     User.findOne(req.session.user._id)
         .then(user => {
-            console.log(user);
             req.user = user;
             next();
         })

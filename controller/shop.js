@@ -16,3 +16,15 @@ exports.details = (req, res) => {
         res.render('product_details', { product: product })
     })
 }
+
+exports.getAccount = (req,res,next) => {
+    res.render('account');
+}
+
+exports.getCustomize = (req,res,next) => {
+    res.render('customize');
+}
+
+exports.getAdmin = (req,res,next) => {
+    res.render('admin');
+}

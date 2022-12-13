@@ -1,22 +1,15 @@
 const express = require('express')
 const router = express.Router()
 
-const shop = require('../controller/shop')
+const isAuth = require('../middleware/isAuth');
 
-router.get('/', shop.home)
+const shopController = require('../controller/shop')
 
-router.get('/myaccount', (req, res) => {
+router.get('/', shopController.home)
 
-    res.render('account')
-})
-router.get('/customize', (req, res) => {
-
-    res.render('customize')
-})
-router.get('/admin', (req, res) => {
-
-    res.render('admin')
-})
-router.get('/product/:id', shop.details)
+router.get('/myaccount',isAuth,shopController.getAccount);
+router.get('/customize',isAuth,shopController.getCustomize);
+router.get('/admin',isAuth,shopController.getAdmin);
+router.get('/product/:id', shopController.details);
 
 module.exports = router
