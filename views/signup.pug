@@ -22,25 +22,69 @@ body
           input(type="hidden" name="_csrf" value=`${csrfToken}`)
 
           h1 CREATE ACCOUNT
+          div.err
+            if(error==='nameErr')
+              p Name cannot be empty 
+            else if (error === 'mobErr')
+              p Mobile number must be 10 digit long 
+            else if (error === 'emailErr')
+              p Enter correct mail id
+            else if (error === 'passErr')
+              p Password length must be (>5)
+            else if (error === 'notMatchPass')
+              p Password and ConfirmPassword are not same
+            else if (error === 'emailExist')
+              p E-mail Already Registered
+            
+          
           #name.TxtField
             label Full Name
-            input(type='text' required='' name="fullName")
+            input(
+              type='text' 
+              class = `${error==='nameErr' ? 'invalid':''}`
+              value=`${error ? formData.fullName: ''}` 
+              required='' 
+              name="fullName"
+            )
             span
           #mob.TxtField
             label Mobile No
-            input(type='text' required='' name="mobileNo")
+            input(
+              type='text' 
+              class = `${error==='mobErr' ? 'invalid':''}` 
+              value=`${error ? formData.mobileNo: ''}` 
+              required='' 
+              name="mobileNo"
+              )
             span
           #user.TxtField
             label Email Address
-            input(type='email' required='' name="email")
+            input(
+              type='email' 
+              class = `${(error==='emailErr' || error==='emailExist') ? 'invalid':''}` 
+              value =value=`${error ? formData.email: ''}` 
+              required='' 
+              name="email"
+              )
             span
           .TxtField
             label Password
-            input(type='password' required='' name="password")
+            input(
+              type='password' 
+              class = `${(error==='notMatchPass' || error==='passErr') ? 'invalid':''}` 
+              value =value=`${error ? formData.password: ''}` 
+              required='' 
+              name="password"
+              )
             span
           .TxtField
             label Confirm Password
-            input(type='password' required='' name="confirmPassword")
+            input(type='password' 
+            class = `${error==='notMatchPass' ? 'invalid':''}` 
+            value =value=`${error ? formData.confirmPassword: ''}` 
+            required='' 
+            name="confirmPassword"
+            )
             span
           .tick
             label

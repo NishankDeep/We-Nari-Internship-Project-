@@ -14,22 +14,62 @@ exports.getSignup = (req,res,next) => {
 exports.postSingnup = (req,res,next) => {
     const {fullName,mobileNo,email,password,confirmPassword} = req.body;
 
-    // validating email
-    if(!validator.validate(email)){
-        console.log('email is not correct');
-        res.redirect('/signup');
+    const userInfo = {
+        fullName:fullName,
+        mobileNo:mobileNo,
+        email:email,
+        password:password,
+        confirmPassword:confirmPassword
+    };
+
+    // validating fullName
+    if(fullName.trim() === ''){
+        console.log('fullName cannot be blank');
+        res.render('signup',{
+            formData:userInfo,
+            error : 'nameErr'
+        })
         return ;
     }
 
-    // if(password.length <= 5){
-    //     console.log('Password is to short');
-    //     res.redirect('/signup')
-    // }
+    // validating Mobile Number
+    if(mobileNo.trim().length !== 10){
+        console.log('mobileNo is Invalid');
+        res.render('signup',{
+            formData:userInfo,
+            error : 'mobErr'
+        })
+        return ;
+    }
+
+    // validating email
+    if(!validator.validate(email)){
+        console.log('email is not correct');
+        // res.redirect('/signup');
+        res.render('signup',{
+            formData:userInfo,
+            error : 'emailErr'
+        })
+        return ;
+    }
+
+    if(password.length <= 5){
+        console.log('Password is to short');
+        res.render('signup',{
+            formData:userInfo,
+            error : 'passErr'
+        })
+        return ;
+    }
 
     // validating password
     if(password !== confirmPassword){
         console.log('password are not matching');
-        res.redirect('/signup');
+        // res.redirect('/signup');
+        res.render('signup',{
+            formData:userInfo,
+            error : 'notMatchPass'
+        })
         return ;
     }
 
@@ -62,7 +102,11 @@ exports.postSingnup = (req,res,next) => {
         .then(result => {
             if(!result){
                 console.log('user already exist');
-                res.redirect('/signup');
+                res.render('signup',{
+                    formData:userInfo,
+                    error : 'emailExist'
+                })
+                return ;
             }
             else{
                 res.status(200).redirect('/login');
