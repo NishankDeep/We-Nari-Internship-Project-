@@ -1,23 +1,34 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-a:link { text-decoration: none; }
-a:visited { text-decoration: none; }
-a:hover { text-decoration: none; }
-a:active { text-decoration: none; }
-
-section{
- position: relative;
- width: 100%;
- height: 100vh;
- display: flex;
+a:link {
+    text-decoration: none;
 }
 
-section .imgBx{
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+section .imgBx {
     position: relative;
     width: 50%;
     height: 100%;
@@ -38,7 +49,7 @@ section .imgBx::before{
     mix-blend-mode: screen;
 } */
 
-section .imgBx img{
+section .imgBx img {
     position: absolute;
     top: 0;
     left: 0;
@@ -48,7 +59,7 @@ section .imgBx img{
     z-index: -1;
 }
 
-section .imgBx .imgText{
+section .imgBx .imgText {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -58,18 +69,18 @@ section .imgBx .imgText{
     backdrop-filter: blur(4px);
 }
 
-section .imgBx .imgText .welcome{
+section .imgBx .imgText .welcome {
     font-family: 'Dancing Script', cursive;
     width: 90%;
     font-size: 100px;
 }
 
-section .imgBx .imgText .desp{
+section .imgBx .imgText .desp {
     font-family: 'Dancing Script', cursive;
     font-size: 40px;
 }
 
-section .contentBx{
+section .contentBx {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,14 +88,14 @@ section .contentBx{
     height: 100%;
 }
 
-section .contentBx .center{
+section .contentBx .center {
     width: 50%;
 }
 
-section .contentBx .center h1{
+section .contentBx .center h1 {
     color: #607d8b;
     font-weight: 600;
-    font-size: 1.5em;  
+    font-size: 1.5em;
     text-transform: uppercase;
     margin-bottom: 25px;
     border-bottom: 4px solid #ff4584;
@@ -92,11 +103,11 @@ section .contentBx .center h1{
     letter-spacing: 1px;
 }
 
-section .contentBx .center .TxtField{
+section .contentBx .center .TxtField {
     margin-bottom: 20px;
 }
 
-section .contentBx .center .TxtField span{
+section .contentBx .center .TxtField span {
     font-size: 16px;
     margin-bottom: 5px;
     display: inline-block;
@@ -106,7 +117,7 @@ section .contentBx .center .TxtField span{
     letter-spacing: 1px;
 }
 
-section .contentBx .center .TxtField input{
+section .contentBx .center .TxtField input {
     width: 100%;
     padding: 10px 20px;
     outline: none;
@@ -119,7 +130,7 @@ section .contentBx .center .TxtField input{
     border-radius: 30px;
 }
 
-section .contentBx .center .TxtField input[type="submit"]{
+section .contentBx .center .TxtField input[type="submit"] {
     background: #ff4584;
     border: 1px solid # #ff4584;
     color: #fff;
@@ -129,7 +140,7 @@ section .contentBx .center .TxtField input[type="submit"]{
     cursor: pointer;
 }
 
-section .contentBx .center .TxtField input[type="submit"]:hover{
+section .contentBx .center .TxtField input[type="submit"]:hover {
     background: #fff;
     color: #ce3266;
     outline: none;
@@ -140,34 +151,34 @@ section .contentBx .center .TxtField input[type="submit"]:hover{
     transition: 0.3s;
 }
 
-section .contentBx .center .tick{
+section .contentBx .center .tick {
     margin-bottom: 10px;
     color: #607d8b;
     font-weight: 400;
     font-size: 14px;
 }
 
-section .contentBx .center .login p{
+section .contentBx .center .login p {
     color: #607d8b;
 }
 
-section .contentBx .center .login p a{
+section .contentBx .center .login p a {
     color: #ff4584;
 }
 
-section .contentBx .center #newacc{
+section .contentBx .center #newacc {
     text-align: center;
 
 }
 
-section .contentBx .center #newacc p{
+section .contentBx .center #newacc p {
     font-style: italic;
     margin-top: 3em;
     margin-bottom: 1em;
 }
 
 
-section .contentBx .center #newacc a{
+section .contentBx .center #newacc a {
     font-size: 15px;
     background: #ff4584;
     color: #fff;
@@ -177,10 +188,10 @@ section .contentBx .center #newacc a{
     cursor: pointer;
     padding: 3% 7%;
     border-radius: 50px;
-    
+
 }
 
-section .contentBx .center #newacc a:hover{
+section .contentBx .center #newacc a:hover {
     background: #fff;
     color: #ce3266;
     outline: none;
@@ -191,23 +202,23 @@ section .contentBx .center #newacc a:hover{
     transition: 0.3s;
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
 
-    section .imgBx{
+    section .imgBx {
         overflow: hidden;
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        
-    } 
 
-    section .imgBx .imgText .welcome{
+    }
+
+    section .imgBx .imgText .welcome {
         color: black;
     }
-    
-    section .contentBx{
+
+    section .contentBx {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -217,12 +228,31 @@ section .contentBx .center #newacc a:hover{
         z-index: 1;
     }
 
-    section .contentBx .center{
+    section .contentBx .center {
         border-radius: 10px;
 
         width: 100%;
         padding: 40px;
         background-color: rgb(255 255 255 / 0.9);
-        margin: 50px;
+        /* margin: 50px; */
+        margin-left: 10px;
+        margin-right: 10px;
     }
+
+    .center {
+
+        margin-top: 0px;
+    }
+}
+
+.imgBx {
+
+    position: fixed !important;
+}
+
+.contentBx {
+
+    position: absolute;
+    right: 0;
+    height: 110vh !important;
 }
