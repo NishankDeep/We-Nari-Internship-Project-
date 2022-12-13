@@ -21,10 +21,6 @@ router.get('/customize', (req, res) => {
 
     res.render('customize')
 })
-router.get('/product', (req, res) => {
-
-    res.render('product')
-})
 router.get('/admin', (req, res) => {
 
     res.render('admin')

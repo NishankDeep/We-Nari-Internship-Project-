@@ -6,7 +6,6 @@ exports.home = (req, res) => {
 
     Product.find((err, data) => {
 
-        console.log(data)
         res.render('index', { data: data })
     })
 }
