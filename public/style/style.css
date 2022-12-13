@@ -119,6 +119,28 @@ body {
     font-size: 20px !important;
 }
 
+
+/* button */
+
+li.logout{
+    margin: 0;
+    padding: 0;
+}
+
+.btnLogout{
+    border: none;
+    background: transparent;
+    padding: 8px 15px;
+    color: white;
+    font-size: 20px !important;
+    
+}
+
+.btnLogout:hover{
+    color: black;
+    transition: .6s ease;
+}
+
 /* Mid Section */
 .featured {
 

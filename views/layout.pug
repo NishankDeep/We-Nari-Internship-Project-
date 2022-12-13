@@ -20,14 +20,21 @@ nav.navbar.navbar-expand-lg.navbar-dark.sticky-top.pb-1
           a.nav-link.active(aria-current='page' href='/') Home
         li.nav-item
           a.nav-link.active(href='#') Products
-        li.nav-item
-          a.nav-link.active Shop
-        li.nav-item
-          a.nav-link.active
-            img#nav-icon(src='/images/cart-icon.png' alt='cart-icon')
-            | Cart
-        li.nav-item
+        if(isLoggedIn)
+          li.nav-item
+            a.nav-link.active Shop
+          li.nav-item
+            a.nav-link.active
+              img#nav-icon(src='/images/cart-icon.png' alt='cart-icon')
+              | Cart
+        li(class=`${!isLoggedIn ? 'nav-link': 'logout' }`)
+        if(!isLoggedIn)
           a.nav-link.active(href='/login' target='') Login
+        else
+          div.logoutForm 
+            form(method="post" action="/logout")
+              input(type="hidden" name="_csrf" value=`${csrfToken}`)
+              button(type="submit" class="btnLogout") Logout
 
 block content
 

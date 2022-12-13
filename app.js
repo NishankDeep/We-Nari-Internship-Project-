@@ -7,7 +7,8 @@ const router = require('./routes/shop.js')
 const authRouter = require('./routes/auth');
 const Product = require('./models/product')
 
-
+// importing models
+const User = require('./models/user');
 
 // package to define the session and maintain the cross site forgery
 const MONGODB_URI="mongodb+srv://admin-prateek:test123@cluster0.a5ercz0.mongodb.net/weNari";
@@ -62,7 +63,29 @@ app.use(session({
 // CSURF use
 app.use(csrfProtection);
 
+app.use((req,res,next) => {
+    if(!req.session.user){
+        return next();
+    }
 
+    User.findOne(req.session.user._id)
+        .then(user => {
+            console.log(user);
+            req.user = user;
+            next();
+        })
+        .catch(err => {
+            console.log(err);
+        })
+
+})
+
+app.use((req,res,next)=>{
+    res.locals.csrfToken = req.csrfToken();
+    res.locals.isLoggedIn = req.session.isLoggedIn;
+
+    next();
+})
 
 // Routes
 app.use('/', router);

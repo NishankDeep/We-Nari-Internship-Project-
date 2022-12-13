@@ -15,14 +15,16 @@ section
   .contentBx
     .center
       h1 LOGIN INTO YOUR ACCOUNT
-      form(method='post')
+      form(method='post' action='/login')
+        input(type="hidden" name="_csrf" value=`${csrfToken}`)
+
         #user.TxtField
           label Email Address
-          input(type='email' required='')
+          input(type='email' required='' name='email')
           span
         .TxtField
           label Password
-          input(type='password' required='')
+          input(type='password' required='' name='password')
           span
         .login
           a(href='#')
@@ -30,7 +32,7 @@ section
             br
             br
         #register.TxtField
-          input(type='submit' value='Login')
+          button(type='submit' class='btn-reg') Login
         #newacc.login
           p New at WeNaari?
           a(href='/signup') Create an account

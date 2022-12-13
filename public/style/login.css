@@ -132,7 +132,7 @@ section .contentBx .center .TxtField input {
 
 section .contentBx .center .TxtField input[type="submit"] {
     background: #ff4584;
-    border: 1px solid # #ff4584;
+    border: 1px solid #ff4584;
     color: #fff;
     outline: none;
     border: none;
@@ -144,7 +144,38 @@ section .contentBx .center .TxtField input[type="submit"]:hover {
     background: #fff;
     color: #ce3266;
     outline: none;
-    border: 1px solid # #ff4584;
+    border: 1px solid  #ff4584;
+    transform: scale(1.1);
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* register button css */
+#register{
+    margin: 15px;
+}
+
+.btn-reg{
+    width: 100%;
+    padding: 10px 20px;
+    outline: none;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #fff;
+    background: #ff4584;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn-reg:hover{
+    background: #fff;
+    color: #ce3266;
+    outline: none;
+    border: 2px solid #ce3266;
     transform: scale(1.1);
     font-weight: 500;
     cursor: pointer;
