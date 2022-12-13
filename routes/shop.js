@@ -5,14 +5,6 @@ const shop = require('../controller/shop')
 
 router.get('/', shop.home)
 
-router.get('/login', (req, res) => {
-
-    res.render('login')
-})
-router.get('/signup', (req, res) => {
-
-    res.render('signup')
-})
 router.get('/myaccount', (req, res) => {
 
     res.render('account')

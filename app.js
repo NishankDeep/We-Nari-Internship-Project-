@@ -4,12 +4,23 @@ const mongoose = require('mongoose')
 const multer = require('multer')
 
 const router = require('./routes/shop.js')
+const authRouter = require('./routes/auth');
 const Product = require('./models/product')
 
-// authenticaion logic
-const MONGODB_URI='mongodb url';
+
+
+// package to define the session and maintain the cross site forgery
+const MONGODB_URI="mongodb+srv://admin-prateek:test123@cluster0.a5ercz0.mongodb.net/weNari";
 const session = require('express-session');
-const MONGODbStore = require()
+const MongoDbStore = require('connect-mongodb-session')(session);
+const csrf = require('csurf');
+const csrfProtection = csrf();
+
+// storing session in database
+const store = MongoDbStore({
+    uri:MONGODB_URI,
+    collection:'session'
+});
 
 
 const app = express()
@@ -22,8 +33,8 @@ app.use(express.urlencoded({ extended: true }))
 app.set('view engine', 'pug')
 app.set('views', path.join(__dirname, 'views'))
 
-// MONGOOSE
-mongoose.connect("mongodb+srv://admin-prateek:test123@cluster0.a5ercz0.mongodb.net/weNari");
+
+
 
 // MULTER
 const Storage = multer.diskStorage({
@@ -39,8 +50,24 @@ const upload = multer({
     storage: Storage
 }).single('image')
 
+
+// setting up the session 
+app.use(session({
+    secret:'the authenticatino secret to establish a sessin for a particualar user',
+    resave:false,
+    saveUninitialized:false,
+    store:store
+}))
+
+// CSURF use
+app.use(csrfProtection);
+
+
+
 // Routes
-app.use('/', router)
+app.use('/', router);
+app.use(authRouter);
+
 
 app.post('/admin', (req, res) => {
 
@@ -70,7 +97,16 @@ app.post('/admin', (req, res) => {
         }
     })
 })
-let port = process.env.PORT
-if (port == null || port == "") port = 80;
 
-app.listen(port, () => console.log("Server started successfully"))
+
+// MONGOOSE connection and port listening
+mongoose.connect(MONGODB_URI)
+        .then(res => {
+            let port = process.env.PORT
+            if (port == null || port == "") port = 80;
+            
+            app.listen(port, () => console.log("Server started successfully"))
+        })
+        .catch(err => {
+            console.log("Some Error in connection");
+        })
