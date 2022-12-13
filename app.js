@@ -17,7 +17,7 @@ app.set('view engine', 'pug')
 app.set('views', path.join(__dirname, 'views'))
 
 // MONGOOSE
-mongoose.connect("mongodb://localhost:27017/weNari")
+mongoose.connect("mongodb+srv://admin-prateek:test123@cluster0.a5ercz0.mongodb.net/weNari");
 
 // MULTER
 const Storage = multer.diskStorage({
@@ -64,5 +64,7 @@ app.post('/admin', (req, res) => {
         }
     })
 })
+let port = process.env.PORT
+if (port == null || port == "") port = 80;
 
-app.listen(80, () => console.log("Server started successfully at port 80!"))
+app.listen(port, () => console.log("Server started successfully"))
