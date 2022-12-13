@@ -6,6 +6,12 @@ const multer = require('multer')
 const router = require('./routes/shop.js')
 const Product = require('./models/product')
 
+// authenticaion logic
+const MONGODB_URI='mongodb url';
+const session = require('express-session');
+const MONGODbStore = require()
+
+
 const app = express()
 
 // PUBLIC
