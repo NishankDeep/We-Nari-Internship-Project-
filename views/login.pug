@@ -15,16 +15,19 @@ section
   .contentBx
     .center
       h1 LOGIN INTO YOUR ACCOUNT
+      div.err 
+        if(error)
+          p Invalid E-mail or Password
       form(method='post' action='/login')
         input(type="hidden" name="_csrf" value=`${csrfToken}`)
 
         #user.TxtField
           label Email Address
-          input(type='email' required='' name='email')
+          input(type='email' value=`${error ? email : ''}` required='' name='email')
           span
         .TxtField
           label Password
-          input(type='password' required='' name='password')
+          input(type='password' value=`${error ? password : ''}` required='' name='password')
           span
         .login
           a(href='#')

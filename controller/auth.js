@@ -135,14 +135,19 @@ exports.postLogin = (req,res,next) => {
         .then(compareResult => {
             if(!compareResult){
                 console.log('login failed');
-                res.redirect('/');
+                // res.redirect('/');
+                res.render('login',{
+                    email:email,
+                    password:password,
+                    error:'invalidData'
+                })
             }
             else{
                 console.log('login successfully');
                 req.session.isLoggedIn = true;
                 req.session.user = currUser;
                 req.session.save(err => {
-                    console.log('login successfully',err);
+                    console.log(err);
                     res.redirect('/');
                 });
             }

@@ -287,3 +287,12 @@ section .contentBx .center #newacc a:hover {
     right: 0;
     height: 110vh !important;
 }
+
+/* error  */
+.err{
+    margin-bottom: 5px;
+}
+
+.err p{
+    color: red;
+}
