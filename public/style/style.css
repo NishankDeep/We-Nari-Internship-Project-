@@ -128,12 +128,14 @@ body {
     transition: .5s;
     margin-left: 0px;
     margin-right: 0px;
+    display: block;
 }
 
 .featured:hover {
 
     transform: rotate(0);
     transition: .25s ease-in-out;
+    color: white;
 }
 
 .card-wrapper:hover .featured {

@@ -1,11 +1,10 @@
 const express = require('express')
-
 const router = express.Router()
 
-router.get('/', (req, res) => {
+const shop = require('../controller/shop')
 
-    res.render('index')
-})
+router.get('/', shop.home)
+
 router.get('/login', (req, res) => {
 
     res.render('login')
@@ -22,4 +21,14 @@ router.get('/customize', (req, res) => {
 
     res.render('customize')
 })
+router.get('/product', (req, res) => {
+
+    res.render('product')
+})
+router.get('/admin', (req, res) => {
+
+    res.render('admin')
+})
+router.get('/product/:id', shop.details)
+
 module.exports = router

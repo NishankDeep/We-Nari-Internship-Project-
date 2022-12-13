@@ -1,0 +1,37 @@
+extends layout.pug
+
+block style
+  link(rel="stylesheet" href = "/style/customize.css")
+block content
+  .wrapper
+  .bg-image
+  section#form-cnt.container.form-container
+    header.header
+    h1#title.text-center Admin page
+    form#survey-form(action = "/admin" method = "post" enctype="multipart/form-data")
+      .form-group
+        label#name-label(for='name') Name
+        input#name.form-control(type='text' name='name' placeholder='Enter the name of the saree' required='')
+      .form-group
+        label#price-label(for='price') Price
+        input#price.form-control(type='text' name='price' placeholder='Enter the price of the saree' required='')
+      .form-group
+        label#pattern-label(for='pattern') Pattern
+        input#pattern.form-control(type='text' name='pattern' placeholder='Enter the pattern on the saree' required='')
+      .form-group
+        label#occasion-label(for='occasion') Occasion
+        input#occasion.form-control(type='text' name='occasion' placeholder='Enter the occasion on which the saree will be worn' required='')
+      .form-group
+        label#fabric-label(for='fabric') Fabric
+        input#fabric.form-control(type='text' name='fabric' placeholder='Enter the fabric of the saree' required='')
+      .form-group
+        p Description
+        textarea#description.input-textarea(name='description' placeholder='Description of the saree')
+      //- .form-group
+      //-   p Description
+      //-   textarea#comments.input-textarea(name='comment' placeholder='Write the details of the saree here...')
+      .form-group
+        label.form-label.txtInside(for=' ') Saree Photo
+        input#attach.form-control.formChoose.sizeChange(type='file' name = 'image' accept='.jpg, .jpeg, .png, ')
+      .form-group
+        button#button.btn(type = 'submit') Submit

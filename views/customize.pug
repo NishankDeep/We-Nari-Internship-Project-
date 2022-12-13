@@ -1,15 +1,14 @@
 extends layout.pug
 
 block style
-  style
-    include ../public/style/customize.css
+  link(rel="stylesheet" href = "/style/customize.css")
 block content
   .wrapper
   .bg-image
   section#form-cnt.container.form-container
     header.header
     h1#title.text-center Saree Customization 
-    form#survey-form(action = "customize" method = "post")
+    form#survey-form(action = "/customize" method = "post")
       .form-group
         label#name-label(for='name') Name
         input#name.form-control(type='text' name='name' placeholder='Enter your name' required='')

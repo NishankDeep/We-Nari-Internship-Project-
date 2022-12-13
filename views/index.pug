@@ -8,40 +8,42 @@ block content
       .carousel-inner
         .carousel-item.active
           .card-wrapper
-            .card.featured
-              img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/latest.jpg' alt='...')
-              .card-body
-                h5.card-title LATEST
-            .card.featured
-              img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/sequinssaree.jpg' alt='...')
-              .card-body
-                h5.card-title SEQUINS
-            .card.featured
-              img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/readymade.jpg' alt='...')
-              .card-body
-                h5.card-title READYMADE
-            .card.featured
-              img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Organza.jpg' alt='...')
-              .card-body
-                h5.card-title ORGANZA
-        .carousel-item
-          .card-wrapper
-            .card.featured
-              img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/silk.jpg' alt='...')
-              .card-body
-                h5.card-title SILK
-            .card.featured
-              img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/patola.jpg' alt='...')
-              .card-body
-                h5.card-title PATOLA
-            .card.featured
-              img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Bandhani.jpg' alt='...')
-              .card-body
-                h5.card-title BANDHANI
-            .card.featured
-              img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Banarasisilk.jpg' alt='...')
-              .card-body
-                h5.card-title BANARASI-SILK
+
+            each val in data
+              a.card.featured(href = '/product/' + val._id)
+                img.card-img-top(src='images/saree_images/'+val.image.data)
+                .card-body
+                  h5.card-title= val.name
+            //- a.card.featured(href = '/product')
+            //-   img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/sequinssaree.jpg' alt='...')
+            //-   .card-body
+            //-     h5.card-title SEQUINS
+            //- a.card.featured(href = '/product')
+            //-   img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/readymade.jpg' alt='...')
+            //-   .card-body
+            //-     h5.card-title READYMADE
+            //- a.card.featured(href = '/product')
+            //-   img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Organza.jpg' alt='...')
+            //-   .card-body
+            //-     h5.card-title ORGANZA
+        //- .carousel-item
+        //-   .card-wrapper
+        //-     a.card.featured(href = '/product')
+        //-       img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/silk.jpg' alt='...')
+        //-       .card-body
+        //-         h5.card-title SILK
+        //-     a.card.featured(href = '/product')
+        //-       img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/patola.jpg' alt='...')
+        //-       .card-body
+        //-         h5.card-title PATOLA
+        //-     a.card.featured(href = '/product')
+        //-       img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Bandhani.jpg' alt='...')
+        //-       .card-body
+        //-         h5.card-title BANDHANI
+        //-     a.card.featured(href = '/product')
+        //-       img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Banarasisilk.jpg' alt='...')
+        //-       .card-body
+        //-         h5.card-title BANARASI-SILK
       button.carousel-control-prev(type='button' data-bs-target='#carouselExampleControlsFirst' data-bs-slide='prev')
         span.carousel-control-prev-icon(aria-hidden='true')
         span.visually-hidden Previous
@@ -51,42 +53,42 @@ block content
     #carouselExampleControlsSmallFirst.carousel.slide.d-sm-none.carousel-fade(data-bs-ride='carousel')
       .carousel-inner
         .carousel-item.active
-          .card.featured
+          a.card.featured(href = '/product')
             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/latest.jpg' alt='...')
             .card-body
               h5.card-title LATEST
         .carousel-item
-          .card.featured
+          a.card.featured(href = '/product')
             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/sequinssaree.jpg' alt='...')
             .card-body
               h5.card-title SEQUINS
         .carousel-item
-          .card.featured
+          a.card.featured(href = '/product')
             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/readymade.jpg' alt='...')
             .card-body
               h5.card-title READYMADE
         .carousel-item
-          .card.featured
+          a.card.featured(href = '/product')
             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Organza.jpg' alt='...')
             .card-body
               h5.card-title ORGANZA
         .carousel-item
-          .card.featured
+          a.card.featured(href = '/product')
             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/silk.jpg' alt='...')
             .card-body
               h5.card-title SILK
         .carousel-item
-          .card.featured
+          a.card.featured(href = '/product')
             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/patola.jpg' alt='...')
             .card-body
               h5.card-title PATOLA
         .carousel-item
-          .card.featured
+          a.card.featured(href = '/product')
             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Bandhani.jpg' alt='...')
             .card-body
               h5.card-title BANDHANI
         .carousel-item
-          .card.featured
+          a.card.featured(href = '/product')
             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Banarasisilk.jpg' alt='...')
             .card-body
               h5.card-title BANARASI-SILK
@@ -103,37 +105,37 @@ block content
       .carousel-inner
         .carousel-item.active
           .card-wrapper
-            .card.featured
+            a.card.featured(href = '/product')
               img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/latest.jpg' alt='...')
               .card-body
                 h5.card-title LATEST
-            .card.featured
+            a.card.featured(href = '/product')
               img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/sequinssaree.jpg' alt='...')
               .card-body
                 h5.card-title SEQUINS
-            .card.featured
+            a.card.featured(href = '/product')
               img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/readymade.jpg' alt='...')
               .card-body
                 h5.card-title READYMADE
-            .card.featured
+            a.card.featured(href = '/product')
               img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Organza.jpg' alt='...')
               .card-body
                 h5.card-title ORGANZA
         .carousel-item
           .card-wrapper
-            .card.featured
+            a.card.featured(href = '/product')
               img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/silk.jpg' alt='...')
               .card-body
                 h5.card-title SILK
-            .card.featured
+            a.card.featured(href = '/product')
               img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/patola.jpg' alt='...')
               .card-body
                 h5.card-title PATOLA
-            .card.featured
+            a.card.featured(href = '/product')
               img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Bandhani.jpg' alt='...')
               .card-body
                 h5.card-title BANDHANI
-            .card.featured
+            a.card.featured(href = '/product')
               img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Banarasisilk.jpg' alt='...')
               .card-body
                 h5.card-title BANARASI-SILK
@@ -146,42 +148,42 @@ block content
     #carouselExampleControlsSmallSecond.carousel.slide.d-sm-none.carousel-fade(data-bs-ride='carousel')
       .carousel-inner
         .carousel-item.active
-          .card.featured
+          a.card.featured(href = '/product')
             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/latest.jpg' alt='...')
             .card-body
               h5.card-title LATEST
         .carousel-item
-          .card.featured
+          a.card.featured(href = '/product')
             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/sequinssaree.jpg' alt='...')
             .card-body
               h5.card-title SEQUINS
         .carousel-item
-          .card.featured
+          a.card.featured(href = '/product')
             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/readymade.jpg' alt='...')
             .card-body
               h5.card-title READYMADE
         .carousel-item
-          .card.featured
+          a.card.featured(href = '/product')
             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Organza.jpg' alt='...')
             .card-body
               h5.card-title ORGANZA
         .carousel-item
-          .card.featured
+          a.card.featured(href = '/product')
             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/silk.jpg' alt='...')
             .card-body
               h5.card-title SILK
         .carousel-item
-          .card.featured
+          a.card.featured(href = '/product')
             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/patola.jpg' alt='...')
             .card-body
               h5.card-title PATOLA
         .carousel-item
-          .card.featured
+          a.card.featured(href = '/product')
             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Bandhani.jpg' alt='...')
             .card-body
               h5.card-title BANDHANI
         .carousel-item
-          .card.featured
+          a.card.featured(href = '/product')
             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Banarasisilk.jpg' alt='...')
             .card-body
               h5.card-title BANARASI-SILK
@@ -198,37 +200,37 @@ block content
       .carousel-inner
         .carousel-item.active
           .card-wrapper
-            .card.featured
+            a.card.featured(href = '/product')
               img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/latest.jpg' alt='...')
               .card-body
                 h5.card-title LATEST
-            .card.featured
+            a.card.featured(href = '/product')
               img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/sequinssaree.jpg' alt='...')
               .card-body
                 h5.card-title SEQUINS
-            .card.featured
+            a.card.featured(href = '/product')
               img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/readymade.jpg' alt='...')
               .card-body
                 h5.card-title READYMADE
-            .card.featured
+            a.card.featured(href = '/product')
               img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Organza.jpg' alt='...')
               .card-body
                 h5.card-title ORGANZA
         .carousel-item
           .card-wrapper
-            .card.featured
+            a.card.featured(href = '/product')
               img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/silk.jpg' alt='...')
               .card-body
                 h5.card-title SILK
-            .card.featured
+            a.card.featured(href = '/product')
               img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/patola.jpg' alt='...')
               .card-body
                 h5.card-title PATOLA
-            .card.featured
+            a.card.featured(href = '/product')
               img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Bandhani.jpg' alt='...')
               .card-body
                 h5.card-title BANDHANI
-            .card.featured
+            a.card.featured(href = '/product')
               img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Banarasisilk.jpg' alt='...')
               .card-body
                 h5.card-title BANARASI-SILK
@@ -241,42 +243,42 @@ block content
     #carouselExampleControlsSmallThird.carousel.slide.d-sm-none.carousel-fade(data-bs-ride='carousel')
       .carousel-inner
         .carousel-item.active
-          .card.featured
+          a.card.featured(href = '/product')
             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/latest.jpg' alt='...')
             .card-body
               h5.card-title LATEST
         .carousel-item
-          .card.featured
+          a.card.featured(href = '/product')
             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/sequinssaree.jpg' alt='...')
             .card-body
               h5.card-title SEQUINS
         .carousel-item
-          .card.featured
+          a.card.featured(href = '/product')
             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/readymade.jpg' alt='...')
             .card-body
               h5.card-title READYMADE
         .carousel-item
-          .card.featured
+          a.card.featured(href = '/product')
             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Organza.jpg' alt='...')
             .card-body
               h5.card-title ORGANZA
         .carousel-item
-          .card.featured
+          a.card.featured(href = '/product')
             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/silk.jpg' alt='...')
             .card-body
               h5.card-title SILK
         .carousel-item
-          .card.featured
+          a.card.featured(href = '/product')
             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/patola.jpg' alt='...')
             .card-body
               h5.card-title PATOLA
         .carousel-item
-          .card.featured
+          a.card.featured(href = '/product')
             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Bandhani.jpg' alt='...')
             .card-body
               h5.card-title BANDHANI
         .carousel-item
-          .card.featured
+          a.card.featured(href = '/product')
             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Banarasisilk.jpg' alt='...')
             .card-body
               h5.card-title BANARASI-SILK
@@ -387,4 +389,4 @@ block content
       p.last And many more...&#x1F64C;
 
 block scripts
-  script(src = '../public/js/script.js')
+  script(src = 'js/script.js')

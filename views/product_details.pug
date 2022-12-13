@@ -1,0 +1,143 @@
+//- extends layout.pug
+
+//- block style
+//-   link(rel="stylesheet" href = "/style/product.css")
+
+//- block content
+//-   .container.product-container
+//-     .content-container
+//-       img.saree(src='/images/saree_images/'+product.image.data)
+//-       .details 
+//-         h3.name= product.name
+//-         .subtitle
+//-           p.price ₹ #{product.price}
+//-           -let flag = 0
+//-           img#heart(src="https://img.icons8.com/ios/30/null/hearts--v1.png" onClick = 'change()')
+//-         hr
+//-         a(class = "btn btn-danger cart") Add to Cart
+//-         hr
+//-         br
+//-         h5 Specifications
+//-         .container.specification
+//-           p
+//-           | Pack of -- 1
+//-           br
+//-           | Pattern --  #{product.pattern}
+//-           br
+//-           | Occasion -- #{product.occasion}
+//-           br
+//-           | Fabric -- #{product.fabric}
+
+
+//- block scripts
+//-   script(src = "/js/product.js")
+
+extends layout.pug
+
+block style
+  script(src='https://kit.fontawesome.com/57c20b0d98.js' crossorigin='anonymous')
+  //- link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css')
+  link(rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200')
+  link(rel='stylesheet' href='/style/product_details.css')
+
+block content
+  .container.details_container
+    .left
+      .img-description
+        .img-options
+          img(src='/images/saree_images/'+product.image.data alt='' onclick='clicking(this)')
+          //
+            <img src="./images/img2.jpg" alt="" onclick="clickimg(this)">
+            <img src="./images/img3.jpg" alt="" onclick="clickimg(this)">
+            <img src="./images/img4.jpg" alt="" onclick="clickimg(this)">
+            <img src="./images/img5.jpg" alt="" onclick="clickimg(this)">
+            <img src="./images/img6.jpg" alt="" onclick="clickimg(this)">
+        .main-img
+          img#change(src='/images/saree_images/'+product.image.data alt='')
+      //- hr
+      .buttons
+        button.btns ADD TO CART
+        button.btns buy now
+    .right
+      .prod-header
+        h1= product.name
+      //
+        <div class="rating-details">
+        <button><span>4.2</span> <img src="./img/start-filled.svg" alt=""> | 600 Ratings</button>
+        </div>
+      //- hr
+      .price-details
+        span.price
+          strong Rs. #{product.price}
+        span.taxes inclusive of all taxes
+      hr
+      .prod-details
+        //
+          <div class="size-details">
+          <span>Size: <strong>55 in</strong></span>
+          <div class="size-options">
+          <button class="btn">28 in</button>
+          <button class="btn">30 in</button>
+          <button class="btn">32 in</button>
+          <button class="btn">34 in</button>
+          <button class="btn">36 in</button>
+          <button class="btn">38 in</button>
+          <button class="btn">40 in</button>
+          </div>
+          </div>
+        .meta-data
+          h3 Product Info
+          span 100% Original Products
+          span Pay on delivery might be available
+          span Easy 30 days returns and exchanges
+          span Try &amp; Buy might be available
+      hr
+      .details
+        .special-heading
+          h3 Specifications
+        table.table-content
+          tr
+            td
+              strong Pack of
+            td.table-details 1
+          tr
+            td
+              strong Shape
+            td.table-details Fit and Flare
+          //
+            <tr>
+            <td><strong>Length</strong></td>
+            <td class="table-details">65 inches</td>
+            </tr>
+          tr
+            td
+              strong Occasion
+            td.table-details= product.occasion
+          tr
+            td
+              strong Fabric Type
+            td.table-details= product.fabric
+          tr
+            td
+              strong Print or Pattern Type
+            td.table-details= product.pattern
+          tr
+            td
+              strong Knit or Woven
+            td.table-details Woven
+          tr
+            td
+              strong Transparency
+            td.table-details Opaque
+      .Description
+        .heading
+          h2 Product Description
+        .prod-content
+          span= product.description
+  //- .Top
+  //-   span
+  //-     a(href='#') Back To Top
+
+block scripts
+  //- script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js')
+  script(src='/js/product_details.js')

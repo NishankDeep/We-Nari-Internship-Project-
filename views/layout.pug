@@ -6,8 +6,7 @@ head
   title WeNari
   script(src='https://kit.fontawesome.com/57c20b0d98.js' crossorigin='anonymous')
   link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css')
-  style
-    include ../public/style/style.css
+  link(rel='stylesheet' href='/style/style.css')
   block style
 
 nav.navbar.navbar-expand-lg.navbar-dark.sticky-top.pb-1
@@ -25,7 +24,7 @@ nav.navbar.navbar-expand-lg.navbar-dark.sticky-top.pb-1
           a.nav-link.active Shop
         li.nav-item
           a.nav-link.active
-            img#nav-icon(src='images/cart-icon.png' alt='cart-icon')
+            img#nav-icon(src='/images/cart-icon.png' alt='cart-icon')
             | Cart
         li.nav-item
           a.nav-link.active(href='/login' target='') Login
