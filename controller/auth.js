@@ -146,6 +146,11 @@ exports.postLogin = (req,res,next) => {
                 console.log('login successfully');
                 req.session.isLoggedIn = true;
                 req.session.user = currUser;
+                if(email === 'admin@1.com'){
+                    console.log('ghusa kya');
+                    req.session.admin = true;
+                }
+
                 req.session.save(err => {
                     console.log(err);
                     res.redirect('/');
