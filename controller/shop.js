@@ -3,31 +3,49 @@ const mongoose = require('mongoose')
 const Product = require('../models/product.js')
 const User = require('../models/user.js')
 
-exports.home = async (req, res) => {
+exports.home = (req, res) => {
 
     Product.find((err, product_data) => {
 
-        res.render('index', { product_data: product_data, user_name: req.user.name })
+        let user_name = '';
+        if (req.user) user_name = req.user.name;
+
+        res.render('index', { product_data: product_data, user_name: user_name })
     })
 }
 exports.details = (req, res) => {
 
     Product.findOne({ _id: req.params.id }, (err, product) => {
 
-        res.render('product_details', { product: product, user_name: req.user.name })
+        let user_name = '';
+        if (req.user) user_name = req.user.name;
+
+        res.render('product_details', { product: product, user_name: user_name })
     })
 }
 
 exports.getAccount = (req, res, next) => {
-    res.render('account', { user_name: req.user.name });
+
+    let user_name = '';
+    if (req.user) user_name = req.user.name;
+
+    res.render('account', { user_name: user_name });
 }
 
 exports.getCustomize = (req, res, next) => {
+
+    let user_name = '';
+    if (req.user) user_name = req.user.name;
+
     res.render('customize', { user_name: req.user.name });
 }
 
 exports.getAdmin = (req, res, next) => {
-    res.render('admin', { user_name: req.user.name });
+
+    let user_name = '';
+    if (req.user) user_name = req.user.name;
+
+    res.render('admin', { user_name: user_name });
 }
 
 exports.postAdminProd = (req, res, next) => {
