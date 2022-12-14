@@ -21,12 +21,16 @@ nav.navbar.navbar-expand-lg.navbar-dark.sticky-top.pb-1
         li.nav-item
           a.nav-link.active(href='#') Products
         if(isLoggedIn)
-          li.nav-item
-            a.nav-link.active Shop
-          li.nav-item
-            a.nav-link.active
-              img#nav-icon(src='/images/cart-icon.png' alt='cart-icon')
-              | Cart
+          if(admin)
+            li.nav-item
+              a.nav-link.active(href="/admin") Add Product 
+          else 
+            li.nav-item
+              a.nav-link.active Shop
+            li.nav-item
+              a.nav-link.active
+                img#nav-icon(src='/images/cart-icon.png' alt='cart-icon')
+                | Cart
         li(class=`${!isLoggedIn ? 'nav-link': 'logout' }`)
         if(!isLoggedIn)
           a.nav-link.active(href='/login' target='') Login

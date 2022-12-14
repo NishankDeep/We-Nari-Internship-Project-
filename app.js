@@ -5,7 +5,7 @@ const multer = require('multer')
 
 const router = require('./routes/shop.js')
 const authRouter = require('./routes/auth');
-const Product = require('./models/product')
+const Product = require('./models/product');
 
 // importing models
 const User = require('./models/user');
@@ -25,6 +25,7 @@ const store = MongoDbStore({
 
 
 const app = express()
+
 
 // MULTER
 const Storage = multer.diskStorage({
@@ -84,6 +85,7 @@ app.use((req,res,next) => {
 app.use((req,res,next)=>{
     res.locals.csrfToken = req.csrfToken();
     res.locals.isLoggedIn = req.session.isLoggedIn;
+    res.locals.admin = req.session.admin;
 
     next();
 })
