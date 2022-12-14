@@ -19,7 +19,7 @@ block content
               a.card.featured(href = '/product/' + data[i]._id)
                 img.card-img-top(src='images/saree_images/'+data[i].image.data)
                 .card-body
-                  h5.card-title= data[i++].name
+                  h5.card-title= data[i].name
       button.carousel-control-prev(type='button' data-bs-target='#carouselExampleControlsFirst' data-bs-slide='prev')
         span.carousel-control-prev-icon(aria-hidden='true')
         span.visually-hidden Previous
