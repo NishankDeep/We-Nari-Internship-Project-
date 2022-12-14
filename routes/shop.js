@@ -12,4 +12,6 @@ router.get('/customize',isAuth,shopController.getCustomize);
 router.get('/admin',isAuth,shopController.getAdmin);
 router.get('/product/:id', shopController.details);
 
+router.post('/admin',shopController.postAdminProd);
+
 module.exports = router

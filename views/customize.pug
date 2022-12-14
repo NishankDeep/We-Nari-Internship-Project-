@@ -9,6 +9,8 @@ block content
     header.header
     h1#title.text-center Saree Customization 
     form#survey-form(action = "/customize" method = "post")
+      input(type="hidden" name="_csrf" value=`${csrfToken}`)
+
       .form-group
         label#name-label(for='name') Name
         input#name.form-control(type='text' name='name' placeholder='Enter your name' required='')

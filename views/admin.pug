@@ -9,6 +9,8 @@ block content
     header.header
     h1#title.text-center Admin page
     form#survey-form(action = "/admin" method = "post" enctype="multipart/form-data")
+      input(type="hidden" name="_csrf" value=`${csrfToken}`)
+
       .form-group
         label#name-label(for='name') Name
         input#name.form-control(type='text' name='name' placeholder='Enter the name of the saree' required='')
