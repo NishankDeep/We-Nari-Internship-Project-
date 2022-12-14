@@ -2,13 +2,20 @@ const User = require('../models/user');
 const validator = require('email-validator');
 const bcrypt = require('bcrypt');
 
+
 exports.getLogin = (req,res,next) => {
-    res.render('login.pug')
+    res.render('auth/login.pug')
 }
 
 exports.getSignup = (req,res,next) => {
-    res.render('signup.pug')
+    res.render('auth/signup.pug')
 }
+
+exports.getForgetPage = (req,res,next) => {
+    res.render('auth/forgetPassword')
+}
+
+
 
 // storing data in database
 exports.postSingnup = (req,res,next) => {
@@ -25,7 +32,7 @@ exports.postSingnup = (req,res,next) => {
     // validating fullName
     if(fullName.trim() === ''){
         console.log('fullName cannot be blank');
-        res.render('signup',{
+        res.render('auth/signup',{
             formData:userInfo,
             error : 'nameErr'
         })
@@ -35,7 +42,7 @@ exports.postSingnup = (req,res,next) => {
     // validating Mobile Number
     if(mobileNo.trim().length !== 10){
         console.log('mobileNo is Invalid');
-        res.render('signup',{
+        res.render('auth/signup',{
             formData:userInfo,
             error : 'mobErr'
         })
@@ -46,7 +53,7 @@ exports.postSingnup = (req,res,next) => {
     if(!validator.validate(email)){
         console.log('email is not correct');
         // res.redirect('/signup');
-        res.render('signup',{
+        res.render('auth/signup',{
             formData:userInfo,
             error : 'emailErr'
         })
@@ -55,7 +62,7 @@ exports.postSingnup = (req,res,next) => {
 
     if(password.length <= 5){
         console.log('Password is to short');
-        res.render('signup',{
+        res.render('auth/signup',{
             formData:userInfo,
             error : 'passErr'
         })
@@ -66,7 +73,7 @@ exports.postSingnup = (req,res,next) => {
     if(password !== confirmPassword){
         console.log('password are not matching');
         // res.redirect('/signup');
-        res.render('signup',{
+        res.render('auth/signup',{
             formData:userInfo,
             error : 'notMatchPass'
         })
@@ -102,7 +109,7 @@ exports.postSingnup = (req,res,next) => {
         .then(result => {
             if(!result){
                 console.log('user already exist');
-                res.render('signup',{
+                res.render('auth/signup',{
                     formData:userInfo,
                     error : 'emailExist'
                 })
@@ -136,7 +143,7 @@ exports.postLogin = (req,res,next) => {
             if(!compareResult){
                 console.log('login failed');
                 // res.redirect('/');
-                res.render('login',{
+                res.render('auth/login',{
                     email:email,
                     password:password,
                     error:'invalidData'
@@ -169,5 +176,82 @@ exports.postLogout = (req,res,next) => {
     })
 }
 
+exports.postForgetPass = (req,res,next) => {
+    const {email,password,confirmPassword} = req.body;
 
+    if(!validator.validate(email)){
+        console.log('invalid email id');
+        res.render('auth/forgetPassword',{
+            email:email,
+            password:password,
+            confirmPassword:confirmPassword,
+            error:'emailInvalid',
+            message:"Email is not correct"
+        })
+        return ;
+    }
+
+    if(password.trim().length < 5 ){
+        res.render('auth/forgetPassword',{
+            error:'invalid',
+            message: 'Password length must be (> 5)',
+            email:email,
+            password:password,
+            confirmPassword:confirmPassword
+        })
+        return ;
+    }
+
+    if(password !== confirmPassword){
+        res.render('auth/forgetPassword',{
+            error:'invalid',
+            message: 'Password and Confirm Password do not match',
+            email:email,
+            password:password,
+            confirmPassword:confirmPassword
+        })
+        return ;
+    }
+
+
+    let currUser;
+
+    User.findOne({email:email})
+        .then(user => {
+            if(!user){
+                
+            }
+            else{
+                currUser = user;
+                return bcrypt.hash(password,15);
+            }
+        })
+        .then(encrptPass => {
+            if(!encrptPass){
+                return null;
+            }
+            else{
+                currUser.password = encrptPass;
+                return currUser.save();
+            }
+        })
+        .then(data => {
+            if(!data){
+                res.render('auth/forgetPassword',{
+                    email:email,
+                    password:'',
+                    confirmPassword:'',
+                    error:'emailInvalid',
+                    message:'E-mail id is not registered'
+                })
+            }
+            else{
+                console.log('password Changed successfully');
+                res.redirect('/login');
+            }
+        })
+        .catch(err => {
+            console.log(err);
+        })
+}
 
