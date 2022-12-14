@@ -8,42 +8,18 @@ block content
       .carousel-inner
         .carousel-item.active
           .card-wrapper
-
-            each val in data
-              a.card.featured(href = '/product/' + val._id)
-                img.card-img-top(src='images/saree_images/'+val.image.data)
+            -for(let i=0; i<Math.min(4, data.length); i++)
+              a.card.featured(href = '/product/' + data[i]._id)
+                img.card-img-top(src='images/saree_images/'+data[i].image.data)
                 .card-body
-                  h5.card-title= val.name
-            //- a.card.featured(href = '/product')
-            //-   img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/sequinssaree.jpg' alt='...')
-            //-   .card-body
-            //-     h5.card-title SEQUINS
-            //- a.card.featured(href = '/product')
-            //-   img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/readymade.jpg' alt='...')
-            //-   .card-body
-            //-     h5.card-title READYMADE
-            //- a.card.featured(href = '/product')
-            //-   img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Organza.jpg' alt='...')
-            //-   .card-body
-            //-     h5.card-title ORGANZA
-        //- .carousel-item
-        //-   .card-wrapper
-        //-     a.card.featured(href = '/product')
-        //-       img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/silk.jpg' alt='...')
-        //-       .card-body
-        //-         h5.card-title SILK
-        //-     a.card.featured(href = '/product')
-        //-       img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/patola.jpg' alt='...')
-        //-       .card-body
-        //-         h5.card-title PATOLA
-        //-     a.card.featured(href = '/product')
-        //-       img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Bandhani.jpg' alt='...')
-        //-       .card-body
-        //-         h5.card-title BANDHANI
-        //-     a.card.featured(href = '/product')
-        //-       img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Banarasisilk.jpg' alt='...')
-        //-       .card-body
-        //-         h5.card-title BANARASI-SILK
+                  h5.card-title= data[i].name
+        .carousel-item
+          .card-wrapper
+            -for(let i=4; i<Math.min(8, data.length); i++)
+              a.card.featured(href = '/product/' + data[i]._id)
+                img.card-img-top(src='images/saree_images/'+data[i].image.data)
+                .card-body
+                  h5.card-title= data[i++].name
       button.carousel-control-prev(type='button' data-bs-target='#carouselExampleControlsFirst' data-bs-slide='prev')
         span.carousel-control-prev-icon(aria-hidden='true')
         span.visually-hidden Previous
@@ -53,241 +29,246 @@ block content
     #carouselExampleControlsSmallFirst.carousel.slide.d-sm-none.carousel-fade(data-bs-ride='carousel')
       .carousel-inner
         .carousel-item.active
-          a.card.featured(href = '/product')
-            img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/latest.jpg' alt='...')
+          a.card.featured(href = '/product/' + data[0]._id)
+            img.card-img-top(src='images/saree_images/'+data[0].image.data)
             .card-body
-              h5.card-title LATEST
-        .carousel-item
-          a.card.featured(href = '/product')
-            img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/sequinssaree.jpg' alt='...')
-            .card-body
-              h5.card-title SEQUINS
-        .carousel-item
-          a.card.featured(href = '/product')
-            img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/readymade.jpg' alt='...')
-            .card-body
-              h5.card-title READYMADE
-        .carousel-item
-          a.card.featured(href = '/product')
-            img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Organza.jpg' alt='...')
-            .card-body
-              h5.card-title ORGANZA
-        .carousel-item
-          a.card.featured(href = '/product')
-            img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/silk.jpg' alt='...')
-            .card-body
-              h5.card-title SILK
-        .carousel-item
-          a.card.featured(href = '/product')
-            img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/patola.jpg' alt='...')
-            .card-body
-              h5.card-title PATOLA
-        .carousel-item
-          a.card.featured(href = '/product')
-            img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Bandhani.jpg' alt='...')
-            .card-body
-              h5.card-title BANDHANI
-        .carousel-item
-          a.card.featured(href = '/product')
-            img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Banarasisilk.jpg' alt='...')
-            .card-body
-              h5.card-title BANARASI-SILK
+              h5.card-title= data[0].name
+        -for(let i=1; i<Math.min(8, data.length); i++)
+          .carousel-item
+            a.card.featured(href = '/product/' + data[i]._id)
+              img.card-img-top(src='images/saree_images/'+data[i].image.data)
+              .card-body
+                h5.card-title= data[i].name
+        //-   a.card.featured(href = '/product')
+        //-     img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/sequinssaree.jpg' alt='...')
+        //-     .card-body
+        //-       h5.card-title SEQUINS
+        //- .carousel-item
+        //-   a.card.featured(href = '/product')
+        //-     img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/readymade.jpg' alt='...')
+        //-     .card-body
+        //-       h5.card-title READYMADE
+        //- .carousel-item
+        //-   a.card.featured(href = '/product')
+        //-     img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Organza.jpg' alt='...')
+        //-     .card-body
+        //-       h5.card-title ORGANZA
+        //- .carousel-item
+        //-   a.card.featured(href = '/product')
+        //-     img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/silk.jpg' alt='...')
+        //-     .card-body
+        //-       h5.card-title SILK
+        //- .carousel-item
+        //-   a.card.featured(href = '/product')
+        //-     img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/patola.jpg' alt='...')
+        //-     .card-body
+        //-       h5.card-title PATOLA
+        //- .carousel-item
+        //-   a.card.featured(href = '/product')
+        //-     img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Bandhani.jpg' alt='...')
+        //-     .card-body
+        //-       h5.card-title BANDHANI
+        //- .carousel-item
+        //-   a.card.featured(href = '/product')
+        //-     img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Banarasisilk.jpg' alt='...')
+        //-     .card-body
+        //-       h5.card-title BANARASI-SILK
       button.carousel-control-prev(type='button' data-bs-target='#carouselExampleControlsSmallFirst' data-bs-slide='prev')
         span.carousel-control-prev-icon(aria-hidden='true')
         span.visually-hidden Previous
       button.carousel-control-next(type='button' data-bs-target='#carouselExampleControlsSmallFirst' data-bs-slide='next')
         span.carousel-control-next-icon(aria-hidden='true')
         span.visually-hidden Next
-  br
-  h3.heading Rivaaz
-  .container.mb-5
-    #carouselExampleControlsSecond.carousel.slide.d-none.d-sm-block.carousel-fade(data-bs-ride='carousel')
-      .carousel-inner
-        .carousel-item.active
-          .card-wrapper
-            a.card.featured(href = '/product')
-              img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/latest.jpg' alt='...')
-              .card-body
-                h5.card-title LATEST
-            a.card.featured(href = '/product')
-              img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/sequinssaree.jpg' alt='...')
-              .card-body
-                h5.card-title SEQUINS
-            a.card.featured(href = '/product')
-              img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/readymade.jpg' alt='...')
-              .card-body
-                h5.card-title READYMADE
-            a.card.featured(href = '/product')
-              img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Organza.jpg' alt='...')
-              .card-body
-                h5.card-title ORGANZA
-        .carousel-item
-          .card-wrapper
-            a.card.featured(href = '/product')
-              img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/silk.jpg' alt='...')
-              .card-body
-                h5.card-title SILK
-            a.card.featured(href = '/product')
-              img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/patola.jpg' alt='...')
-              .card-body
-                h5.card-title PATOLA
-            a.card.featured(href = '/product')
-              img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Bandhani.jpg' alt='...')
-              .card-body
-                h5.card-title BANDHANI
-            a.card.featured(href = '/product')
-              img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Banarasisilk.jpg' alt='...')
-              .card-body
-                h5.card-title BANARASI-SILK
-      button.carousel-control-prev(type='button' data-bs-target='#carouselExampleControlsSecond' data-bs-slide='prev')
-        span.carousel-control-prev-icon(aria-hidden='true')
-        span.visually-hidden Previous
-      button.carousel-control-next(type='button' data-bs-target='#carouselExampleControlsSecond' data-bs-slide='next')
-        span.carousel-control-next-icon(aria-hidden='true')
-        span.visually-hidden Next
-    #carouselExampleControlsSmallSecond.carousel.slide.d-sm-none.carousel-fade(data-bs-ride='carousel')
-      .carousel-inner
-        .carousel-item.active
-          a.card.featured(href = '/product')
-            img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/latest.jpg' alt='...')
-            .card-body
-              h5.card-title LATEST
-        .carousel-item
-          a.card.featured(href = '/product')
-            img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/sequinssaree.jpg' alt='...')
-            .card-body
-              h5.card-title SEQUINS
-        .carousel-item
-          a.card.featured(href = '/product')
-            img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/readymade.jpg' alt='...')
-            .card-body
-              h5.card-title READYMADE
-        .carousel-item
-          a.card.featured(href = '/product')
-            img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Organza.jpg' alt='...')
-            .card-body
-              h5.card-title ORGANZA
-        .carousel-item
-          a.card.featured(href = '/product')
-            img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/silk.jpg' alt='...')
-            .card-body
-              h5.card-title SILK
-        .carousel-item
-          a.card.featured(href = '/product')
-            img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/patola.jpg' alt='...')
-            .card-body
-              h5.card-title PATOLA
-        .carousel-item
-          a.card.featured(href = '/product')
-            img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Bandhani.jpg' alt='...')
-            .card-body
-              h5.card-title BANDHANI
-        .carousel-item
-          a.card.featured(href = '/product')
-            img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Banarasisilk.jpg' alt='...')
-            .card-body
-              h5.card-title BANARASI-SILK
-      button.carousel-control-prev(type='button' data-bs-target='#carouselExampleControlsSmallSecond' data-bs-slide='prev')
-        span.carousel-control-prev-icon(aria-hidden='true')
-        span.visually-hidden Previous
-      button.carousel-control-next(type='button' data-bs-target='#carouselExampleControlsSmallSecond' data-bs-slide='next')
-        span.carousel-control-next-icon(aria-hidden='true')
-        span.visually-hidden Next
-  br
-  h3.heading Art of India
-  .container.mb-5
-    #carouselExampleControlsThird.carousel.slide.d-none.d-sm-block.carousel-fade(data-bs-ride='carousel')
-      .carousel-inner
-        .carousel-item.active
-          .card-wrapper
-            a.card.featured(href = '/product')
-              img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/latest.jpg' alt='...')
-              .card-body
-                h5.card-title LATEST
-            a.card.featured(href = '/product')
-              img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/sequinssaree.jpg' alt='...')
-              .card-body
-                h5.card-title SEQUINS
-            a.card.featured(href = '/product')
-              img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/readymade.jpg' alt='...')
-              .card-body
-                h5.card-title READYMADE
-            a.card.featured(href = '/product')
-              img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Organza.jpg' alt='...')
-              .card-body
-                h5.card-title ORGANZA
-        .carousel-item
-          .card-wrapper
-            a.card.featured(href = '/product')
-              img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/silk.jpg' alt='...')
-              .card-body
-                h5.card-title SILK
-            a.card.featured(href = '/product')
-              img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/patola.jpg' alt='...')
-              .card-body
-                h5.card-title PATOLA
-            a.card.featured(href = '/product')
-              img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Bandhani.jpg' alt='...')
-              .card-body
-                h5.card-title BANDHANI
-            a.card.featured(href = '/product')
-              img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Banarasisilk.jpg' alt='...')
-              .card-body
-                h5.card-title BANARASI-SILK
-      button.carousel-control-prev(type='button' data-bs-target='#carouselExampleControlsThird' data-bs-slide='prev')
-        span.carousel-control-prev-icon(aria-hidden='true')
-        span.visually-hidden Previous
-      button.carousel-control-next(type='button' data-bs-target='#carouselExampleControlsThird' data-bs-slide='next')
-        span.carousel-control-next-icon(aria-hidden='true')
-        span.visually-hidden Next
-    #carouselExampleControlsSmallThird.carousel.slide.d-sm-none.carousel-fade(data-bs-ride='carousel')
-      .carousel-inner
-        .carousel-item.active
-          a.card.featured(href = '/product')
-            img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/latest.jpg' alt='...')
-            .card-body
-              h5.card-title LATEST
-        .carousel-item
-          a.card.featured(href = '/product')
-            img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/sequinssaree.jpg' alt='...')
-            .card-body
-              h5.card-title SEQUINS
-        .carousel-item
-          a.card.featured(href = '/product')
-            img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/readymade.jpg' alt='...')
-            .card-body
-              h5.card-title READYMADE
-        .carousel-item
-          a.card.featured(href = '/product')
-            img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Organza.jpg' alt='...')
-            .card-body
-              h5.card-title ORGANZA
-        .carousel-item
-          a.card.featured(href = '/product')
-            img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/silk.jpg' alt='...')
-            .card-body
-              h5.card-title SILK
-        .carousel-item
-          a.card.featured(href = '/product')
-            img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/patola.jpg' alt='...')
-            .card-body
-              h5.card-title PATOLA
-        .carousel-item
-          a.card.featured(href = '/product')
-            img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Bandhani.jpg' alt='...')
-            .card-body
-              h5.card-title BANDHANI
-        .carousel-item
-          a.card.featured(href = '/product')
-            img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Banarasisilk.jpg' alt='...')
-            .card-body
-              h5.card-title BANARASI-SILK
-      button.carousel-control-prev(type='button' data-bs-target='#carouselExampleControlsSmallThird' data-bs-slide='prev')
-        span.carousel-control-prev-icon(aria-hidden='true')
-        span.visually-hidden Previous
-      button.carousel-control-next(type='button' data-bs-target='#carouselExampleControlsSmallThird' data-bs-slide='next')
-        span.carousel-control-next-icon(aria-hidden='true')
-        span.visually-hidden Next
+  //- br
+  //- h3.heading Rivaaz
+  //- .container.mb-5
+  //-   #carouselExampleControlsSecond.carousel.slide.d-none.d-sm-block.carousel-fade(data-bs-ride='carousel')
+  //-     .carousel-inner
+  //-       .carousel-item.active
+  //-         .card-wrapper
+  //-           a.card.featured(href = '/product')
+  //-             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/latest.jpg' alt='...')
+  //-             .card-body
+  //-               h5.card-title LATEST
+  //-           a.card.featured(href = '/product')
+  //-             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/sequinssaree.jpg' alt='...')
+  //-             .card-body
+  //-               h5.card-title SEQUINS
+  //-           a.card.featured(href = '/product')
+  //-             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/readymade.jpg' alt='...')
+  //-             .card-body
+  //-               h5.card-title READYMADE
+  //-           a.card.featured(href = '/product')
+  //-             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Organza.jpg' alt='...')
+  //-             .card-body
+  //-               h5.card-title ORGANZA
+  //-       .carousel-item
+  //-         .card-wrapper
+  //-           a.card.featured(href = '/product')
+  //-             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/silk.jpg' alt='...')
+  //-             .card-body
+  //-               h5.card-title SILK
+  //-           a.card.featured(href = '/product')
+  //-             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/patola.jpg' alt='...')
+  //-             .card-body
+  //-               h5.card-title PATOLA
+  //-           a.card.featured(href = '/product')
+  //-             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Bandhani.jpg' alt='...')
+  //-             .card-body
+  //-               h5.card-title BANDHANI
+  //-           a.card.featured(href = '/product')
+  //-             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Banarasisilk.jpg' alt='...')
+  //-             .card-body
+  //-               h5.card-title BANARASI-SILK
+  //-     button.carousel-control-prev(type='button' data-bs-target='#carouselExampleControlsSecond' data-bs-slide='prev')
+  //-       span.carousel-control-prev-icon(aria-hidden='true')
+  //-       span.visually-hidden Previous
+  //-     button.carousel-control-next(type='button' data-bs-target='#carouselExampleControlsSecond' data-bs-slide='next')
+  //-       span.carousel-control-next-icon(aria-hidden='true')
+  //-       span.visually-hidden Next
+  //-   #carouselExampleControlsSmallSecond.carousel.slide.d-sm-none.carousel-fade(data-bs-ride='carousel')
+  //-     .carousel-inner
+  //-       .carousel-item.active
+  //-         a.card.featured(href = '/product')
+  //-           img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/latest.jpg' alt='...')
+  //-           .card-body
+  //-             h5.card-title LATEST
+  //-       .carousel-item
+  //-         a.card.featured(href = '/product')
+  //-           img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/sequinssaree.jpg' alt='...')
+  //-           .card-body
+  //-             h5.card-title SEQUINS
+  //-       .carousel-item
+  //-         a.card.featured(href = '/product')
+  //-           img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/readymade.jpg' alt='...')
+  //-           .card-body
+  //-             h5.card-title READYMADE
+  //-       .carousel-item
+  //-         a.card.featured(href = '/product')
+  //-           img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Organza.jpg' alt='...')
+  //-           .card-body
+  //-             h5.card-title ORGANZA
+  //-       .carousel-item
+  //-         a.card.featured(href = '/product')
+  //-           img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/silk.jpg' alt='...')
+  //-           .card-body
+  //-             h5.card-title SILK
+  //-       .carousel-item
+  //-         a.card.featured(href = '/product')
+  //-           img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/patola.jpg' alt='...')
+  //-           .card-body
+  //-             h5.card-title PATOLA
+  //-       .carousel-item
+  //-         a.card.featured(href = '/product')
+  //-           img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Bandhani.jpg' alt='...')
+  //-           .card-body
+  //-             h5.card-title BANDHANI
+  //-       .carousel-item
+  //-         a.card.featured(href = '/product')
+  //-           img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Banarasisilk.jpg' alt='...')
+  //-           .card-body
+  //-             h5.card-title BANARASI-SILK
+  //-     button.carousel-control-prev(type='button' data-bs-target='#carouselExampleControlsSmallSecond' data-bs-slide='prev')
+  //-       span.carousel-control-prev-icon(aria-hidden='true')
+  //-       span.visually-hidden Previous
+  //-     button.carousel-control-next(type='button' data-bs-target='#carouselExampleControlsSmallSecond' data-bs-slide='next')
+  //-       span.carousel-control-next-icon(aria-hidden='true')
+  //-       span.visually-hidden Next
+  //- br
+  //- h3.heading Art of India
+  //- .container.mb-5
+  //-   #carouselExampleControlsThird.carousel.slide.d-none.d-sm-block.carousel-fade(data-bs-ride='carousel')
+  //-     .carousel-inner
+  //-       .carousel-item.active
+  //-         .card-wrapper
+  //-           a.card.featured(href = '/product')
+  //-             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/latest.jpg' alt='...')
+  //-             .card-body
+  //-               h5.card-title LATEST
+  //-           a.card.featured(href = '/product')
+  //-             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/sequinssaree.jpg' alt='...')
+  //-             .card-body
+  //-               h5.card-title SEQUINS
+  //-           a.card.featured(href = '/product')
+  //-             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/readymade.jpg' alt='...')
+  //-             .card-body
+  //-               h5.card-title READYMADE
+  //-           a.card.featured(href = '/product')
+  //-             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Organza.jpg' alt='...')
+  //-             .card-body
+  //-               h5.card-title ORGANZA
+  //-       .carousel-item
+  //-         .card-wrapper
+  //-           a.card.featured(href = '/product')
+  //-             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/silk.jpg' alt='...')
+  //-             .card-body
+  //-               h5.card-title SILK
+  //-           a.card.featured(href = '/product')
+  //-             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/patola.jpg' alt='...')
+  //-             .card-body
+  //-               h5.card-title PATOLA
+  //-           a.card.featured(href = '/product')
+  //-             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Bandhani.jpg' alt='...')
+  //-             .card-body
+  //-               h5.card-title BANDHANI
+  //-           a.card.featured(href = '/product')
+  //-             img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Banarasisilk.jpg' alt='...')
+  //-             .card-body
+  //-               h5.card-title BANARASI-SILK
+  //-     button.carousel-control-prev(type='button' data-bs-target='#carouselExampleControlsThird' data-bs-slide='prev')
+  //-       span.carousel-control-prev-icon(aria-hidden='true')
+  //-       span.visually-hidden Previous
+  //-     button.carousel-control-next(type='button' data-bs-target='#carouselExampleControlsThird' data-bs-slide='next')
+  //-       span.carousel-control-next-icon(aria-hidden='true')
+  //-       span.visually-hidden Next
+  //-   #carouselExampleControlsSmallThird.carousel.slide.d-sm-none.carousel-fade(data-bs-ride='carousel')
+  //-     .carousel-inner
+  //-       .carousel-item.active
+  //-         a.card.featured(href = '/product')
+  //-           img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/latest.jpg' alt='...')
+  //-           .card-body
+  //-             h5.card-title LATEST
+  //-       .carousel-item
+  //-         a.card.featured(href = '/product')
+  //-           img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/sequinssaree.jpg' alt='...')
+  //-           .card-body
+  //-             h5.card-title SEQUINS
+  //-       .carousel-item
+  //-         a.card.featured(href = '/product')
+  //-           img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/readymade.jpg' alt='...')
+  //-           .card-body
+  //-             h5.card-title READYMADE
+  //-       .carousel-item
+  //-         a.card.featured(href = '/product')
+  //-           img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Organza.jpg' alt='...')
+  //-           .card-body
+  //-             h5.card-title ORGANZA
+  //-       .carousel-item
+  //-         a.card.featured(href = '/product')
+  //-           img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/silk.jpg' alt='...')
+  //-           .card-body
+  //-             h5.card-title SILK
+  //-       .carousel-item
+  //-         a.card.featured(href = '/product')
+  //-           img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/patola.jpg' alt='...')
+  //-           .card-body
+  //-             h5.card-title PATOLA
+  //-       .carousel-item
+  //-         a.card.featured(href = '/product')
+  //-           img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Bandhani.jpg' alt='...')
+  //-           .card-body
+  //-             h5.card-title BANDHANI
+  //-       .carousel-item 
+  //-         a.card.featured(href = '/product')
+  //-           img.card-img-top(src='https://saree.b-cdn.net/media/wysiwyg/Homepage/aprilhomepage/Banarasisilk.jpg' alt='...')
+  //-           .card-body
+  //-             h5.card-title BANARASI-SILK
+  //-     button.carousel-control-prev(type='button' data-bs-target='#carouselExampleControlsSmallThird' data-bs-slide='prev')
+  //-       span.carousel-control-prev-icon(aria-hidden='true')
+  //-       span.visually-hidden Previous
+  //-     button.carousel-control-next(type='button' data-bs-target='#carouselExampleControlsSmallThird' data-bs-slide='next')
+  //-       span.carousel-control-next-icon(aria-hidden='true')
+  //-       span.visually-hidden Next
   // Customization Section
   .customize
     p Personalize your saree according to your preferences here!
