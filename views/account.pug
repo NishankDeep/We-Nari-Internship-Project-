@@ -1,11 +1,14 @@
 extends layout.pug
 
+block username
+  - const username = user_name;
+
 block style
   link(rel = "stylesheet" href = "/style/myaccount.css")
 
 block content
   section.Myaccount
-    p MY ACCOUNT
+    p Welcome, #{user_name}
   section.carton
     #wishList.block(onclick="location.href='#';" style='cursor: pointer;')
       .img

@@ -1,3 +1,5 @@
+block username
+
 doctype html
 head
   meta(charset='UTF-8')
@@ -35,10 +37,21 @@ nav.navbar.navbar-expand-lg.navbar-dark.sticky-top.pb-1
         if(!isLoggedIn)
           a.nav-link.active(href='/login' target='') Login
         else
-          div.logoutForm 
-            form(method="post" action="/logout")
-              input(type="hidden" name="_csrf" value=`${csrfToken}`)
-              button(type="submit" class="btnLogout") Logout
+          li.nav-item.dropdown
+            a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')= username
+            ul.dropdown-menu
+              li
+                a.dropdown-item(href='/myaccount') My Account
+              li
+                div.logoutForm 
+                  form(method="post" action="/logout")
+                    input(type="hidden" name="_csrf" value=`${csrfToken}`)
+                    button.dropdown-item(type="submit") Logout
+              //-   a.dropdown-item(href='#') Another action
+              //- li
+              //-   hr.dropdown-divider
+              //- li
+              //-   a.dropdown-item(href='#') Something else here
 
 block content
 

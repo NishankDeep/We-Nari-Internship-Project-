@@ -122,22 +122,26 @@ body {
 
 
 /* button */
+.dropdown-toggle {
 
-li.logout{
+    color: white;
+}
+
+li.logout {
     margin: 0;
     padding: 0;
 }
 
-.btnLogout{
+.btnLogout {
     border: none;
     background: transparent;
     padding: 8px 15px;
-    color: white;
+    /* colorwhite; */
     font-size: 20px !important;
-    
+
 }
 
-.btnLogout:hover{
+.btnLogout:hover {
     color: black;
     transition: .6s ease;
 }

@@ -1,38 +1,7 @@
-//- extends layout.pug
-
-//- block style
-//-   link(rel="stylesheet" href = "/style/product.css")
-
-//- block content
-//-   .container.product-container
-//-     .content-container
-//-       img.saree(src='/images/saree_images/'+product.image.data)
-//-       .details 
-//-         h3.name= product.name
-//-         .subtitle
-//-           p.price ₹ #{product.price}
-//-           -let flag = 0
-//-           img#heart(src="https://img.icons8.com/ios/30/null/hearts--v1.png" onClick = 'change()')
-//-         hr
-//-         a(class = "btn btn-danger cart") Add to Cart
-//-         hr
-//-         br
-//-         h5 Specifications
-//-         .container.specification
-//-           p
-//-           | Pack of -- 1
-//-           br
-//-           | Pattern --  #{product.pattern}
-//-           br
-//-           | Occasion -- #{product.occasion}
-//-           br
-//-           | Fabric -- #{product.fabric}
-
-
-//- block scripts
-//-   script(src = "/js/product.js")
-
 extends layout.pug
+
+block username
+  - const username = user_name;
 
 block style
   script(src='https://kit.fontawesome.com/57c20b0d98.js' crossorigin='anonymous')

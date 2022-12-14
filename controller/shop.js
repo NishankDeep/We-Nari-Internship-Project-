@@ -1,35 +1,36 @@
 const mongoose = require('mongoose')
 
 const Product = require('../models/product.js')
+const User = require('../models/user.js')
 
-exports.home = (req, res) => {
+exports.home = async (req, res) => {
 
-    Product.find((err, data) => {
+    Product.find((err, product_data) => {
 
-        res.render('index', { data: data })
+        res.render('index', { product_data: product_data, user_name: req.user.name })
     })
 }
 exports.details = (req, res) => {
 
     Product.findOne({ _id: req.params.id }, (err, product) => {
 
-        res.render('product_details', { product: product })
+        res.render('product_details', { product: product, user_name: req.user.name })
     })
 }
 
-exports.getAccount = (req,res,next) => {
-    res.render('account');
+exports.getAccount = (req, res, next) => {
+    res.render('account', { user_name: req.user.name });
 }
 
-exports.getCustomize = (req,res,next) => {
-    res.render('customize');
+exports.getCustomize = (req, res, next) => {
+    res.render('customize', { user_name: req.user.name });
 }
 
-exports.getAdmin = (req,res,next) => {
-    res.render('admin');
+exports.getAdmin = (req, res, next) => {
+    res.render('admin', { user_name: req.user.name });
 }
 
-exports.postAdminProd = (req,res,next) => {
+exports.postAdminProd = (req, res, next) => {
     const product = new Product({
 
         name: req.body.name,

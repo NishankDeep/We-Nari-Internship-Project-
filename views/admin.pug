@@ -1,5 +1,8 @@
 extends layout.pug
 
+block username
+  - const username = user_name;
+
 block style
   link(rel="stylesheet" href = "/style/customize.css")
 block content
