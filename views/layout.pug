@@ -21,7 +21,7 @@ nav.navbar.navbar-expand-lg.navbar-dark.sticky-top.pb-1
         li.nav-item
           a.nav-link.active(aria-current='page' href='/') Home
         li.nav-item
-          a.nav-link.active(href='#') Products
+          a.nav-link.active(href='/product') Products
         if(isLoggedIn)
           if(admin)
             li.nav-item
@@ -38,7 +38,7 @@ nav.navbar.navbar-expand-lg.navbar-dark.sticky-top.pb-1
           a.nav-link.active(href='/login' target='') Login
         else
           li.nav-item.dropdown
-            a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')= username
+            a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')= username || user_name
             ul.dropdown-menu
               li
                 a.dropdown-item(href='/myaccount') My Account

@@ -1,0 +1,22 @@
+extends layout 
+
+block style 
+    link(rel="stylesheet", href="/style/product.css")
+
+block content                 
+    div(class="container text-center container-prod")
+        div(class="row g-3 cont-row")
+            each prod in product
+                div(class="col cont-col")
+                    div( class="card card-custom" style="width: 17rem")
+                        img(src='/images/saree_images/'+prod.image.data class="imgHt" alt="...")
+                        //- img(src=`${prod.image.imageUrl}` class="imgHt" alt="...")
+                        div(class="card-body")
+                            div(class="card-desc")
+                                p(class="card-text card-title") #{prod.name}
+                                p(class="card-text") #{prod.price}
+                                
+                            a(href=`/product/${prod._id}` class="btn btn-primary btnprod") Detail
+            
+                
+            

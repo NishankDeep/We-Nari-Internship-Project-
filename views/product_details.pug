@@ -15,13 +15,15 @@ block content
       .img-description
         .img-options
           img(src='/images/saree_images/'+product.image.data alt='' onclick='clicking(this)')
-          //
+          //- img(src=`${product.image.imageUrl}` alt='' onclick='clicking(this)')
+          //- 
             <img src="./images/img2.jpg" alt="" onclick="clickimg(this)">
             <img src="./images/img3.jpg" alt="" onclick="clickimg(this)">
             <img src="./images/img4.jpg" alt="" onclick="clickimg(this)">
             <img src="./images/img5.jpg" alt="" onclick="clickimg(this)">
             <img src="./images/img6.jpg" alt="" onclick="clickimg(this)">
         .main-img
+          //- img#change(src=`${product.image.imageUrl}` alt='')
           img#change(src='/images/saree_images/'+product.image.data alt='')
       //- hr
       .buttons 
@@ -29,7 +31,7 @@ block content
           input(type="hidden" name="_csrf" value=`${csrfToken}`)
           input(type = "hidden" name = "product" value = product)
           button.btns.btn(type = "submit") ADD TO CART
-        button.btns.btn buy now
+        a(href="/buyNow" class="btn").btns.btn BUY NOW
     .right
       .prod-header
         h1= product.name
