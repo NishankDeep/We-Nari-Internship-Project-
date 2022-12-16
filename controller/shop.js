@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const Product = require('../models/product.js')
+const Product = require('../models/product.js').Product
 const User = require('../models/user.js')
 
 exports.home = (req, res) => {
@@ -23,7 +23,6 @@ exports.details = (req, res) => {
         res.render('product_details', { product: product, user_name: user_name })
     })
 }
-
 exports.getAccount = (req, res, next) => {
 
     let user_name = '';
@@ -47,7 +46,19 @@ exports.getAdmin = (req, res, next) => {
 
     res.render('admin', { user_name: user_name });
 }
+exports.getCart = (req, res) => {
 
+    res.render('cart', { cartItems: req.user.cartItems })
+}
+exports.addToCart = (req, res) => {
+
+    User.updateOne({ _id: req.user._id }, { $push: { cartItems: req.body.product } }, (err, data) => {
+
+        if (!err) res.redirect('/cart')
+
+        else console.log(err)
+    })
+}
 exports.postAdminProd = (req, res, next) => {
     const product = new Product({
 

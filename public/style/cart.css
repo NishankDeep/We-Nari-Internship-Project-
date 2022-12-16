@@ -1,0 +1,72 @@
+.products {
+
+    margin-left: 200px;
+    margin-top: 50px;
+    width: 400px;
+}
+
+.product-thumbnail {
+
+    margin: 20px;
+    width: 50%;
+    display: flex;
+}
+
+.saree-image {
+
+    width: 100px;
+    height: 150px;
+}
+
+.product-details {
+
+    margin-left: 30px;
+}
+
+.btn-primary {
+
+    padding: 5px;
+    background-color: #ff4584;
+}
+
+.btn-primary:hover {
+
+    background-color: white;
+    color: #ff4584;
+}
+
+.price-details {
+    margin-top: 2rem;
+}
+
+.price-details td strong {
+    font-weight: 600;
+}
+
+.price-details .special-heading {
+    margin-bottom: 1rem;
+}
+
+.price-details .special-heading h3 {
+    font-size: 1.5rem;
+}
+
+.table-content td {
+    padding: 0.24rem 0;
+    font-size: 0.87rem;
+    font-weight: 500;
+}
+
+
+.table-content .table-details {
+    padding-left: 10rem;
+    width: 100%;
+}
+
+.price-details {
+
+    position: fixed;
+    width: 500px;
+    top: 250px;
+    right: 100px;
+}

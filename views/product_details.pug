@@ -24,9 +24,12 @@ block content
         .main-img
           img#change(src='/images/saree_images/'+product.image.data alt='')
       //- hr
-      .buttons
-        button.btns ADD TO CART
-        button.btns buy now
+      .buttons 
+        form(action = '/cart' method = 'post')
+          input(type="hidden" name="_csrf" value=`${csrfToken}`)
+          input(type = "hidden" name = "product" value = product)
+          button.btns.btn(type = "submit") ADD TO CART
+        button.btns.btn buy now
     .right
       .prod-header
         h1= product.name

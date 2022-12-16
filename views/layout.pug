@@ -30,7 +30,7 @@ nav.navbar.navbar-expand-lg.navbar-dark.sticky-top.pb-1
             li.nav-item
               a.nav-link.active Shop
             li.nav-item
-              a.nav-link.active
+              a.nav-link.active(href = "/cart")
                 img#nav-icon(src='/images/cart-icon.png' alt='cart-icon')
                 | Cart
         li(class=`${!isLoggedIn ? 'nav-link': 'logout' }`)

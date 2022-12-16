@@ -3,119 +3,119 @@ const validator = require('email-validator');
 const bcrypt = require('bcrypt');
 
 
-exports.getLogin = (req,res,next) => {
+exports.getLogin = (req, res, next) => {
     res.render('auth/login.pug')
 }
 
-exports.getSignup = (req,res,next) => {
+exports.getSignup = (req, res, next) => {
     res.render('auth/signup.pug')
 }
 
-exports.getForgetPage = (req,res,next) => {
+exports.getForgetPage = (req, res, next) => {
     res.render('auth/forgetPassword')
 }
 
 
 
 // storing data in database
-exports.postSingnup = (req,res,next) => {
-    const {fullName,mobileNo,email,password,confirmPassword} = req.body;
+exports.postSingnup = (req, res, next) => {
+    const { fullName, mobileNo, email, password, confirmPassword } = req.body;
 
     const userInfo = {
-        fullName:fullName,
-        mobileNo:mobileNo,
-        email:email,
-        password:password,
-        confirmPassword:confirmPassword
+        fullName: fullName,
+        mobileNo: mobileNo,
+        email: email,
+        password: password,
+        confirmPassword: confirmPassword
     };
 
     // validating fullName
-    if(fullName.trim() === ''){
+    if (fullName.trim() === '') {
         console.log('fullName cannot be blank');
-        res.render('auth/signup',{
-            formData:userInfo,
-            error : 'nameErr'
+        res.render('auth/signup', {
+            formData: userInfo,
+            error: 'nameErr'
         })
-        return ;
+        return;
     }
 
     // validating Mobile Number
-    if(mobileNo.trim().length !== 10){
+    if (mobileNo.trim().length !== 10) {
         console.log('mobileNo is Invalid');
-        res.render('auth/signup',{
-            formData:userInfo,
-            error : 'mobErr'
+        res.render('auth/signup', {
+            formData: userInfo,
+            error: 'mobErr'
         })
-        return ;
+        return;
     }
 
     // validating email
-    if(!validator.validate(email)){
+    if (!validator.validate(email)) {
         console.log('email is not correct');
         // res.redirect('/signup');
-        res.render('auth/signup',{
-            formData:userInfo,
-            error : 'emailErr'
+        res.render('auth/signup', {
+            formData: userInfo,
+            error: 'emailErr'
         })
-        return ;
+        return;
     }
 
-    if(password.length <= 5){
+    if (password.length <= 5) {
         console.log('Password is to short');
-        res.render('auth/signup',{
-            formData:userInfo,
-            error : 'passErr'
+        res.render('auth/signup', {
+            formData: userInfo,
+            error: 'passErr'
         })
-        return ;
+        return;
     }
 
     // validating password
-    if(password !== confirmPassword){
+    if (password !== confirmPassword) {
         console.log('password are not matching');
         // res.redirect('/signup');
-        res.render('auth/signup',{
-            formData:userInfo,
-            error : 'notMatchPass'
+        res.render('auth/signup', {
+            formData: userInfo,
+            error: 'notMatchPass'
         })
-        return ;
+        return;
     }
 
-    User.findOne({email:email})
+    User.findOne({ email: email })
         .then(user => {
-            if(user){
+            if (user) {
                 return null;
             }
-            else{
-                return bcrypt.hash(password,15);
+            else {
+                return bcrypt.hash(password, 15);
             }
-            
+
         })
         .then(hashPassword => {
-            if(!hashPassword){
+            if (!hashPassword) {
                 // console.log('userExist');
                 return null;
             }
-            else{
+            else {
                 const user = new User({
-                    name:fullName,
-                    phoneNo:mobileNo,
-                    email:email,
-                    password:hashPassword
+                    name: fullName,
+                    phoneNo: mobileNo,
+                    email: email,
+                    password: hashPassword
                 })
 
                 return user.save();
             }
         })
         .then(result => {
-            if(!result){
+            if (!result) {
                 console.log('user already exist');
-                res.render('auth/signup',{
-                    formData:userInfo,
-                    error : 'emailExist'
+                res.render('auth/signup', {
+                    formData: userInfo,
+                    error: 'emailExist'
                 })
-                return ;
+                return;
             }
-            else{
+            else {
                 res.status(200).redirect('/login');
             }
         })
@@ -125,35 +125,35 @@ exports.postSingnup = (req,res,next) => {
 
 }
 
-exports.postLogin = (req,res,next) => {
-    const {email,password} = req.body;
+exports.postLogin = (req, res, next) => {
+    const { email, password } = req.body;
     let currUser;
 
-    User.findOne({email:email})
+    User.findOne({ email: email })
         .then(user => {
-            if(!user){
+            if (!user) {
                 return null;
             }
-            else{
-                currUser=user;
-                return bcrypt.compare(password,user.password);
+            else {
+                currUser = user;
+                return bcrypt.compare(password, user.password);
             }
         })
         .then(compareResult => {
-            if(!compareResult){
+            if (!compareResult) {
                 console.log('login failed');
                 // res.redirect('/');
-                res.render('auth/login',{
-                    email:email,
-                    password:password,
-                    error:'invalidData'
+                res.render('auth/login', {
+                    email: email,
+                    password: password,
+                    error: 'invalidData'
                 })
             }
-            else{
+            else {
                 console.log('login successfully');
                 req.session.isLoggedIn = true;
                 req.session.user = currUser;
-                if(email === 'admin@1.com'){
+                if (email === 'admin@1.com') {
                     console.log('ghusa kya');
                     req.session.admin = true;
                 }
@@ -169,83 +169,83 @@ exports.postLogin = (req,res,next) => {
         })
 }
 
-exports.postLogout = (req,res,next) => {
+exports.postLogout = (req, res, next) => {
     req.session.destroy(err => {
         console.log(req.session);
         res.redirect('/');
     })
 }
 
-exports.postForgetPass = (req,res,next) => {
-    const {email,password,confirmPassword} = req.body;
+exports.postForgetPass = (req, res, next) => {
+    const { email, password, confirmPassword } = req.body;
 
-    if(!validator.validate(email)){
+    if (!validator.validate(email)) {
         console.log('invalid email id');
-        res.render('auth/forgetPassword',{
-            email:email,
-            password:password,
-            confirmPassword:confirmPassword,
-            error:'emailInvalid',
-            message:"Email is not correct"
+        res.render('auth/forgetPassword', {
+            email: email,
+            password: password,
+            confirmPassword: confirmPassword,
+            error: 'emailInvalid',
+            message: "Email is not correct"
         })
-        return ;
+        return;
     }
 
-    if(password.trim().length < 5 ){
-        res.render('auth/forgetPassword',{
-            error:'invalid',
+    if (password.trim().length < 5) {
+        res.render('auth/forgetPassword', {
+            error: 'invalid',
             message: 'Password length must be (> 5)',
-            email:email,
-            password:password,
-            confirmPassword:confirmPassword
+            email: email,
+            password: password,
+            confirmPassword: confirmPassword
         })
-        return ;
+        return;
     }
 
-    if(password !== confirmPassword){
-        res.render('auth/forgetPassword',{
-            error:'invalid',
+    if (password !== confirmPassword) {
+        res.render('auth/forgetPassword', {
+            error: 'invalid',
             message: 'Password and Confirm Password do not match',
-            email:email,
-            password:password,
-            confirmPassword:confirmPassword
+            email: email,
+            password: password,
+            confirmPassword: confirmPassword
         })
-        return ;
+        return;
     }
 
 
     let currUser;
 
-    User.findOne({email:email})
+    User.findOne({ email: email })
         .then(user => {
-            if(!user){
-                
+            if (!user) {
+
             }
-            else{
+            else {
                 currUser = user;
-                return bcrypt.hash(password,15);
+                return bcrypt.hash(password, 15);
             }
         })
         .then(encrptPass => {
-            if(!encrptPass){
+            if (!encrptPass) {
                 return null;
             }
-            else{
+            else {
                 currUser.password = encrptPass;
                 return currUser.save();
             }
         })
         .then(data => {
-            if(!data){
-                res.render('auth/forgetPassword',{
-                    email:email,
-                    password:'',
-                    confirmPassword:'',
-                    error:'emailInvalid',
-                    message:'E-mail id is not registered'
+            if (!data) {
+                res.render('auth/forgetPassword', {
+                    email: email,
+                    password: '',
+                    confirmPassword: '',
+                    error: 'emailInvalid',
+                    message: 'E-mail id is not registered'
                 })
             }
-            else{
+            else {
                 console.log('password Changed successfully');
                 res.redirect('/login');
             }

@@ -1,0 +1,28 @@
+extends layout.pug
+
+block style
+  link(rel="stylesheet" href = "/style/cart.css")
+
+block content
+  .products
+    each val in cartItems
+      .product-thumbnail
+        img.saree-image(src="/images/saree_images/"+val.image.data)
+        .product-details
+          p.name= val.name
+          p.price Rs. #{val.price}
+          br
+          a(class="btn btn-primary") Remove
+      hr
+  //- .price-details
+  //-   .special-heading
+  //-     h3 Price Details
+  //-   table.table-content
+  //-     tr
+  //-       td
+  //-         strong Number of Items
+  //-       td.table-details 1
+  //-     tr
+  //-       td
+  //-         strong Total ammount
+  //-       td.table-details Fit and Flare
