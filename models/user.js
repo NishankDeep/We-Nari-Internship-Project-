@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const productSchema = require('./product').productSchema;
 
+console.log(productSchema.obj)
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({

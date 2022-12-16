@@ -68,9 +68,18 @@ exports.getBuyNow = (req, res, next) => {
 }
 exports.getCart = (req, res) => {
 
+    // req.user.cartItems.forEach((productId) => {
+
+    //     Product.findOne({ _id: productId }, (err, product) => {
+
+    //         res.render('cart', { product: product })
+    //     })
+    // })
     res.render('cart', { cartItems: req.user.cartItems })
 }
 exports.addToCart = (req, res) => {
+
+    console.log(req.user.cartItems)
 
     User.updateOne({ _id: req.user._id }, { $push: { cartItems: req.body.product } }, (err, data) => {
 

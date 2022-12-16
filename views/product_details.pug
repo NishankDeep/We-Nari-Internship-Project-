@@ -31,7 +31,7 @@ block content
           input(type="hidden" name="_csrf" value=`${csrfToken}`)
           input(type = "hidden" name = "product" value = product)
           button.btns.btn(type = "submit") ADD TO CART
-        a(href="/buyNow" class="btn").btns.btn BUY NOW
+        button(href="/buyNow" class="btn").btns.btn BUY NOW
     .right
       .prod-header
         h1= product.name
