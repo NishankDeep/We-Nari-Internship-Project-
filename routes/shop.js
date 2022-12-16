@@ -18,5 +18,6 @@ router.get('/cart', shopController.getCart);
 
 router.post('/admin', isAdminAuth, shopController.postAdminProd);
 router.post('/cart', shopController.addToCart)
+router.post('/removeFromCart', shopController.removeFromCart)
 
 module.exports = router
