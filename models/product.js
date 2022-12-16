@@ -9,7 +9,6 @@ const productSchema = new mongoose.Schema({
     fabric: String,
     description: String,
     image: {
-
         data: Buffer,
         content: String
     }
