@@ -2,6 +2,8 @@ const mongoose = require('mongoose')
 
 const Product = require('../models/product.js').Product
 const User = require('../models/user.js')
+const productSchema = require('../models//product').productSchema;
+
 
 exports.home = (req, res) => {
 
@@ -77,16 +79,26 @@ exports.getCart = (req, res) => {
     // })
     res.render('cart', { cartItems: req.user.cartItems })
 }
+
 exports.addToCart = (req, res) => {
 
-    console.log(req.user.cartItems)
+    Product.findOne({ _id: req.body.id })
+        .then(prod => {
 
-    User.updateOne({ _id: req.user._id }, { $push: { cartItems: req.body.product } }, (err, data) => {
+            return prod;
+        })
+        .then((data) => {
+            User.updateOne({ _id: req.user._id }, { $push: { cartItems: data } }, (err, data) => {
 
-        if (!err) res.redirect('/cart')
+                if (!err) res.redirect('/')
 
-        else console.log(err)
-    })
+                else console.log(err)
+            })
+        })
+        .catch(err => {
+            console.log(err);
+        })
+
 }
 exports.postAdminProd = (req, res, next) => {
     // console.log(req.file);
