@@ -17,7 +17,7 @@ router.get('/product/:id', shopController.details);
 router.get('/cart',isAuth, shopController.getCart);
 
 router.post('/admin', isAdminAuth, shopController.postAdminProd);
-router.post('/cart', shopController.addToCart)
-router.post('/removeFromCart', shopController.removeFromCart)
+router.post('/cart',isAuth, shopController.addToCart)
+router.post('/removeFromCart',isAuth, shopController.removeFromCart)
 
 module.exports = router
