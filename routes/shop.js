@@ -12,9 +12,9 @@ router.get('/myaccount', isAuth, shopController.getAccount);
 router.get('/customize', isAuth, shopController.getCustomize);
 router.get('/admin', isAdminAuth, shopController.getAdmin);
 router.get('/product', shopController.getProduct);
-router.get('/buyNow', shopController.getBuyNow);
+router.get('/buyNow',isAuth, shopController.getBuyNow);
 router.get('/product/:id', shopController.details);
-router.get('/cart', shopController.getCart);
+router.get('/cart',isAuth, shopController.getCart);
 
 router.post('/admin', isAdminAuth, shopController.postAdminProd);
 router.post('/cart', shopController.addToCart)
