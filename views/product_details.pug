@@ -29,7 +29,7 @@ block content
       .buttons 
         form(action = '/cart' method = 'post')
           input(type="hidden" name="_csrf" value=`${csrfToken}`)
-          input(type = "hidden" name = "product" value = product)
+          input(type = "hidden" name ="id" value =`${product. _id}`)
           button.btns.btn(type = "submit") ADD TO CART
         a(href="/buyNow" class="btn").btns.btn BUY NOW
     .right

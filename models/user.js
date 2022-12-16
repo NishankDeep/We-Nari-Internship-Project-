@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
 
 const productSchema = require('./product').productSchema;
-
+// console.log(productSchema);
 const Schema = mongoose.Schema;
+
 
 const userSchema = new Schema({
     name: {
@@ -21,7 +22,10 @@ const userSchema = new Schema({
         type: String,
         require: true
     },
-    cartItems: [productSchema]
+    cartItems:{
+            type : [productSchema],
+            default : undefined
+        }
 });
 
 module.exports = mongoose.model('User', userSchema);
