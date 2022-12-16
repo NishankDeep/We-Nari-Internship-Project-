@@ -52,7 +52,6 @@ exports.getAdmin = (req, res, next) => {
 exports.getProduct = (req, res, next) => {
     let user_name = '';
     if (req.user) user_name = req.user.name;
-    console.log(user_name);
 
     Product.find()
         .then(prod => {
@@ -66,18 +65,18 @@ exports.getProduct = (req, res, next) => {
 }
 
 exports.getBuyNow = (req, res, next) => {
-    res.render('addressDetail')
+
+    let user_name = '';
+    if (req.user) user_name = req.user.name;
+
+    res.render('addressDetail', { user_name: user_name })
 }
 exports.getCart = (req, res) => {
 
-    // req.user.cartItems.forEach((productId) => {
+    let user_name = '';
+    if (req.user) user_name = req.user.name;
 
-    //     Product.findOne({ _id: productId }, (err, product) => {
-
-    //         res.render('cart', { product: product })
-    //     })
-    // })
-    res.render('cart', { cartItems: req.user.cartItems })
+    res.render('cart', { cartItems: req.user.cartItems, user_name: user_name });
 }
 
 exports.addToCart = (req, res) => {
@@ -87,18 +86,50 @@ exports.addToCart = (req, res) => {
 
             return prod;
         })
-        .then((data) => {
-            User.updateOne({ _id: req.user._id }, { $push: { cartItems: data } }, (err, data) => {
+        .then(async (data) => {
 
-                if (!err) res.redirect('/')
+            const user = await User.findOne({ _id: req.user._id })
 
-                else console.log(err)
-            })
+            let flag = 1;
+
+            for (let i = 0; i < user.cartItems.length; i++) {
+
+                if (user.cartItems[i]._id.equals(data._id)) {
+
+                    flag = 0
+                    break
+                }
+            }
+            if (flag === 1) {
+
+                user.cartItems.push(data)
+                user.save()
+                    .then(() => console.log('Product successfully added two cart'))
+                    .catch((err) => console.log(err))
+            }
+            res.redirect('/cart')
         })
         .catch(err => {
             console.log(err);
         })
 
+}
+exports.removeFromCart = async (req, res) => {
+
+    for (let i = 0; i < req.user.cartItems.length; i++) {
+
+        const product = await Product.findOne({ _id: req.body.productId })
+
+        if (req.user.cartItems[i]._id.equals(product.id)) {
+
+            req.user.cartItems.splice(i, 1)
+            break
+        }
+    }
+    console.log(req.user.cartItems)
+    req.user.save()
+        .then(() => res.redirect('/cart'))
+        .catch((err) => console.log(err))
 }
 exports.postAdminProd = (req, res, next) => {
     // console.log(req.file);

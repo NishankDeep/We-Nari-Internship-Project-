@@ -144,7 +144,7 @@ section .contentBx .center .TxtField input[type="submit"]:hover {
     background: #fff;
     color: #ce3266;
     outline: none;
-    border: 1px solid  #ff4584;
+    border: 1px solid #ff4584;
     transform: scale(1.1);
     font-weight: 500;
     cursor: pointer;
@@ -152,34 +152,25 @@ section .contentBx .center .TxtField input[type="submit"]:hover {
 }
 
 /* register button css */
-#register{
+#register {
     margin: 15px;
 }
 
-.btn-reg{
+.btn {
+
+    color: white;
+    background-color: #ff4584;
     width: 100%;
     padding: 10px 20px;
-    outline: none;
-    font-size: 16px;
-    letter-spacing: 1px;
-    color: #fff;
-    background: #ff4584;
     border-radius: 30px;
-    outline: none;
-    border: none;
     font-weight: 500;
-    cursor: pointer;
 }
 
-.btn-reg:hover{
-    background: #fff;
-    color: #ce3266;
-    outline: none;
-    border: 2px solid #ce3266;
-    transform: scale(1.1);
-    font-weight: 500;
-    cursor: pointer;
-    transition: 0.3s;
+.btn:hover {
+
+    border: 1px solid #ff4584 !important;
+    color: #ff4584;
+    background-color: white;
 }
 
 section .contentBx .center .tick {
@@ -203,34 +194,14 @@ section .contentBx .center #newacc {
 }
 
 section .contentBx .center #newacc p {
-    font-style: italic;
+    /* /* font-style: italic; */
     margin-top: 3em;
     margin-bottom: 1em;
 }
 
+#newacc a {
 
-section .contentBx .center #newacc a {
-    font-size: 15px;
-    background: #ff4584;
-    color: #fff;
-    outline: none;
-    border: none;
-    font-weight: 500;
-    cursor: pointer;
-    padding: 3% 7%;
-    border-radius: 50px;
-
-}
-
-section .contentBx .center #newacc a:hover {
-    background: #fff;
-    color: #ce3266;
-    outline: none;
-    /* border: 2px solid #ce3266; */
-    transform: scale(2.1);
-    font-weight: 500;
-    cursor: pointer;
-    transition: 0.3s;
+    text-decoration: underline;
 }
 
 @media (max-width: 768px) {
@@ -289,10 +260,10 @@ section .contentBx .center #newacc a:hover {
 }
 
 /* error  */
-.err{
+.err {
     margin-bottom: 5px;
 }
 
-.err p{
+.err p {
     color: red;
 }

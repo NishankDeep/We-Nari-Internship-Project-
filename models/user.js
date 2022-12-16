@@ -2,8 +2,6 @@ const mongoose = require('mongoose');
 
 const productSchema = require('./product').productSchema;
 
-console.log(productSchema.obj)
-// console.log(productSchema);
 const Schema = mongoose.Schema;
 
 
@@ -24,7 +22,11 @@ const userSchema = new Schema({
         type: String,
         require: true
     },
-    cartItems: [productSchema]
+    cartItems: {
+
+        type: [productSchema],
+        default: null
+    }
 });
 
 module.exports = mongoose.model('User', userSchema);

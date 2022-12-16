@@ -19,25 +19,6 @@ section .imgBx {
     height: 100%;
 }
 
-/* h1{ */
-/* padding-top: 200px; */
-/* margin-top: 200px;
-} */
-/* gradient background */
-
-/* 
-section .imgBx::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(225deg, #f44e86, #03a9f4);
-    z-index: 1;
-    mix-blend-mode: screen;
-} */
-
 section .imgBx img {
     position: absolute;
     top: 0;
@@ -98,7 +79,7 @@ section .contentBx .center h1 {
 }
 
 section .contentBx .center .TxtField {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 section .contentBx .center .TxtField span {
@@ -113,7 +94,7 @@ section .contentBx .center .TxtField span {
 
 section .contentBx .center .TxtField input {
     width: 100%;
-    padding: 10px 20px;
+    padding: 10px 10px;
     outline: none;
     font-weight: 400;
     border: 1px solid #607d8b;
@@ -145,34 +126,31 @@ section .contentBx .center .TxtField {
 }
 
 /* register button css */
-#register{
+#register {
     margin: 15px;
 }
 
-.btn-reg{
-    width: 100%;
-    padding: 10px 20px;
-    outline: none;
-    font-size: 16px;
-    letter-spacing: 1px;
-    color: #fff;
-    background: #ff4584;
-    border-radius: 30px;
-    outline: none;
-    border: none;
-    font-weight: 500;
-    cursor: pointer;
+label {
+
+    font-size: 15px;
+    font-weight: 400;
 }
 
-.btn-reg:hover{
-    background: #fff;
-    color: #ce3266;
-    outline: none;
-    border: 2px solid #ce3266;
-    transform: scale(1.1);
+.btn {
+
+    color: white;
+    background-color: #ff4584;
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 30px;
     font-weight: 500;
-    cursor: pointer;
-    transition: 0.3s;
+}
+
+.btn:hover {
+
+    border: 1px solid #ff4584 !important;
+    color: #ff4584;
+    background-color: white;
 }
 
 section .contentBx .center .tick {
@@ -245,16 +223,16 @@ section .contentBx .center .login p a {
 
 /* error css code */
 
-input.invalid{
+input.invalid {
     border-color: rgba(243, 84, 84, 0.812) !important;
 }
 
-.err{
+.err {
     font-size: medium;
     margin-top: 1px;
     margin-bottom: 20px;
 }
 
-.err p{
+.err p {
     color: red;
 }

@@ -1,19 +1,26 @@
 extends layout.pug
 
+block username
+  - const username = user_name;
+
 block style
   link(rel="stylesheet" href = "/style/cart.css")
 
 block content
   .products
     each val in cartItems
-      .product-thumbnail
-        img.saree-image(src="/images/saree_images/"+val.image.data)
-        .product-details
-          p.name= val.name
-          p.price Rs. #{val.price}
-          br
-          a(class="btn btn-primary") Remove
-      hr
+      a.product-link(href = '/product/'+val._id)
+        .product-thumbnail
+          img.saree-image(src="/images/saree_images/"+val.image.data)
+          .product-details
+            p.name= val.name
+            p.price Rs. #{val.price}
+            br
+            form(action = '/removeFromCart' method = 'post')
+              input(type="hidden" name="_csrf" value=`${csrfToken}`)  
+              input(type = "hidden" name = "productId" value = val._id)
+              button(type = 'submit' class="btn") Remove
+      //- hr
   //- .price-details
   //-   .special-heading
   //-     h3 Price Details

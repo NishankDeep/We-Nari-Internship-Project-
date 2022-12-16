@@ -7,11 +7,19 @@
 
 .product-thumbnail {
 
+    background-color: white;
+    padding: 10px;
     margin: 20px;
-    width: 50%;
+    width: 370px;
     display: flex;
+    box-shadow: 5px 1px 20px 1px rgb(207, 180, 180);
 }
 
+/* .product-link:hover .product-thumbnail {
+
+    box-shadow: none;
+    transition: .3s;
+} */
 .saree-image {
 
     width: 100px;
@@ -23,14 +31,18 @@
     margin-left: 30px;
 }
 
-.btn-primary {
+.btn {
 
+    color: white;
+    border: none !important;
     padding: 5px;
     background-color: #ff4584;
 }
 
-.btn-primary:hover {
+.btn:hover {
 
+    padding: 4px;
+    border: 1px solid #ff4584 !important;
     background-color: white;
     color: #ff4584;
 }
@@ -69,4 +81,9 @@
     width: 500px;
     top: 250px;
     right: 100px;
+}
+
+.product-link {
+
+    color: black;
 }
