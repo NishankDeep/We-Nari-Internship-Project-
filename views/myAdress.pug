@@ -1,0 +1,19 @@
+extends layout.pug
+
+block style
+  link(rel="stylesheet" href = "/style/addressDetails.css")
+
+block content
+  .container.content
+    .left
+      p.heading Delivery Address
+      each val in data
+        form.address-details
+          .d-flex
+            //- input.radio(type = 'radio')
+            p.name= val.name
+            p.mobileNo= val.mobileNo
+          p.address= val.address
+          p.pincode= val.pincode
+          button(type= 'submit' class='btn') Deliver here
+      a.newAddress(href = '/addNewAddress') + Add a new address

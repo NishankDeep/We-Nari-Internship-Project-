@@ -4,7 +4,6 @@ const productSchema = require('./product').productSchema;
 
 const Schema = mongoose.Schema;
 
-
 const userSchema = new Schema({
     name: {
         type: String,

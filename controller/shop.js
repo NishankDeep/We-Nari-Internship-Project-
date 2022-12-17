@@ -2,8 +2,7 @@ const mongoose = require('mongoose')
 
 const Product = require('../models/product.js').Product
 const User = require('../models/user.js')
-const productSchema = require('../models//product').productSchema;
-
+const deliveryDetails = require('../models/deliveryDetails')
 
 exports.home = (req, res) => {
 
@@ -63,13 +62,48 @@ exports.getProduct = (req, res, next) => {
 
         })
 }
+exports.getNewAddress = (req, res) => {
 
-exports.getBuyNow = (req, res, next) => {
+    res.render('addNewAddress')
+}
+exports.postNewAddress = (req, res) => {
+
+    const deliverydetails = new deliveryDetails({
+
+        name: req.body.name,
+        mobileNo: req.body.mobile,
+        pincode: req.body.pincode,
+        locality: req.body.locality,
+        address: req.body.address,
+        city: req.body.city,
+        state: req.body.state,
+        userId: req.user._id
+    });
+    deliverydetails.save()
+        .then(res.redirect('/myAddress'))
+        .catch((err) => console.log(err))
+}
+exports.getBuyNow = async (req, res, next) => {
 
     let user_name = '';
     if (req.user) user_name = req.user.name;
 
-    res.render('addressDetail', { user_name: user_name })
+    const product = await Product.findOne({ _id: req.params.id })
+
+    deliveryDetails.find({ userId: req.user._id }, (err, data) => {
+
+        res.render('addressDetail', { data: data, user_name: user_name, product: product })
+    })
+}
+exports.getmyAddress = (req, res) => {
+
+    let user_name = '';
+    if (req.user) user_name = req.user.name;
+
+    deliveryDetails.find({ userId: req.user._id }, (err, data) => {
+
+        res.render('myAdress', { data: data, user_name: user_name })
+    })
 }
 exports.getCart = (req, res) => {
 

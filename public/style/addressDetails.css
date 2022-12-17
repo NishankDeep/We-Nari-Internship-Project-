@@ -1,0 +1,164 @@
+.name {
+
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.mobileNo {
+
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.radio {
+
+    padding: 5px;
+}
+
+.address {
+
+    padding-left: 30px;
+}
+
+.btn {
+
+    color: white;
+    border: none !important;
+    padding: 5px;
+    background-color: #ff4584;
+}
+
+.btn:hover {
+
+    padding: 4px;
+    border: 1px solid #ff4584 !important;
+    background-color: white;
+    color: #ff4584;
+}
+
+.newAddress {
+
+    background-color: white;
+    padding: 10px;
+    margin-left: 100px;
+    color: #ff4584;
+}
+
+.product-details {
+
+    width: 400px !important;
+    margin-top: 2rem;
+}
+
+.product-details .special-heading {
+    margin-bottom: 1rem;
+}
+
+.product-details .special-heading h3 {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.table-content td {
+    padding: 0.5rem 0;
+    font-size: 1.1rem;
+    /* font-weight: 500; */
+}
+
+.table-left {
+
+    width: 80%;
+    font-weight: 500;
+}
+
+.table-content .table-details {
+    padding-left: 3rem;
+    width: 100%;
+}
+
+.container.content {
+
+    margin-bottom: 20px;
+}
+
+.newAddress:hover {
+
+    color: #ff4584;
+    text-decoration: underline;
+}
+
+.pincode {
+
+    padding-left: 30px;
+}
+
+.left {
+
+    width: 50%;
+}
+
+.address-details {
+
+    box-shadow: 5px 1px 20px 1px rgb(207, 180, 180);
+    padding: 10px;
+    margin: 20px;
+    margin-left: 100px;
+    background-color: white;
+    width: 500px;
+}
+
+.product-details {
+
+    margin: 80px;
+    background-color: white;
+    padding: 20px;
+    width: 300px;
+    position: fixed;
+    top: 100px;
+    right: 100px;
+}
+
+@media screen and (max-width: 700px) {
+
+    .address-details {
+
+        width: 300px;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+
+    .product-details {
+
+        margin-top: 50px !important;
+        margin: auto;
+        width: 300px !important;
+        padding: 5px;
+        text-align: center;
+        position: static;
+    }
+
+    .newAddress {
+
+        margin: auto;
+    }
+
+    .table-left {
+
+        width: 200px;
+    }
+
+    .table-details {
+
+        width: 150px !important;
+    }
+
+    .left {
+
+        width: 100%;
+    }
+
+    .heading {
+
+        font-size: 30px;
+    }
+}

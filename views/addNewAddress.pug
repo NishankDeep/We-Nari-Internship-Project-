@@ -1,0 +1,40 @@
+extends layout.pug
+
+block style
+  link(rel = "stylesheet" href = "/style/customize.css")
+
+block content
+  .wrapper
+  .bg-image
+  section#form-cnt.container.form-container
+    header.header
+    h1#title.text-center ADD Address
+    form#survey-form(action = "/postNewAddress" method = "post" enctype="multipart/form-data")
+      input(type="hidden" name="_csrf" value=`${csrfToken}`)
+
+      .form-group
+        label#name-label(for='name') Name*
+        input#name.form-control(type='text' name='name' placeholder='Name' required='')
+      .form-group
+        label#price-label(for='mobNo') Mobile No.*
+        input#price.form-control(type='text' name='mobNumber' placeholder='10-digit-mobile-number' required='')
+      .form-group
+        label#pattern-label(for='pincode') Pincode*
+        input#pattern.form-control(type='text' name='pincode' placeholder='pincode' required='')
+      .form-group
+        label#occasion-label(for='locality') Locality
+        input#occasion.form-control(type='text' name='locality' placeholder='Locality')
+      .form-group
+        p Address*
+        textarea#description.input-textarea(name='address' placeholder='Address' required='')
+      .form-group
+        label#fabric-label(for='city') City/Town*
+        input#fabric.form-control(type='text' name='city' placeholder='city/town' required='')
+      .form-group
+        label#fabric-label(for='state') State*
+        input#fabric.form-control(type='text' name='state' placeholder='state' required='')
+      //- .form-group
+      //-   p Description
+      //-   textarea#comments.input-textarea(name='comment' placeholder='Write the details of the saree here...')
+      .form-group
+        button#button.btn(type = 'submit') Deliver Here
