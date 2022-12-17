@@ -9,6 +9,9 @@
 body {
 
     background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
 }
 
 .scrolling-active {
@@ -303,7 +306,8 @@ a:visited {
 /* footer firstBox */
 
 footer {
-
+    margin-top: auto;
+    /* position: fixed; */
     background-color: white;
 }
 
