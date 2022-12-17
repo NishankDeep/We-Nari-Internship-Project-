@@ -5,7 +5,7 @@ const User = require('../models/user.js')
 const deliveryDetails = require('../models/deliveryDetails')
 
 exports.home = (req, res) => {
-
+    // res.render("new");
     Product.find((err, product_data) => {
 
         let user_name = '';
