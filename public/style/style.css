@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+html{
+    height: 100%;
+}
+
 body {
 
     background-color: whitesmoke;
@@ -306,8 +310,9 @@ a:visited {
 /* footer firstBox */
 
 footer {
-    margin-top: auto;
+    /* margin: 0; */
     /* position: fixed; */
+    margin-top: auto;
     background-color: white;
 }
 
