@@ -124,3 +124,12 @@
     }
     
 }
+
+#adminFeature{
+    display: flex;
+    justify-content: space-between;
+}
+
+.delForm{
+    margin-right: 1rem;
+}

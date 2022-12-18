@@ -1,0 +1,44 @@
+extends layout.pug
+
+block username
+  - const username = user_name;
+
+block style
+  link(rel="stylesheet" href = "/style/customize.css")
+block content
+  .wrapper
+  .bg-image
+  section#form-cnt.container.form-container
+    header.header
+    h1#title.text-center Edit Product Page
+    form#survey-form(action = `/editPage` method = "post" enctype="multipart/form-data")
+      input(type="hidden" name="_csrf" value=`${csrfToken}`)
+      input(type="hidden" name="prodId" value=`${product._id}`)
+
+
+      .form-group
+        label#name-label(for='name') Name
+        input#name.form-control(type='text' value=`${product.name}` name='name' placeholder='Enter the name of the saree' required='')
+      .form-group
+        label#price-label(for='price') Price
+        input#price.form-control(type='text' value=`${product.price}` name='price' placeholder='Enter the price of the saree' required='')
+      .form-group
+        label#pattern-label(for='pattern') Pattern
+        input#pattern.form-control(type='text' value=`${product.pattern}` name='pattern' placeholder='Enter the pattern on the saree' required='')
+      .form-group
+        label#occasion-label(for='occasion') Occasion
+        input#occasion.form-control(type='text' value=`${product.occasion}` name='occasion' placeholder='Enter the occasion on which the saree will be worn' required='')
+      .form-group
+        label#fabric-label(for='fabric') Fabric
+        input#fabric.form-control(type='text' value=`${product.fabric}` name='fabric' placeholder='Enter the fabric of the saree' required='')
+      .form-group
+        p Description
+        textarea#description.input-textarea(name='description' value=`${product.description}` placeholder='Description of the saree') #{product.description}
+      //- .form-group
+      //-   p Description
+      //-   textarea#comments.input-textarea(name='comment' placeholder='Write the details of the saree here...')
+      .form-group
+        label.form-label.txtInside(for='image') Saree Photo
+        input#attach.form-control.formChoose.sizeChange(type='file' name = 'image' accept='.jpg, .jpeg, .png, ')
+      .form-group
+        button#button.btn(type = 'submit') Submit

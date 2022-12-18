@@ -77,6 +77,60 @@ exports.getEditProfile = (req,res,next) => {
     });
 }
 
+exports.getEditPage = (req,res,next) => {
+    let user_name = '';
+    if (req.user) user_name = req.user.name;
+
+    const prodId = req.params.prodId;
+
+    Product.findById(prodId)
+           .then(prod=>{
+               res.render("editPage",{
+                   user_name:user_name,
+                   product:prod
+               })
+           })
+           .catch(err => {
+             console.log(err);
+           })
+    
+}
+
+exports.postEditPage = (req,res,next) => {
+    const prodId = req.body.prodId;
+    const name = req.body.name;
+    const price = req.body.price;
+    const pattern = req.body.pattern;
+    const occasion = req.body.occasion;
+    const fabric = req.body.fabric;
+    const description = req.body.description;
+    const image =req.file;
+
+    Product.findById(prodId)
+           .then(prod => {
+             prod.name = name;
+             prod.price = price;
+             prod.pattern = pattern;
+             prod.occasion = occasion;
+             prod.fabric = fabric;
+             prod.description = description;
+
+             if(image){
+                removeImage.deleteFromFile(prod.imageUrl);
+                prod.imageUrl = image.path;
+             }
+
+             return prod.save();
+           })
+           .then(data => {
+            res.redirect('/product');
+            console.log("data is updated");
+           })
+           .catch(err => {
+            console.log(err);
+           })
+}
+
 exports.postEditProfile = (req,res,next) => {
     const {name,email,phoneNo} = req.body;
 
@@ -185,7 +239,7 @@ exports.getCart = async(req, res) => {
         //     break
         // }
     }
-    console.log(cartItems);
+    // console.log(cartItems);
     req.user.cartItems = cartItems;
     req.user.save()
         .then(() => res.redirect('/cart'))

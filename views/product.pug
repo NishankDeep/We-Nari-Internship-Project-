@@ -18,9 +18,12 @@ block content
                                 
                             a(href=`/product/${prod._id}` class="btn btn-primary btnprod") Detail
                             if(admin)
-                                form(action=`/deleteItem/${prod._id}`, method="post") 
-                                    input(type="hidden" name="_csrf" value=`${csrfToken}`)
-                                    button(class="btn btn-primary btnprod") Delete
+                                #adminFeature
+                                    form(action=`/deleteItem/${prod._id}`, method="post" class="delForm") 
+                                        input(type="hidden" name="_csrf" value=`${csrfToken}`)
+                                        button(class="btn btn-primary btnprod ") Delete
+                                    a(href=`/editPage/${prod._id}` class="btn btn-primary btnprod ") Edit Product
+                            
             
                 
             

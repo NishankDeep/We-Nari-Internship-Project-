@@ -18,6 +18,7 @@ router.get('/cart', isAuth, shopController.getCart);
 router.get('/addNewAddress', isAuth, shopController.getNewAddress);
 router.get('/myAddress', isAuth, shopController.getmyAddress);
 router.get('/editProfile',isAuth,shopController.getEditProfile);
+router.get('/editPage/:prodId',isAdminAuth,shopController.getEditPage);
 
 router.post('/admin', shopController.postAdminProd);
 router.post('/cart', shopController.addToCart)
@@ -25,5 +26,6 @@ router.post('/removeFromCart', shopController.removeFromCart)
 router.post('/postNewAddress', shopController.postNewAddress)
 router.post('/editProfile',shopController.postEditProfile);
 router.post('/deleteItem/:prodId',shopController.postDeleteProduct);
+router.post('/editPage',shopController.postEditPage);
 
 module.exports = router
