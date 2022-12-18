@@ -83,7 +83,7 @@ app.use((req,res,next) => {
 })
 
 app.use((req,res,next)=>{
-    res.locals.user_name = req.user.name;
+    // res.locals.user_name = req.user.name || 'null';
     res.locals.csrfToken = req.csrfToken();
     res.locals.isLoggedIn = req.session.isLoggedIn;
     res.locals.admin = req.session.admin;

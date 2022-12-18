@@ -69,6 +69,7 @@ exports.getNewAddress = (req, res) => {
 
 exports.getEditProfile = (req,res,next) => {
     res.render('editProfile',{
+        user_name: user_name,
         name:req.user.name,
         email:req.user.email,
         phoneNo:req.user.phoneNo
