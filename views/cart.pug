@@ -11,14 +11,15 @@ block content
     each val in cartItems
       a.product-link(href = '/product/'+val._id)
         .product-thumbnail
-          img.saree-image(src="/images/saree_images/"+val.image.data)
+          img.saree-image(src=`/${val.imageUrl}`)
+          //- img.saree-image(src="/images/saree_images/"+val.image.data)
           .product-details
             p.name= val.name
             p.price Rs. #{val.price}
             br
             form(action = '/removeFromCart' method = 'post')
               input(type="hidden" name="_csrf" value=`${csrfToken}`)  
-              input(type = "hidden" name = "productId" value = val._id)
+              input(type = "hidden" name = "productId" value = `${val._id}`)
               button(type = 'submit' class="btn") Remove
       //- hr
   //- .price-details

@@ -9,8 +9,8 @@ block content
             each prod in product
                 div(class="col cont-col")
                     div( class="card card-custom" style="width: 17rem")
-                        img(src='/images/saree_images/'+prod.image.data class="imgHt" alt="...")
-                        //- img(src=`${prod.image.imageUrl}` class="imgHt" alt="...")
+                        //- img(src='/images/saree_images/'+prod.image.data class="imgHt" alt="...")
+                        img(src=`/${prod.imageUrl}` class="imgHt" alt="...")
                         div(class="card-body")
                             div(class="card-desc")
                                 p(class="card-text card-title") #{prod.name}

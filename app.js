@@ -28,12 +28,22 @@ const app = express()
 
 
 // MULTER
+// const Storage = multer.diskStorage({
+
+//     destination: './public/images/saree_images',
+//     filename: (req, file, cb) => {
+
+//         cb(null, file.fieldname + "_" + Date.now() + path.extname(file.originalname))
+//     }
+// })
 const Storage = multer.diskStorage({
 
-    destination: './public/images/saree_images',
+    destination: (req,file,cb) => {
+        cb(null,'saree_images');
+    },
     filename: (req, file, cb) => {
 
-        cb(null, file.fieldname + "_" + Date.now() + path.extname(file.originalname))
+        cb(null, file.fieldname + "-" + Date.now() + "-" + file.originalname)
     }
 })
 
@@ -42,8 +52,10 @@ const upload = multer({
 }).single('image')
 
 
+
 // PUBLIC
 app.use(express.static(path.join(__dirname, 'public')))
+app.use('/saree_images',express.static(path.join(__dirname,'saree_images')));
 app.use(express.urlencoded({ extended: true }))
 
 // pug

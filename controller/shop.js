@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const validator = require('email-validator');
+const removeImage = require('../util/removeImage');
 
 const Product = require('../models/product.js').Product
 const User = require('../models/user.js')
@@ -170,7 +171,25 @@ exports.getmyAddress = (req, res) => {
         res.render('myAdress', { data: data, user_name: user_name })
     })
 }
-exports.getCart = (req, res) => {
+exports.getCart = async(req, res) => {
+    const cartItems=[];
+    for (let i = 0; i < req.user.cartItems.length; i++) {
+
+        const product = await Product.findOne({ _id: req.user.cartItems[i]._id })
+        if(product){
+            cartItems.push(product);
+        }
+        // if (req.user.cartItems[i]._id.equals(product.id)) {
+
+        //     req.user.cartItems.splice(i, 1)
+        //     break
+        // }
+    }
+    console.log(cartItems);
+    req.user.cartItems = cartItems;
+    req.user.save()
+        .then(() => res.redirect('/cart'))
+        .catch((err) => console.log(err))
 
     let user_name = '';
     if (req.user) user_name = req.user.name;
@@ -214,7 +233,11 @@ exports.addToCart = (req, res) => {
 
 }
 exports.removeFromCart = async (req, res) => {
+        // const prodId = req.productId;
+        // const newCartItem = req.user.cartItems.filter(item => item._id.toString() !== prodId.toString());
 
+        // req.user.cartItems = newCartItem;
+        // await req.user.save();
     for (let i = 0; i < req.user.cartItems.length; i++) {
 
         const product = await Product.findOne({ _id: req.body.productId })
@@ -231,8 +254,8 @@ exports.removeFromCart = async (req, res) => {
         .catch((err) => console.log(err))
 }
 exports.postAdminProd = (req, res, next) => {
-    // console.log(req.file);
-    // let store = req.file.path;
+    console.log(req.file);
+    let store = req.file.path;
     // store=store.substr(6);
 
     const product = new Product({
@@ -243,6 +266,7 @@ exports.postAdminProd = (req, res, next) => {
         occasion: req.body.occasion,
         fabric: req.body.fabric,
         description: req.body.description,
+        imageUrl:store,
         image: {
             data: req.file.filename,
             content: 'image/png'
@@ -255,15 +279,23 @@ exports.postAdminProd = (req, res, next) => {
 }
 
 exports.postDeleteProduct = (req,res,next) => {
-    const prodId = req.params.prodId
+    const prodId = req.params.prodId;
 
-    Product.findByIdAndRemove(prodId)
-            .then(() => {
-                res.redirect('/product');
-                console.log('deleted');
-            })
-            .catch(err => {
-                console.log(err);
-            })
+    Product.findById(prodId)
+           .then(prod => {
+                return removeImage.deleteFromFile(prod.imageUrl);
+           })
+           .then(() => {
+                return Product.findByIdAndRemove(prodId)
+           })
+           .then(() => {
+               res.redirect('/product');
+               console.log('deleted');
+           })
+           .catch(err => {
+               console.log(err);
+           })
+
+    
 }
 

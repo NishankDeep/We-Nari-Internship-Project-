@@ -13,16 +13,16 @@ block content
           .card-wrapper
             -for(let i=0; i<Math.min(4, product_data.length); i++)
               a.card.featured(href = '/product/' + product_data[i]._id)
-                //- img.card-img-top(src=`${product_data[i].image.imgaeUrl}`)
-                img.card-img-top(src='images/saree_images/'+product_data[i].image.data)
+                img.card-img-top(src=`/${product_data[i].imageUrl}`)
+                //- img.card-img-top(src='images/saree_images/'+product_data[i].image.data)
                 .card-body
                   h5.card-title= product_data[i].name
         .carousel-item
           .card-wrapper
             -for(let i=4; i<Math.min(8, product_data.length); i++)
               a.card.featured(href = '/product/' + product_data[i]._id)
-                //- img.card-img-top(src=`${product_data[i].image.imgaeUrl}`)
-                img.card-img-top(src='images/saree_images/'+product_data[i].image.data)
+                img.card-img-top(src=`/${product_data[i].imageUrl}`)
+                //- img.card-img-top(src='images/saree_images/'+product_data[i].image.data)
                 .card-body
                   h5.card-title= product_data[i].name
       button.carousel-control-prev(type='button' data-bs-target='#carouselExampleControlsFirst' data-bs-slide='prev')
@@ -35,15 +35,15 @@ block content
       .carousel-inner
         .carousel-item.active
           a.card.featured(href = '/product/' + product_data[0]._id)
-            //- img.card-img-top(src=src=`${product_data[0].image.imgaeUrl}`)
-            img.card-img-top(src='images/saree_images/'+product_data[0].image.data)
+            img.card-img-top(src=src=`/${product_data[0].imageUrl}`)
+            //- img.card-img-top(src='images/saree_images/'+product_data[0].image.data)
             .card-body
               h5.card-title= product_data[0].name
         -for(let i=1; i<Math.min(8, product_data.length); i++)
           .carousel-item
             a.card.featured(href = '/product/' + product_data[i]._id)
-              //- img.card-img-top(src=src=`${product_data[i].image.imgaeUrl}`)
-              img.card-img-top(src='images/saree_images/'+product_data[i].image.product_data)
+              img.card-img-top(src=`/${product_data[i].imageUrl}`)
+              //- img.card-img-top(src='images/saree_images/'+product_data[i].image.product_data)
               .card-body
                 h5.card-title= product_data[i].name
         //-   a.card.featured(href = '/product')

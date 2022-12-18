@@ -8,10 +8,18 @@ const productSchema = new mongoose.Schema({
     occasion: String,
     fabric: String,
     description: String,
-    image: {
-        data: Buffer,
-        content: String
+    imageUrl: {
+        type:String,
+        require:true
     }
 })
+
+
 exports.productSchema = productSchema
 exports.Product = new mongoose.model('Product', productSchema)
+
+// ,
+//     image: {
+//         data: Buffer,
+//         content: String
+//     }

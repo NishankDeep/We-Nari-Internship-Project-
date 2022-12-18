@@ -14,8 +14,8 @@ block content
     .left
       .img-description
         .img-options
-          img(src='/images/saree_images/'+product.image.data alt='' onclick='clicking(this)')
-          //- img(src=`${product.image.imageUrl}` alt='' onclick='clicking(this)')
+          //- img(src='/images/saree_images/'+product.image.data alt='' onclick='clicking(this)')
+          img(src=`/${product.imageUrl}` alt='' onclick='clicking(this)')
           //- 
             <img src="./images/img2.jpg" alt="" onclick="clickimg(this)">
             <img src="./images/img3.jpg" alt="" onclick="clickimg(this)">
@@ -23,8 +23,8 @@ block content
             <img src="./images/img5.jpg" alt="" onclick="clickimg(this)">
             <img src="./images/img6.jpg" alt="" onclick="clickimg(this)">
         .main-img
-          //- img#change(src=`${product.image.imageUrl}` alt='')
-          img#change(src='/images/saree_images/'+product.image.data alt='')
+          img#change(src=`/${product.imageUrl}` alt='')
+          //- img#change(src='/images/saree_images/'+product.image.data alt='')
       //- hr
       .buttons 
         form(action = '/cart' method = 'post')
