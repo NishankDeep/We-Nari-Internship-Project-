@@ -42,7 +42,7 @@ block content
           strong LOGIN &amp; SECURITY
           br
           |  Edit login, name and mobile number
-    #address.block(onclick="location.href='#';" style='cursor: pointer;')
+    #address.block(onclick="location.href='/changePass';" style='cursor: pointer;')
       .img
         img(src='images/MyAccount_Icons/address.jpeg' width='100px' height='100px' alt='Your-Address')
       .text
@@ -50,14 +50,14 @@ block content
           strong MY ADDRESS
           br
           |  Edit addresses for new orders
-    #payment.block(onclick="location.href='#';" style='cursor: pointer;')
+    #payment.block(onclick="location.href='/changePass';" style='cursor: pointer;')
       .img
-        img(src='images/MyAccount_Icons/online_payment.png' width='100px' height='100px' alt='Payment-options')
+        img(src='images/MyAccount_Icons/change-password.png' width='100px' height='100px' alt='Payment-options')
       .text
         p
-          strong PAYMENT OPTIONS
+          strong Change Password
           br
-          |  Edit or add payment methods
+          |  Change current password
     #contact.block(onclick="location.href='#';" style='cursor: pointer;')
       .img
         img(src='images/MyAccount_Icons/contactUs.png' width='90px' height='90px' alt='Contact-us')
@@ -66,3 +66,7 @@ block content
           strong CONTACT US
           br
           |  Contact our customer service here
+
+
+//- Payment Options
+//- Edit or add payment methods
