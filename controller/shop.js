@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const validator = require('email-validator');
 
 const Product = require('../models/product.js').Product
 const User = require('../models/user.js')
@@ -65,6 +66,70 @@ exports.getNewAddress = (req, res) => {
 
     res.render('addNewAddress')
 }
+
+exports.getEditProfile = (req,res,next) => {
+    res.render('editProfile',{
+        name:req.user.name,
+        email:req.user.email,
+        phoneNo:req.user.phoneNo
+    });
+}
+
+exports.postEditProfile = (req,res,next) => {
+    const {name,email,phoneNo} = req.body;
+
+    if (name.trim() === '') {
+        console.log('fullName cannot be blank');
+        res.render('editProfile', {
+            error: 'nameErr',
+            name:name,
+            email:email,
+            phoneNo:phoneNo
+        })
+        return;
+    }
+
+    console.log(phoneNo);
+    // validating Mobile Number
+    if (phoneNo.trim().length !== 10) {
+        console.log('mobileNo is Invalid');
+        res.render('editProfile', {
+            error: 'mobErr',
+            name:name,
+            email:email,
+            phoneNo:phoneNo
+        })
+        return;
+    }
+
+    // validating email
+    if (!validator.validate(email)) {
+        console.log('email is not correct');
+        // res.redirect('/signup');
+        res.render('editProfile', {
+            error: 'emailErr',
+            name:name,
+            email:email,
+            phoneNo:phoneNo
+        })
+        return;
+    }
+
+    req.user.email=email;
+    req.user.name=name;
+    req.user.phoneNo=phoneNo;
+    
+    req.user.save()
+        .then(data => {
+            res.redirect('/');
+        })
+        .catch(err => {
+            console.log(err);
+        })
+
+}
+
+
 exports.postNewAddress = (req, res) => {
 
     const deliverydetails = new deliveryDetails({
@@ -186,5 +251,18 @@ exports.postAdminProd = (req, res, next) => {
         .then(() => res.send("Product data saved successfully in the database"))
         .catch((err) => console.log(err))
 
+}
+
+exports.postDeleteProduct = (req,res,next) => {
+    const prodId = req.params.prodId
+
+    Product.findByIdAndRemove(prodId)
+            .then(() => {
+                res.redirect('/product');
+                console.log('deleted');
+            })
+            .catch(err => {
+                console.log(err);
+            })
 }
 

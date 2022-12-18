@@ -195,3 +195,10 @@ button {
   background-color: #ff4584;
   color: white;
 }
+
+.err{
+  color: red;
+  font-size: small;
+  padding-left:1rem ;
+  
+}

@@ -88,6 +88,7 @@
     border: 2px solid #ff4584;
     color: black;
     width: 100%;
+    margin: 0.2rem;
 }
 
 .btnprod:hover{
