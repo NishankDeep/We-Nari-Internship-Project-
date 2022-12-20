@@ -48,6 +48,13 @@
 
     width: 400px !important;
     margin-top: 2rem;
+    margin: 80px;
+    background-color: white;
+    padding: 20px;
+    width: 300px;
+    position: fixed;
+    top: 100px;
+    right: 100px;
 }
 
 .product-details .special-heading {
@@ -105,17 +112,6 @@
     margin-left: 100px;
     background-color: white;
     width: 500px;
-}
-
-.product-details {
-
-    margin: 80px;
-    background-color: white;
-    padding: 20px;
-    width: 300px;
-    position: fixed;
-    top: 100px;
-    right: 100px;
 }
 
 @media screen and (max-width: 700px) {

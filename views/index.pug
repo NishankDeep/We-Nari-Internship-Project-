@@ -17,14 +17,15 @@ block content
                 //- img.card-img-top(src='images/saree_images/'+product_data[i].image.data)
                 .card-body
                   h5.card-title= product_data[i].name
-        .carousel-item
-          .card-wrapper
-            -for(let i=4; i<Math.min(8, product_data.length); i++)
-              a.card.featured(href = '/product/' + product_data[i]._id)
-                img.card-img-top(src=`/${product_data[i].imageUrl}`)
-                //- img.card-img-top(src='images/saree_images/'+product_data[i].image.data)
-                .card-body
-                  h5.card-title= product_data[i].name
+        if(product_data.length >= 5)
+          .carousel-item
+            .card-wrapper
+              -for(let i=4; i<Math.min(8, product_data.length); i++)
+                a.card.featured(href = '/product/' + product_data[i]._id)
+                  img.card-img-top(src=`/${product_data[i].imageUrl}`)
+                  //- img.card-img-top(src='images/saree_images/'+product_data[i].image.data)
+                  .card-body
+                    h5.card-title= product_data[i].name
       button.carousel-control-prev(type='button' data-bs-target='#carouselExampleControlsFirst' data-bs-slide='prev')
         span.carousel-control-prev-icon(aria-hidden='true')
         span.visually-hidden Previous
