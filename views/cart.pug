@@ -1,36 +1,44 @@
 extends layout.pug
 
 block username
-  - const username = user_name;
+  - const username = user_name
 
 block style
   link(rel="stylesheet" href = "/style/cart.css")
 
 block content
-  .products
-    each val in cartItems
-      a.product-link(href = '/product/'+val._id)
-        .product-thumbnail
-          img.saree-image(src=`/${val.imageUrl}`)
-          //- img.saree-image(src="/images/saree_images/"+val.image.data)
-          .product-details
-            p.name= val.name
-            p.price Rs. #{val.price}
-            br
-            form(action = '/removeFromCart' method = 'post')
-              input(type="hidden" name="_csrf" value=`${csrfToken}`)  
-              input(type = "hidden" name = "productId" value = `${val._id}`)
-              button(type = 'submit' class="btn") Remove
-      //- hr
-  //- .price-details
-  //-   .special-heading
-  //-     h3 Price Details
-  //-   table.table-content
-  //-     tr
-  //-       td
-  //-         strong Number of Items
-  //-       td.table-details 1
-  //-     tr
-  //-       td
-  //-         strong Total ammount
-  //-       td.table-details Fit and Flare
+  if(cartItems.length == 0)
+    h1.heading Your cart is empty!
+  else
+    -let totalPrice = 0
+    .products
+      each val in cartItems
+        -totalPrice += val.price
+        a.product-link(href = '/product/'+val._id)
+          .product-thumbnail
+            img.saree-image(src=`/${val.imageUrl}`)
+            //- img.saree-image(src="/images/saree_images/"+val.image.data)
+            .product-details
+              p.name= val.name
+              p.price Rs. #{val.price}
+              br
+              form(action = '/removeFromCart' method = 'post')
+                input(type="hidden" name="_csrf" value=`${csrfToken}`)  
+                input(type = "hidden" name = "productId" value = `${val._id}`)
+                button(type = 'submit' class="btn") Remove
+      .total
+        .special-heading
+          h3 Total
+        table.table-content
+          -let s = "items"
+          -if(cartItems.length == 1) s = "item"
+          tr
+
+            td.table-left Price ( #{cartItems.length} #{s})
+            td.table-details ₹#{totalPrice}
+          tr
+            td.table-left Delivery Charges
+            td.table-details FREE
+          tr
+            td.table-left Total Payable
+            td.table-details ₹#{totalPrice}

@@ -87,3 +87,41 @@
 
     color: black;
 }
+
+.total {
+
+    width: 400px !important;
+    margin-top: 2rem;
+    margin: 80px;
+    background-color: white;
+    padding: 20px;
+    width: 300px;
+    position: fixed;
+    top: 100px;
+    right: 100px;
+}
+
+.total .special-heading {
+    margin-bottom: 1rem;
+}
+
+.total .special-heading h3 {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.table-content td {
+    padding: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.table-left {
+
+    width: 80%;
+    font-weight: 500;
+}
+
+.table-content .table-details {
+    padding-left: 3rem;
+    width: 100%;
+}
