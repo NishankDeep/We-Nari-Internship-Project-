@@ -172,6 +172,7 @@ section .contentBx .center .TxtField input[type="submit"]:hover {
     border: 1px solid #ff4584 !important;
     color: #ff4584;
     background-color: white;
+    cursor: pointer;
 }
 
 section .contentBx .center .tick {
