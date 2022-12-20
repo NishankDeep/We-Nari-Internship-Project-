@@ -51,6 +51,7 @@ section .imgBx .imgText .desp {
 }
 
 section .contentBx {
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -207,6 +208,14 @@ section .contentBx .center .login p a {
     /* padding-top: 100px; */
     /* margin-top: 80px;
     } */
+}
+
+@media screen and (max-height: 700px) {
+
+    .contentBx {
+
+        margin-top: 100px;
+    }
 }
 
 .imgBx {
