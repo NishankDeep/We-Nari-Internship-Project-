@@ -1,13 +1,12 @@
 extends layout.pug
 
 block username
-  - const username = user_name;
+  - const username = user_name
 
 block style
   link(rel="stylesheet" href = "/style/cart.css")
 
 block content
-
   if(cartItems.length == 0)
     h1.heading Your cart is empty!
   else
