@@ -164,6 +164,7 @@ section .contentBx .center .TxtField input[type="submit"]:hover {
     padding: 10px 20px;
     border-radius: 30px;
     font-weight: 500;
+    border: none;
 }
 
 .btn:hover {
@@ -171,6 +172,7 @@ section .contentBx .center .TxtField input[type="submit"]:hover {
     border: 1px solid #ff4584 !important;
     color: #ff4584;
     background-color: white;
+    cursor: pointer;
 }
 
 section .contentBx .center .tick {
