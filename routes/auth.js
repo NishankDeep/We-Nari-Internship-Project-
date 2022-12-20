@@ -3,12 +3,12 @@ const express = require('express');
 const route = express.Router();
 const authController = require('../controller/auth');
 const isAuth = require('../middleware/isAuth');
-const isPassAuth = require('../middleware/isPassAuth')
+const isLoginAuth = require('../middleware/isLoginAuth')
 
-route.get('/login',authController.getLogin);
-route.get('/signup',authController.getSignup);
-route.get('/forgetPass',authController.getForgetPage);
-route.get('/changePass',isAuth,authController.getChangePass);
+route.get('/login',isLoginAuth,authController.getLogin);
+route.get('/signup',isLoginAuth,authController.getSignup);
+route.get('/forgetPass',isLoginAuth,authController.getForgetPage);
+route.get('/changePass',authController.getChangePass);
 
 route.post('/sign-up',authController.postSingnup);
 route.post('/login',authController.postLogin);
