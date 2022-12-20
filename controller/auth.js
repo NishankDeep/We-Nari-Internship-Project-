@@ -1,6 +1,7 @@
 const User = require('../models/user');
 const validator = require('email-validator');
 const bcrypt = require('bcrypt');
+const { listenerCount } = require('../models/user');
 
 
 exports.getLogin = (req, res, next) => {
@@ -13,6 +14,15 @@ exports.getSignup = (req, res, next) => {
 
 exports.getForgetPage = (req, res, next) => {
     res.render('auth/forgetPassword')
+}
+
+exports.getChangePass = (req,res,next) => {
+    let user_name = '';
+    if (req.user) user_name = req.user.name;
+    res.render('auth/changePass',{
+        user_name:user_name,
+        email:req.user.email
+    });
 }
 
 
@@ -177,11 +187,22 @@ exports.postLogout = (req, res, next) => {
 }
 
 exports.postForgetPass = (req, res, next) => {
-    const { email, password, confirmPassword } = req.body;
+    let { email, password, confirmPassword } = req.body;
+    let path;
+    let redir;
+    if(req.session.isLoggedIn){
+        // email=req.user.email;
+        path='auth/changePass';
+        redir='/';
+    }
+    else{
+        path='auth/forgetPassword';
+        redir='/login';
+    }
 
     if (!validator.validate(email)) {
-        console.log('invalid email id');
-        res.render('auth/forgetPassword', {
+        // console.log(email);
+        res.render(path, {
             email: email,
             password: password,
             confirmPassword: confirmPassword,
@@ -192,8 +213,8 @@ exports.postForgetPass = (req, res, next) => {
     }
 
     if (password.trim().length < 5) {
-        res.render('auth/forgetPassword', {
-            error: 'invalid',
+        res.render(path, {
+            error: 'invalidLength',
             message: 'Password length must be (> 5)',
             email: email,
             password: password,
@@ -203,8 +224,8 @@ exports.postForgetPass = (req, res, next) => {
     }
 
     if (password !== confirmPassword) {
-        res.render('auth/forgetPassword', {
-            error: 'invalid',
+        res.render(path, {
+            error: 'invalidMatch',
             message: 'Password and Confirm Password do not match',
             email: email,
             password: password,
@@ -219,7 +240,7 @@ exports.postForgetPass = (req, res, next) => {
     User.findOne({ email: email })
         .then(user => {
             if (!user) {
-
+                return ;
             }
             else {
                 currUser = user;
@@ -237,7 +258,7 @@ exports.postForgetPass = (req, res, next) => {
         })
         .then(data => {
             if (!data) {
-                res.render('auth/forgetPassword', {
+                res.render(path, {
                     email: email,
                     password: '',
                     confirmPassword: '',
@@ -247,7 +268,7 @@ exports.postForgetPass = (req, res, next) => {
             }
             else {
                 console.log('password Changed successfully');
-                res.redirect('/login');
+                res.redirect(redir);
             }
         })
         .catch(err => {
