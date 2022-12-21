@@ -188,17 +188,15 @@ exports.postLogout = (req, res, next) => {
 
 exports.postForgetPass = (req, res, next) => {
     let { email, password, confirmPassword } = req.body;
-    let path;
-    let redir;
-    if(req.session.isLoggedIn){
-        // email=req.user.email;
-        path='auth/changePass';
-        redir='/';
-    }
-    else{
-        path='auth/forgetPassword';
-        redir='/login';
-    }
+
+    // if(req.session.isLoggedIn){
+    //     path='auth/changePass';
+    //     redir='/';
+    // }
+    // else{
+    const path='auth/forgetPassword';
+    const redir='/login';
+    // }
 
     if (!validator.validate(email)) {
         // console.log(email);
@@ -276,3 +274,113 @@ exports.postForgetPass = (req, res, next) => {
         })
 }
 
+
+exports.postChangePassword = async (req,res,next) => {
+    let { oldPassword, password, confirmPassword } = req.body;
+
+    // if(req.session.isLoggedIn){
+        path='auth/changePass';
+        redir='/';
+    // }
+    // else{
+    // const path='auth/forgetPassword';
+    // const redir='/login';
+    // // }
+
+    const isValid = await bcrypt.compare(oldPassword,req.user.password);
+
+    if(!isValid){
+        res.render(path, {
+            error: 'invalidLength',
+            message: 'Old Password is incorrect',
+            oldPassword:oldPassword,
+            password: password,
+            confirmPassword: confirmPassword
+        })
+        return;
+    }
+    
+
+    if (password.trim().length < 5) {
+        res.render(path, {
+            error: 'invalidLength',
+            message: 'Password length must be (> 5)',
+            oldPassword:oldPassword,
+            password: password,
+            confirmPassword: confirmPassword
+        })
+        return;
+    }
+
+    if (password !== confirmPassword) {
+        res.render(path, {
+            error: 'invalidMatch',
+            message: 'Password and Confirm Password do not match',
+            oldPassword:oldPassword,
+            password: password,
+            confirmPassword: confirmPassword
+        })
+        return;
+    }
+
+    const encryptPass = await bcrypt.hash(password, 15)
+    req.user.password = encryptPass;
+    const data = await req.user.save();
+
+    if (!data) {
+        res.render(path, {
+            oldPassword:oldPassword,
+            password: '',
+            confirmPassword: '',
+            error: 'pass Invalid',
+            message: 'Password Credential is not correct'
+        })
+    }
+    else {
+        console.log('password Changed successfully');
+        res.redirect(redir);
+    }
+
+    
+
+
+    // let currUser;
+
+    // User.findOne({ email: req.user.email })
+    //     .then(user => {
+    //         if (!user) {
+    //             return ;
+    //         }
+    //         else {
+    //             currUser = user;
+    //             return bcrypt.hash(password, 15);
+    //         }
+    //     })
+    //     .then(encrptPass => {
+    //         if (!encrptPass) {
+    //             return null;
+    //         }
+    //         else {
+    //             currUser.password = encrptPass;
+    //             return currUser.save();
+    //         }
+    //     })
+    //     .then(data => {
+    //         if (!data) {
+    //             res.render(path, {
+    //                 oldPassword:oldPassword,
+    //                 password: '',
+    //                 confirmPassword: '',
+    //                 error: 'pass Invalid',
+    //                 message: 'Password Credential is not correct'
+    //             })
+    //         }
+    //         else {
+    //             console.log('password Changed successfully');
+    //             res.redirect(redir);
+    //         }
+    //     })
+    //     .catch(err => {
+    //         console.log(err);
+    //     })
+}
