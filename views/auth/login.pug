@@ -28,7 +28,9 @@ section
           span
         .TxtField
           label Password
-          input(type='password' value=`${error ? password : ''}` required='' name='password')
+          .d-flex
+            input#password(type='password' value=`${error ? password : ''}` required='' name='password')
+            input#eye(type = 'checkbox' onclick = 'show()')
           span
         .login
           a(href='/forgetPass')
@@ -41,3 +43,6 @@ section
           p 
             | New at WeNaari? 
             a(href='/signup') Create an account
+
+block scripts
+  script(src = '/js/script.js')

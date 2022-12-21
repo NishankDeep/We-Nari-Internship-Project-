@@ -269,3 +269,9 @@ section .contentBx .center #newacc p {
 .err p {
     color: red;
 }
+
+#eye {
+
+    width: 20px;
+    margin-left: 20px;
+}
