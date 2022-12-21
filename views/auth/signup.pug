@@ -70,22 +70,26 @@ body
             span
           .TxtField
             label Password
-            input(
-              type='password' 
-              class = `${(error==='notMatchPass' || error==='passErr') ? 'invalid':''}` 
-              value =value=`${error ? formData.password: ''}` 
-              required='' 
-              name="password"
-              )
+            .d-flex
+              input#password1(
+                type='password' 
+                class = `${(error==='notMatchPass' || error==='passErr') ? 'invalid':''}` 
+                value =value=`${error ? formData.password: ''}` 
+                required='' 
+                name="password"
+                )
+              input.eye(type = 'checkbox' onclick = 'show1()')
             span
           .TxtField
             label Confirm Password
-            input(type='password' 
-            class = `${error==='notMatchPass' ? 'invalid':''}` 
-            value =value=`${error ? formData.confirmPassword: ''}` 
-            required='' 
-            name="confirmPassword"
-            )
+            .d-flex
+              input#password2(type='password' 
+                class = `${error==='notMatchPass' ? 'invalid':''}` 
+                value =value=`${error ? formData.confirmPassword: ''}` 
+                required=''
+                name="confirmPassword"
+                )
+              input.eye(type = 'checkbox' onclick = 'show2()')
             span
           .tick
             label
@@ -99,3 +103,6 @@ body
             p
               | Already have an account? 
               a(href='/login') Login
+
+block scripts
+  script(src = '/js/script.js')

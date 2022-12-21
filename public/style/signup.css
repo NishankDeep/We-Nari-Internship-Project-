@@ -245,3 +245,9 @@ input.invalid {
 .err p {
     color: red;
 }
+
+.eye {
+
+    width: 20px !important;
+    margin-left: 20px !important;
+}
