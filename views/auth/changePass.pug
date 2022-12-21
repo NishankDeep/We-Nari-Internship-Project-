@@ -18,11 +18,15 @@ block content
       input(type="hidden" name="email" value=`${email}`)
 
       .form-group
+        label#name-label(for='name') Old Password
+        input#name.form-control(type='password' value=`${error ? password : ''}` name='oldPassword' placeholder='' required='')
+      
+      .form-group
         label#name-label(for='name') New Password
-        input#name.form-control(type='password' value=`${error ? password : ''}` name='password' placeholder='*****' required='')
+        input#name.form-control(type='password' value=`${error ? password : ''}` name='password' placeholder='' required='')
        
       .form-group
         label#price-label(for='price') Confirm Password
-        input#price.form-control(type='password' value=`${error ? confirmPassword : ''}` name='confirmPassword' placeholder='*****' required='')
+        input#price.form-control(type='password' value=`${error ? confirmPassword : ''}` name='confirmPassword' placeholder='' required='')
       .form-group
         button#button.btn(type = 'submit') Submit
