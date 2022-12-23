@@ -1,16 +1,14 @@
 extends layout.pug
 
-block username
-  - const username = user_name;
-
 block style
   link(rel="stylesheet" href = "/style/customize.css")
+
 block content
   .wrapper
   .bg-image
   section#form-cnt.container.form-container
     header.header
-    h1#title.text-center Edit Profile
+    h1#title.text-center Edit Profile Details
     form#survey-form(action = "/editProfile" method = "post" enctype="multipart/form-data")
       input(type="hidden" name="_csrf" value=`${csrfToken}`)
       input(type="hidden" name="id" value=``)
@@ -30,25 +28,5 @@ block content
         input#pattern.form-control(type='text' value=`${email}` name='email' placeholder='Enter the email address' required='')
         if (error === 'emailErr')
             p.err Enter correct email
-
-        //- .form-group
-        //- label.form-label.txtInside(for=' ') Saree Photo
-        //- input#attach.form-control.formChoose.sizeChange(type='file' name = 'image' accept='.jpg, .jpeg, .png, ')
       .form-group
        button#button.btn(type = 'submit') Change 
-
-    //-   .form-group
-    //-     label#occasion-label(for='occasion') Occasion
-    //-     input#occasion.form-control(type='text' name='occasion' placeholder='Enter the occasion on which the saree will be worn' required='')
-    //-   .form-group
-    //-     label#fabric-label(for='fabric') Fabric
-    //-     input#fabric.form-control(type='text' name='fabric' placeholder='Enter the fabric of the saree' required='')
-    //-   .form-group
-    //-     p Description
-    //-     textarea#description.input-textarea(name='description' placeholder='Description of the saree')
-      //- .form-group
-      //-   p Description
-      //-   textarea#comments.input-textarea(name='comment' placeholder='Write the details of the saree here...')
-     
-     
-     

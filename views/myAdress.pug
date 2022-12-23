@@ -10,9 +10,8 @@ block content
       each val in data
         form.address-details
           .d-flex
-            //- input.radio(type = 'radio')
             p.name= val.name
             p.mobileNo= val.mobileNo
-          p.address= val.address
+          p.address  #{val.address}, #{val.city}, #{val.state}
           p.pincode= val.pincode
       a.newAddress(href = '/addNewAddress') + Add a new address

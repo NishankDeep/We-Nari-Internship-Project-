@@ -1,8 +1,5 @@
 extends layout.pug
 
-block username
-  - const username = user_name;
-
 block style
   script(src='https://kit.fontawesome.com/57c20b0d98.js' crossorigin='anonymous')
   //- link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css')
@@ -22,8 +19,13 @@ block content
             <img src="./images/img4.jpg" alt="" onclick="clickimg(this)">
             <img src="./images/img5.jpg" alt="" onclick="clickimg(this)">
             <img src="./images/img6.jpg" alt="" onclick="clickimg(this)">
-        .main-img
-          img#change(src=`/${product.imageUrl}` alt='')
+        form(action = '/addToWishlist' method = 'post')
+          input(type="hidden" name="_csrf" value=`${csrfToken}`)
+          input(type = 'hidden' name = 'id' value = product._id)
+          .main-img
+            img#change(src=`/${product.imageUrl}` alt='')
+          input#toggle-heart(type = 'checkbox' name = 'wishlistToggle' onChange = "this.form.submit()" checked = flag)
+          label(type = 'submit' for = 'toggle-heart') ❤ 
           //- img#change(src='/images/saree_images/'+product.image.data alt='')
       //- hr
       .buttons 
@@ -33,6 +35,7 @@ block content
           button.btns.btn(type = "submit") ADD TO CART
         a(href='/buyNow/'+product. _id)
           button(class="btn").btns.btn BUY NOW
+        //- input#toggle-heart(type = 'checkbox')
     .right
       .prod-header
         h1= product.name

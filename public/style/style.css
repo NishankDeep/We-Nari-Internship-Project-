@@ -18,11 +18,6 @@ body {
     min-height: 100%;
 }
 
-nav {
-
-    padding-right: 30px !important;
-}
-
 .scrolling-active {
 
     transition: 0.5s ease;
@@ -75,6 +70,11 @@ nav {
     .banner {
         height: 450px;
     }
+
+    nav {
+
+        padding-right: 30px !important;
+    }
 }
 
 @media screen and (min-width:980px) {
@@ -113,6 +113,11 @@ nav {
 
     padding-left: 30px;
     padding-right: 30px;
+}
+
+.dropdown-item:active {
+
+    background-color: #ff4584 !important;
 }
 
 .navbar-brand {

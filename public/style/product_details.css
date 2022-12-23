@@ -136,10 +136,12 @@ hr {
 }
 
 .left .buttons {
+
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 2rem 0;
+    margin-left: 115px;
 }
 
 .left .buttons .btns {
@@ -324,5 +326,53 @@ hr {
 
     .Top {
         width: 100%;
+    }
+
+    .buttons {
+
+        margin-left: 0px !important;
+    }
+
+    [for='toggle-heart'] {
+
+        top: 150px !important;
+        right: 0px !important;
+    }
+}
+
+#toggle-heart {
+
+    position: absolute;
+    left: -100vw;
+}
+
+#toggle-heart:checked+label {
+
+    color: #e2264d;
+    will-change: font-size;
+    animation: heart 1s cubic-bezier(.17, .89, .32, 1.49);
+}
+
+[for='toggle-heart'] {
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #aab8c2;
+    cursor: pointer;
+    font-size: 2em;
+    padding-left: 10px;
+    border: 1px solid white;
+    border-radius: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: white;
+}
+
+@keyframes heart {
+
+    0%,
+    17.5% {
+        font-size: 0;
     }
 }

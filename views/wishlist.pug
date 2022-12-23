@@ -4,13 +4,13 @@ block style
   link(rel="stylesheet" href = "/style/cart.css")
 
 block content
-  if(cartItems.length == 0)
-    h1.heading Your cart is empty!
+  if(wishlistItems.length == 0)
+    h1.heading Wishlist is empty!
   else
-    h1.heading Your Cart
+    h1.heading Wishlist
     -let totalPrice = 0
     .products
-      each val in cartItems
+      each val in wishlistItems
         -totalPrice += val.price
         a.product-link(href = '/product/'+val._id)
           .product-thumbnail
@@ -20,19 +20,19 @@ block content
               p.name= val.name
               p.price Rs. #{val.price}
               br
-              form(action = '/removeFromCart' method = 'post')
+              form(action = '/removeFromWishlist' method = 'post')
                 input(type="hidden" name="_csrf" value=`${csrfToken}`)  
                 input(type = "hidden" name = "productId" value = `${val._id}`)
                 button(type = 'submit' class="btn") Remove
-      .total
+    //-   .total
         .special-heading
           h3 Total
         table.table-content
           -let s = "items"
-          -if(cartItems.length == 1) s = "item"
+          -if(wishlistItems.length == 1) s = "item"
           tr
 
-            td.table-left Price ( #{cartItems.length} #{s})
+            td.table-left Price ( #{wishlistItems.length} #{s})
             td.table-details ₹#{totalPrice}
           tr
             td.table-left Delivery Charges

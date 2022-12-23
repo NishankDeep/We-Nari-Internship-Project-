@@ -1,16 +1,13 @@
 extends layout.pug
 
-block username
-  - const username = user_name;
-
 block style
   link(rel = "stylesheet" href = "/style/myaccount.css")
 
 block content
   section.Myaccount
-    p Welcome, #{user_name}
+    p Welcome, #{fname}
   section.carton
-    #wishList.block(onclick="location.href='#';" style='cursor: pointer;')
+    #wishList.block(onclick="location.href='/wishlist';" style='cursor: pointer;')
       .img
         img(src='images/MyAccount_Icons/favourite.webp' width='90px' height='90px' alt='wish-list')
       .text
@@ -39,9 +36,9 @@ block content
         img(src='images/MyAccount_Icons/loginSecurity.png' width='100px' height='100px' alt='Login-and-Security')
       .text
         p
-          strong LOGIN &amp; SECURITY
+          strong EDIT PROFILE DETAILS
           br
-          |  Edit login, name and mobile number
+          |  Edit name, mobile number and email
     #address.block(onclick="location.href='/myaddress';" style='cursor: pointer;')
       .img
         img(src='images/MyAccount_Icons/address.jpeg' width='100px' height='100px' alt='Your-Address')

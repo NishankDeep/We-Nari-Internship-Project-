@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const passportLocalMongoose = require('passport-local-mongoose')
 
 const productSchema = require('./product').productSchema;
 
@@ -25,7 +26,13 @@ const userSchema = new Schema({
 
         type: [productSchema],
         default: null
+    },
+    wishlistItems: {
+
+        type: [productSchema],
+        default: null
     }
 });
+userSchema.plugin(passportLocalMongoose)
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = new mongoose.model('User', userSchema);
